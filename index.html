@@ -124,7 +124,7 @@ table.main tbody tr:hover td { background: #ebe9e2; cursor: pointer; }
 <body>
 <div class="wrap">
   <h1>Evans Transformation Board</h1>
-  <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 5/1/2026 EOD</div>
+  <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 5/5/2026 — Morning</div>
 
   <!-- P0 BANNER -->
   <div class="p0-banner">
@@ -264,8 +264,8 @@ table.main tbody tr:hover td { background: #ebe9e2; cursor: pointer; }
         <div style="padding:6px 8px;color:#854F0B;border-left:0.5px solid #d3d1c7">⬜ Card creation next</div>
       </div>
       <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">IPS — Begin Transformation sent to Paul Volkman 5/1. TL Tender feature enablement — Brian to raise with Kev/Marcel.</div>
-        <div style="padding:6px 8px;color:#854F0B;border-left:0.5px solid #d3d1c7">🔄 Awaiting PV</div>
+        <div style="padding:6px 8px">IPS — Begin Transformation approved Paul Volkman 5/1. TL Tender feature enablement — Brian/Marcel. QA testing path TBD with Kev.</div>
+        <div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">✅ PV approved 5/1</div>
       </div>
       <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
         <div style="padding:6px 8px">Transformation Board rules of engagement — meeting scheduled with Brian + Wyatt. Agenda drafted.</div>
@@ -383,7 +383,7 @@ const GAPS = [
 const QW = [
   { seq:1, name:"Alto-Shaam [Bid Management]", loads:"Low", uxpct:"Low UX", gp:"—", type:"Process", note:"✅ IN EXECUTION. Begin Transformation approved Paul Volkman 4/29. Go-Live ~May 13. BOL stories on critical path in sprint.", active:true },
   { seq:2, name:"Wunder-Bar", loads:"2,533/yr", uxpct:93, gp:"—", type:"Customer", note:"🟠 On Deck. Spike v1.9 complete. Target go-live May 31. KAM: Spencer Walker. ⚠️ June constraint — Leticia Navarro maternity leave. Vendor portal active — must-have for go-live. Backup POC TBD." },
-  { seq:3, name:"IPS [TL Tender]", loads:"—", uxpct:"E3 native", gp:"—", type:"Process", note:"🟠 Awaiting PV approval. Begin Transformation sent 5/1. TL Tender feature enablement — Brian to raise with Kev/Marcel." },
+  { seq:3, name:"IPS [TL Tender]", loads:"—", uxpct:"E3 native", gp:"—", type:"Process", note:"✅ PV Begin Transformation approved 5/1. IN EXECUTION. TL Tender feature enablement — Brian/Marcel path. QA testing path TBD with Kev." },
   { seq:4, name:"AJ Manufacturing [LTL Rate Shop + Dispatch]", loads:"699/yr", uxpct:100, gp:37024, type:"Customer", note:"🟡 Spike v1.1 complete — pending Jared review, card creation next. KAM: Spencer Walker. 100% UX. Clean migration path. No integrations, no Legacy WS. Vendor portal active — 84 vendor addresses, confirm active users with Spencer." },
   { seq:5, name:"ASI Doors", loads:415, uxpct:68.2, gp:30591, type:"TBD", note:"Initial discovery already done." },
   { seq:6, name:"Banker Wire", loads:1025, uxpct:97.2, gp:12704, type:"TBD", note:"Trace Vooma only. Near-pure UX." },
@@ -423,8 +423,8 @@ const CUSTOMERS = [
   { name:"Wixon", tier:"Not UX", loads:6, gp:261, complexity:"Complex", type:"Type 3", status:"Integration", color:"int", note:"Legacy WS / IFS ERP integration." },
   { name:"Wunder-Bar [LTL Rate Shop + Dispatch]", tier:"Not UX", loads:2533, gp:0, complexity:"Simple-Moderate", type:"Customer", status:"Discovery", color:"qw", kam:"Spencer Walker", mondayStatus:"On Deck",
     note:"Spike v1.9 complete — card creation next. KAM: Spencer Walker. ~2,533 UX loads/yr. LTL rate shop + dispatch. Self-service. Contracted. Vendor portal active — 3 vendor users, ~385 inbound loads/yr. MUST-HAVE for go-live.\n\n⚠️ Hard timing constraint: Leticia Navarro (primary POC) on maternity leave June 2026. Target go-live tail end of May. Backup POC TBD — confirm with Spencer before cutover.\n\nConfirmed config: Account WUNDVA · Rate Contract WUNDVA · Standard rate flow · PPA force yes · NTE 7 pallets/10,000 lbs/143\" · Default origin: 2060 Cessna Dr., Ste. 100, Vacaville CA 95688 (address conflict — Spencer to confirm vs. 820 Enterprise St) · Default Terms: Prepaid · Pickup: 1200–1600, Delivery: 0900–1600 · Default Special Instructions: ***DO NOT DOUBLE STACK FREIGHT*** (confirm E3 field with Kev) · Non-LCC reason: No · Freight Entry: Standard\n\nOpen before Volkman gate: Shipping address confirm · Backup POC · Formal vendor portal confirm · Default Special Instructions field in E3 · Other Reference Numbers at dispatch · Canada routing/FXFE support · Customer Markup rate tier · NMFC sub-class intake path · PPA key/% at rate contract level · Monday card creation · PV Begin Transformation (not submitted)" },
-  { name:"IPS [TL Tender]", tier:"Not UX", loads:0, gp:0, complexity:"Low", type:"Process", status:"Stakeholder Alignment", color:"t2", mondayStatus:"Awaiting PV", legacyWS:"N/A", kam:"Ryan Helgason",
-    spike:`<div style="font-size:12px;font-weight:500;margin-bottom:4px">Spike status: Discovery Complete — Pending Config</div>
+  { name:"IPS [TL Tender]", tier:"Not UX", loads:0, gp:0, complexity:"Low", type:"Process", status:"In Execution", color:"t2", mondayStatus:"In Progress", legacyWS:"N/A", kam:"Ryan Helgason",
+    spike:`<div style="font-size:12px;font-weight:500;margin-bottom:4px">Spike status: ✅ Begin Transformation Approved 5/1 — Pending config + feature enablement</div>
 <div style="font-size:11px;color:#73726c;margin-bottom:8px">Owner: Eric Lewis · KAM: Ryan Helgason · Date: 4/27/2026</div>
 
 <div style="font-size:11px;font-weight:500;margin-bottom:3px">Targeted outcome</div>
@@ -455,13 +455,13 @@ const CUSTOMERS = [
 
 <div style="font-size:11px;font-weight:500;margin-bottom:3px">Open items</div>
 <div style="font-size:11px;color:#73726c;line-height:1.7">
-🔄 Paul Volkman — Begin Transformation approval — sent 5/1, awaiting response<br>
+🔄 Paul Volkman — Begin Transformation APPROVED 5/1/2026<br>
 ⬜ TL Tender feature enablement — Brian to raise with Kev. Marcel to own path going forward.<br>
 ⬜ QA testing path — define with Kev<br>
 ⬜ Onboarding spreadsheet (TL Tender tab) — in progress
 </div>`,
-    note:"Existing E3 customer — 2nd integrated client. TL Tender enablement only. No Legacy UX history. TL Tender ≠ Bid Management — IPS self-serves TL shipments, no bid rounds. Spike complete 4/27. Running in parallel with Alto-Shaam (#1). KAM: Ryan Helgason. Contact: Lamar Johnson (ljohnson@ipack.com). Open: PV Begin Transformation approval, QA testing path." },
-  { name:"Alto-Shaam [Bid Management]", tier:"Not UX", loads:1, gp:27, complexity:"Low", type:"Process", status:"In Execution", color:"t2", active:true, kam:"Rich Reese", mondayStatus:"In Progress", legacyWS:"YES",
+    note:"Existing E3 customer — 2nd integrated client. TL Tender enablement only. No Legacy UX history. TL Tender ≠ Bid Management — IPS self-serves TL shipments, no bid rounds. Spike complete 4/27. KAM: Ryan Helgason. Contact: Lamar Johnson (ljohnson@ipack.com). ✅ PV Begin Transformation approved 5/1. Open: TL Tender feature enablement (Brian/Marcel), QA testing path." },
+  { name:"Alto-Shaam [Bid Management]", tier:"Not UX", loads:1, gp:27, complexity:"Low", type:"Customer", status:"In Execution", color:"t2", active:true, kam:"Rich Reese", mondayStatus:"In Progress", legacyWS:"YES",
     pvOutreach:"✅ Begin Transformation APPROVED — Paul Volkman 4/29/2026. Go-Live approval pending — after config complete.",
     spike:`<div style="font-size:12px;font-weight:500;margin-bottom:4px">Spike status: ✅ Begin Transformation Approved 4/29 — Config in progress | Widget type reclassified: Customer (Rate Shop + Bid Management — reclassified from Process 4/29 per Brian/Eric)</div>
 <div style="font-size:11px;color:#73726c;margin-bottom:8px">Owner: Eric Lewis · KAM: Rich Reese · Date: 4/22/2026 · Updated: 4/29/2026</div>
