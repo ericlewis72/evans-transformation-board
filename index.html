@@ -124,7 +124,7 @@ table.main tbody tr:hover td { background: #ebe9e2; cursor: pointer; }
 <body>
 <div class="wrap">
   <h1>Evans Transformation Board</h1>
-  <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 5/1/2026</div>
+  <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 5/1/2026 EOD</div>
 
   <!-- P0 BANNER -->
   <div class="p0-banner">
@@ -170,9 +170,11 @@ table.main tbody tr:hover td { background: #ebe9e2; cursor: pointer; }
 
   <!-- QUICK WINS -->
   <div class="view" id="v-quickwins">
-    <div class="qw-rule"><strong>Confirmed sequencing — sent to James 4/22, replied to James' email.</strong> Kev confirmed Alto-Shaam on sprint priority list via Teams DM 4/22.<br><strong>Sequencing criterion:</strong> % UX = load share through UX portal. <strong>Ideal profile:</strong> 100% UX · low volume · no integration columns · outbound simple.</div>
+    <div class="qw-rule"><strong>Wave 1 — status as of 5/1/2026 EOD</strong><br>
+      ✅ Alto-Shaam — IN EXECUTION, PV approved 4/29, Go-Live ~May 13 &nbsp;·&nbsp; 🟠 Wunder-Bar — On Deck, spike complete, target May 31 &nbsp;·&nbsp; 🟠 IPS — Awaiting PV (sent 5/1) &nbsp;·&nbsp; 🟡 AJ Manufacturing — Spike v1.1, Jared review pending<br>
+      <strong>Sequencing criterion:</strong> % UX of total loads. Ideal profile: 100% UX · low volume · no integration · outbound simple.</div>
     <div style="font-size:11px;color:#73726c;padding:5px 10px;border-radius:6px;border:0.5px solid #d3d1c7;background:#ebe9e2;margin-bottom:.75rem">
-      <strong>Data source update 4/22:</strong> James updated UX_E3_Project.xlsx with Web Services data from 1/1/25–12/10/25. New tabs: "Web Services Pivot" and "Load Entry Type %" now available as additional reference.
+      <strong>Data source:</strong> UX_E3_Project.xlsx — Web Services Pivot and Load Entry Type % tabs available as reference. Updated 4/22 by James.
     </div>
     <table class="main"><thead><tr><th>#</th><th>Customer</th><th>March loads</th><th>% UX</th><th>Type</th><th>GP</th><th>Notes</th></tr></thead><tbody id="qw-tbody"></tbody></table>
     <div style="margin-top:1rem;font-size:12px;font-weight:500;color:#73726c;margin-bottom:6px">Confirmed NOT first candidates despite appearing simple</div>
@@ -380,10 +382,10 @@ const GAPS = [
 ];
 const QW = [
   { seq:1, name:"Alto-Shaam [Bid Management]", loads:"Low", uxpct:"Low UX", gp:"—", type:"Process", note:"✅ IN EXECUTION. Begin Transformation approved Paul Volkman 4/29. Go-Live ~May 13. BOL stories on critical path in sprint.", active:true },
-  { seq:2, name:"IPS [TL Tender]", loads:"—", uxpct:"E3 native", gp:"—", type:"Process", note:"🟠 Awaiting PV approval. Begin Transformation sent 5/1. TL Tender feature enablement — Brian to raise with Kev/Marcel." },
-  { seq:3, name:"Wunder-Bar", loads:"2,533/yr", uxpct:93, gp:"—", type:"Customer", note:"🟠 Spike v1.9 complete — card creation next. KAM: Spencer Walker. ⚠️ Hard timing constraint: Leticia Navarro (primary POC) on maternity leave June 2026. Target go-live tail end of May. Vendor portal active — must-have for go-live. Backup POC TBD — confirm with Spencer before cutover." },
-  { seq:4, name:"ASI Doors", loads:415, uxpct:68.2, gp:30591, type:"TBD", note:"Initial discovery already done." },
-  { seq:5, name:"AJ Manufacturing", loads:699, uxpct:100, gp:37024, type:"TBD", note:"Cleanest on list. No integration activity." },
+  { seq:2, name:"Wunder-Bar", loads:"2,533/yr", uxpct:93, gp:"—", type:"Customer", note:"🟠 On Deck. Spike v1.9 complete. Target go-live May 31. KAM: Spencer Walker. ⚠️ June constraint — Leticia Navarro maternity leave. Vendor portal active — must-have for go-live. Backup POC TBD." },
+  { seq:3, name:"IPS [TL Tender]", loads:"—", uxpct:"E3 native", gp:"—", type:"Process", note:"🟠 Awaiting PV approval. Begin Transformation sent 5/1. TL Tender feature enablement — Brian to raise with Kev/Marcel." },
+  { seq:4, name:"AJ Manufacturing [LTL Rate Shop + Dispatch]", loads:"699/yr", uxpct:100, gp:37024, type:"Customer", note:"🟡 Spike v1.1 complete — pending Jared review, card creation next. KAM: Spencer Walker. 100% UX. Clean migration path. No integrations, no Legacy WS. Vendor portal active — 84 vendor addresses, confirm active users with Spencer." },
+  { seq:5, name:"ASI Doors", loads:415, uxpct:68.2, gp:30591, type:"TBD", note:"Initial discovery already done." },
   { seq:6, name:"Banker Wire", loads:1025, uxpct:97.2, gp:12704, type:"TBD", note:"Trace Vooma only. Near-pure UX." },
 ];
 const NOT_QW = [
@@ -394,7 +396,8 @@ const NOT_QW = [
   { name:"Solar Turbines", reason:"199 Manual loads" },
 ];
 const CUSTOMERS = [
-  { name:"AJ Manufacturing", tier:"Quick Win", loads:699, gp:37024, complexity:"Simple", type:"Type 1", status:"Intake", color:"qw", note:"Pure UX. Paul mentioned as low hanging fruit. First migration candidate.", uxpct:100 },
+  { name:"AJ Manufacturing [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:699, gp:37024, complexity:"Simple-Moderate", type:"Customer", status:"Discovery", color:"qw", kam:"Spencer Walker", legacyWS:"No",
+    note:"🟡 Spike v1.1 complete — pending Jared review, card creation next. KAM: Spencer Walker. ~699 UX loads/yr. 100% UX. LTL rate shop + dispatch. Standard rate mode. No integrations, no EDI, no Legacy WS. Clean migration path.\n\nVendor portal active — 84 vendor addresses. Confirm active vendor users with Spencer.\nAllow Quote Dispatch = No — users cannot self-dispatch from quote screen.\nFixed Special Instructions on every BOL: 'DRIVER MUST CHOCK WHEELS' and 'ATTN Receiving: Inspect this shipment and note any potential damage on the BOL'\n\nKey contacts: Spencer Walker (KAM/Evans) · Krystal Blum (Primary) — kblum@ajdoor.com / 715-568-1793 ext. 10 · Carol Prince (Bill-To) — cprince@ajdoor.com\n\nConfirmed config: Account AJMABL · Rate Contract AJMABL · Standard rate flow · PPA 19% · PPA Min $15 · PPA Max $200 · PPA Key PalletRaterConfig40 · PPA Calculation Total $ · NTE 7 pallets/10,000 lbs/143\" · Default Origin 521 Main Street, Bloomer WI 54724 · Default Terms Prepaid · Pickup 0700–1600, Delivery 0800–1600 · Help Email ajmfg@evanstrans.com · Help Phone 800-886-7799\n\nNMFC sub-classes: 34265 (4 subs) and 35540 (8 subs including colon-suffix variant)\n\nUsers to migrate (7): kblum, cprince, jseverson, rfisher, bsarauer, jbohl, chassemer — all @ajdoor.com. kblum = Open Book + Customer Markup; all others = Closed Book + Customer Markup.\n\nSpike doc: AJManufacturing_SpikeDoc_v1.1 · SharePoint: Product Development / Transformation / Customers / AJ Manufacturing /\n\nOpen items:\n⬜ Jared McKeen spike review\n⬜ Monday card creation — next action after Jared review\n⬜ Confirm active vendor users — Spencer\n⬜ Fixed Special Instructions field in E3 — confirm field exists (Eric/Kev)\n⬜ Customer Markup rate access tier — confirm configurable in E3 (Eric/Kev/Marcel)\n⬜ Post Charge active record — confirm in Mongoose (Pricing Team/Eric)\n⬜ Paul Volkman Begin Transformation approval — not submitted, early stage" },
   { name:"Octopi Brewing", tier:"Quick Win", loads:450, gp:15887, complexity:"Simple", type:"Type 1", status:"Intake", color:"qw", note:"Pure UX. Low volume. First migration candidate.", uxpct:100 },
   { name:"Best Pump and Flow", tier:"Quick Win", loads:362, gp:17661, complexity:"Simple", type:"Type 1", status:"Intake", color:"qw", note:"Pure UX. Low volume. First migration candidate.", uxpct:100 },
   { name:"34 Degrees LLC", tier:"Quick Win", loads:271, gp:39378, complexity:"Simple", type:"Type 1", status:"Intake", color:"qw", note:"Pure UX. Low volume. First migration candidate.", uxpct:100 },
