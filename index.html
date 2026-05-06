@@ -124,7 +124,7 @@ table.main tbody tr:hover td { background: #ebe9e2; cursor: pointer; }
 <body>
 <div class="wrap">
   <h1>Evans Transformation Board</h1>
-  <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 5/5/2026 — Morning</div>
+  <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 5/6/2026 — Morning</div>
 
   <!-- P0 BANNER -->
   <div class="p0-banner">
@@ -136,13 +136,12 @@ table.main tbody tr:hover td { background: #ebe9e2; cursor: pointer; }
     <div style="font-size:11px;color:#73726c;margin-top:3px">Type 4 · Internal · Execution: Marcel, Hector, Ben (UX) · Eric: gap list input only — not execution owner</div>
     <div class="p0-chips">
       <span class="p0-chip" style="background:#EAF3DE;color:#27500A;border-color:#97C459">10 UI complete</span>
-      <span class="p0-chip" style="background:#B5D4F4;color:#0C447C;border-color:#85B7EB">2 needs validation — download confirmed, bulk import not yet available</span>
-      <span class="p0-chip">8 spreadsheet/Kev-only</span>
+      <span class="p0-chip">10 spreadsheet only</span>
       <span class="p0-chip">7 not built</span>
     </div>
     <div class="p0-toggle" onclick="toggleP0(this)">Show gap backlog ▾</div>
     <div class="p0-detail" id="p0-detail">
-      <div style="font-size:12px;font-weight:500;margin-bottom:6px">Self-serve gap backlog — updated 4/21 from E3 SBX UI audit</div>
+      <div style="font-size:12px;font-weight:500;margin-bottom:6px">Self-serve gap backlog — updated 5/6/2026</div>
       <table style="width:100%;border-collapse:collapse;font-size:11px" id="gap-inline-tbl"></table>
     </div>
   </div>
@@ -152,7 +151,7 @@ table.main tbody tr:hover td { background: #ebe9e2; cursor: pointer; }
     <div class="stat"><div class="lbl">Total GP at stake</div><div class="val">$3.36M</div><div class="sub">89,136 loads</div></div>
     <div class="stat"><div class="lbl">Quick-win candidates</div><div class="val">6</div><div class="sub">incl. IPS running parallel to #1</div></div>
     <div class="stat"><div class="lbl">Tier 1 customers</div><div class="val">6</div><div class="sub">$1.5M GP</div></div>
-    <div class="stat"><div class="lbl">Self-serve gaps open</div><div class="val">17</div><div class="sub">2 validate · 8 spreadsheet · 7 not built</div></div>
+    <div class="stat"><div class="lbl">Self-serve gaps open</div><div class="val">17</div><div class="sub">10 spreadsheet · 7 not built</div></div>
   </div>
 
   <!-- NAV -->
@@ -362,12 +361,12 @@ const GAPS = [
   { pri:"—", area:"Locations", state:"complete", note:"Add New Locations confirmed" },
   { pri:"—", area:"Truckload Tenders feature toggle", state:"complete", note:"Single toggle confirmed" },
   { pri:"—", area:"Dock Scheduling feature toggle", state:"complete", note:"All four dock permission toggles confirmed" },
-  { pri:1, area:"Bulk address book upload", state:"validate", note:"Download confirmed functional. Upload/bulk add still singular only — bulk import not yet available." },
-  { pri:2, area:"Bulk product catalog upload", state:"validate", note:"Download confirmed functional. Upload/bulk add still singular only — bulk import not yet available." },
+  { pri:1, area:"Bulk address book upload", state:"spreadsheet", note:"Bulk import not available — upload still singular only. Spreadsheet process required." },
+  { pri:2, area:"Bulk product catalog upload", state:"spreadsheet", note:"Bulk import not available — upload still singular only. Spreadsheet process required." },
   { pri:3, area:"Reference number config UI", state:"spreadsheet", note:"Not visible in any UI screen" },
   { pri:4, area:"Vendor management settings UI", state:"spreadsheet", note:"Not visible in any UI screen" },
   { pri:5, area:"NTE settings UI", state:"spreadsheet", note:"Not visible in any UI screen" },
-  { pri:6, area:"PPA / GRE / MG config UI", state:"kev", note:"Not visible in any UI screen — highest risk single point of failure" },
+  { pri:6, area:"PPA / GRE / MG config UI", state:"spreadsheet", note:"Not visible in any UI screen" },
   { pri:7, area:"NMFC / density table UI", state:"spreadsheet", note:"Not visible in any UI screen" },
   { pri:8, area:"TL Tender settings UI", state:"spreadsheet", note:"Feature toggle exists; settings config not in UI" },
   { pri:9, area:"Forecasting settings UI", state:"spreadsheet", note:"Feature toggle exists; settings config not in UI" },
