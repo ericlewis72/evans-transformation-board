@@ -125,7 +125,7 @@ table.main tbody tr:hover td { background: #ebe9e2; cursor: pointer; }
 <body>
 <div class="wrap">
   <h1>Evans Transformation Board</h1>
-  <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 5/11/2026</div>
+  <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 5/12/2026 — Post-Deployment</div>
 
   <!-- P0 BANNER -->
   <div class="p0-banner">
@@ -171,8 +171,8 @@ table.main tbody tr:hover td { background: #ebe9e2; cursor: pointer; }
 
   <!-- QUICK WINS -->
   <div class="view" id="v-quickwins">
-    <div class="qw-rule"><strong>Wave 1 — status as of 5/11/2026</strong><br>
-      ✅ Alto-Shaam — PV Go-Live approved, ~May 13, Spot Quote test pending Kev &nbsp;·&nbsp; 🟠 Wunder-Bar — On Deck, Spencer promised 5/8, ⚠️ catalog gap &nbsp;·&nbsp; 🔵 IPS — UAT, awaiting PV Go-Live + Ryan &nbsp;·&nbsp; 🟡 AJ Manufacturing — awaiting Spencer &nbsp;·&nbsp; 🟠 TurboChef — Demo 5/15, Training 5/18, Go-Live 5/20 &nbsp;·&nbsp; 🔜 Horizon: Newton Beverage (5/21 kickoff), Ice Drill (5/14 mtg), Custom Pipe (TBD)<br>
+    <div class="qw-rule"><strong>Wave 1 — status as of 5/12/2026 — Post-Deployment</strong><br>
+      🟢 Alto-Shaam — DEPLOYED 5/12, awaiting PV final sign-off &nbsp;·&nbsp; 🟢 IPS — DEPLOYED 5/12, awaiting PV final sign-off &nbsp;·&nbsp; 🟠 TurboChef — In Execution, sprint 5/13, demo 5/15, go-live 5/20 &nbsp;·&nbsp; 🟠 Wunder-Bar — On Deck, Spencer pending &nbsp;·&nbsp; 🟡 AJ Manufacturing — awaiting Spencer &nbsp;·&nbsp; 🔜 Newton Beverage 5/21 · Ice Drill 5/14 · Custom Pipe TBD<br>
       <strong>Sequencing criterion:</strong> % UX of total loads. Ideal profile: 100% UX · low volume · no integration · outbound simple.</div>
     <div style="font-size:11px;color:#73726c;padding:5px 10px;border-radius:6px;border:0.5px solid #d3d1c7;background:#ebe9e2;margin-bottom:.75rem">
       <strong>Data source:</strong> UX_E3_Project.xlsx — Web Services Pivot and Load Entry Type % tabs available as reference. Updated 4/22 by James.
@@ -257,8 +257,20 @@ table.main tbody tr:hover td { background: #ebe9e2; cursor: pointer; }
         <div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">✅ Done 4/29</div>
       </div>
       <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">Alto-Shaam Go-Live — target ~May 13. BOL stories on critical path in sprint.</div>
-        <div style="padding:6px 8px;color:#854F0B;border-left:0.5px solid #d3d1c7">⬜ ~May 13</div>
+        <div style="padding:6px 8px">🟢 Alto-Shaam — DEPLOYED 5/12 ~22:47 EDT. Awaiting PV final sign-off. Go-live comms pending.</div>
+        <div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">⬜ PV sign-off</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
+        <div style="padding:6px 8px">🟢 IPS — DEPLOYED 5/12 ~22:47 EDT. Awaiting PV final sign-off. Go-live comms pending.</div>
+        <div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">⬜ PV sign-off</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
+        <div style="padding:6px 8px">UX/E3 Delta — internal vetting complete. Word doc produced. 4 items disputed by Kev 5/11 (Cost Plus/Markup visibility, Admin carrier count, PPA options, Customize rate view). Review session with Kev needed before anything goes back to Francesca/Jared. Francesca/Jared email recalled — do not resend until after Kev walkthrough. Brian Franzwa question pending: vendor visibility per customer in E3 admin. Clarifications still needed from Francesca/Jared: Notify Ops use case, Audit history scope, Density calc disable, EDI/API customization example.</div>
+        <div style="padding:6px 8px;color:#854F0B;border-left:0.5px solid #d3d1c7">⬜ Kev walkthrough first</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
+        <div style="padding:6px 8px">AJ Manufacturing spike — had Wunder-Bar contamination. Verify corrected before Spencer review.</div>
+        <div style="padding:6px 8px;color:#854F0B;border-left:0.5px solid #d3d1c7">⬜ Verify spike</div>
       </div>
       <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
         <div style="padding:6px 8px">Wunder-Bar — card created 5/1. Spencer Walker discussion 5/7 — config spreadsheet + spike review incoming today. ⚠️ June deadline — Leticia Navarro maternity leave.</div>
@@ -421,16 +433,16 @@ const GAPS = [
   { pri:"⚠️", area:"Multi-product selection (bulk add to commodity lines)", state:"platform", note:"LOW — Francesca flagged 5/9. Select multiple products, then fill dims/weight per line. Not urgent." },
 ];
 const QW = [
-  { seq:1, name:"Alto-Shaam [Bid Management]", loads:"Low", uxpct:"Low UX", gp:"—", type:"Customer", note:"✅ IN EXECUTION. PV Go-Live approved. Visual UAT confirmed 5/7. Go-Live ~May 13. BOL stories on critical path.", active:true },
-  { seq:2, name:"Wunder-Bar", loads:"2,533/yr", uxpct:93, gp:"—", type:"Customer", note:"🟠 On Deck. Spike v1.9 complete. Card created 5/1. KAM: Spencer Walker. ⚠️ June constraint — Leticia Navarro maternity leave. Target tail end of May. Spencer config spreadsheet + spike review promised 5/8. ⚠️ Searchable product catalog gap — potential blocker, needs escalation to Kev/Brian." },
-  { seq:3, name:"IPS [TL Tender]", loads:"—", uxpct:"E3 native", gp:"—", type:"Process", note:"🔵 UAT. TL Tender verified PROD 5/7. Spike v1.0 complete. Go-Live email sent PV + Ryan 5/7. Awaiting PV Go-Live approval + Ryan demo feedback." },
-  { seq:4, name:"AJ Manufacturing [LTL Rate Shop + Dispatch]", loads:"699/yr", uxpct:100, gp:37024, type:"Customer", note:"🟡 Spike v1.1 complete. ✅ Jared review done. ✅ Card created 5/5. Spencer engaged — awaiting responses." },
-  { seq:5, name:"TurboChef [TL Tender + Vendor Mgmt]", loads:"—", uxpct:"Net New", gp:"—", type:"Net New", note:"🟠 Intake. Demo May 15 (exec walkthrough). Training May 18. Go-Live May 20. One-pager complete. Monday card 11961182379. KAM: Spencer Walker. Contact: Adriana Lopez. Demo host: Francesca Glorioso. 2 features needed by 5/15: Vendor TL Tender (ticket Tuesday sprint) + Default consignee address (Francesca tech form submitted)." },
+  { seq:1, name:"Alto-Shaam [Bid Management]", loads:"Low", uxpct:"Low UX", gp:"—", type:"Customer", note:"✅ DEPLOYED 5/12 ~22:47 EDT. Awaiting PV final sign-off. Go-live comms pending post-PV.", active:true },
+  { seq:2, name:"Wunder-Bar", loads:"2,533/yr", uxpct:93, gp:"—", type:"Customer", note:"🟠 On Deck. Spencer config spreadsheet + spike review pending. ⚠️ June constraint — Leticia Navarro maternity leave. ⚠️ Searchable product catalog — may be blocker." },
+  { seq:3, name:"IPS [TL Tender]", loads:"—", uxpct:"E3 native", gp:"—", type:"Process", note:"✅ DEPLOYED 5/12 ~22:47 EDT. Awaiting PV final sign-off. Go-live comms pending post-PV." },
+  { seq:4, name:"AJ Manufacturing [LTL Rate Shop + Dispatch]", loads:"699/yr", uxpct:100, gp:37024, type:"Customer", note:"🟡 Spike v1.1 complete. ✅ Jared review done. ✅ Card created 5/5. Spencer engaged — awaiting responses. ⚠️ Spike had Wunder-Bar contamination — verify corrected." },
+  { seq:5, name:"TurboChef [TL Tender + Vendor Mgmt]", loads:"—", uxpct:"Net New", gp:"—", type:"Net New", note:"🟠 In Execution. Sprint 5/13 — Vendor TL Tender + Default consignee (both must be live by 5/15). Demo 5/15 · Training 5/18 · Go-Live 5/20." },
   { seq:6, name:"ASI Doors", loads:415, uxpct:68.2, gp:30591, type:"TBD", note:"Initial discovery already done." },
   { seq:7, name:"Banker Wire", loads:1025, uxpct:97.2, gp:12704, type:"TBD", note:"0% auto-billing on April ODFL scorecard — direct business case for modernization. Near-pure UX." },
-  { seq:"H1", name:"Newton Beverage Solutions", loads:"—", uxpct:"Net New", gp:"—", type:"Net New", note:"🔜 Horizon. Kickoff 5/21. Go-live early-mid June. E3, no integration. Inbound + outbound vendor setup. Brian Mears lead. Spencer to be added to meeting." },
-  { seq:"H2", name:"Ice Drill", loads:"—", uxpct:"Net New", gp:"—", type:"Net New", note:"🔜 Horizon. Meeting Thursday 5/14. Blanket inbound + outbound shipper. Brian Mears." },
-  { seq:"H3", name:"Custom Pipe", loads:"—", uxpct:"Net New", gp:"—", type:"Net New", note:"🔜 Horizon. TBD timeline. Inbound + outbound. Contract redline returned 5/9. In pipeline since 1/29. Brian Mears." },
+  { seq:"H1", name:"Newton Beverage Solutions", loads:"—", uxpct:"Net New", gp:"—", type:"Net New", note:"🔜 Horizon. Kickoff 5/21. Go-live early-mid June. Net new. Inbound + outbound vendor. Brian Mears lead. Spencer to be added." },
+  { seq:"H2", name:"Ice Drill", loads:"—", uxpct:"Net New", gp:"—", type:"Net New", note:"🔜 Horizon. Meeting ~5/14. Blanket inbound + outbound. Brian Mears." },
+  { seq:"H3", name:"Custom Pipe", loads:"—", uxpct:"Net New", gp:"—", type:"Net New", note:"🔜 Horizon. TBD. Inbound + outbound. Contract returned 5/9. Pipeline since 1/29. Brian Mears." },
 ];
 const NOT_QW = [
   { name:"Bridgestone Hosepower", reason:"93.5% UX — 26 Vooma loads + multi-entity consolidation" },
@@ -440,7 +452,7 @@ const NOT_QW = [
   { name:"Solar Turbines", reason:"199 Manual loads" },
 ];
 const CUSTOMERS = [
-  { name:"TurboChef [TL Tender + Vendor Management]", tier:"Not UX", loads:0, gp:0, complexity:"Simple", type:"Net New", status:"Discovery", color:"t2", kam:"Spencer Walker", mondayStatus:"On Deck",
+  { name:"TurboChef [TL Tender + Vendor Management]", tier:"Not UX", loads:0, gp:0, complexity:"Simple", type:"Net New", status:"In Execution", color:"t2", kam:"Spencer Walker", mondayStatus:"In Progress",
     note:"NET NEW ONBOARD — not a Project Meridian migration. Monday card 11961182379.\n\nCustomer: TurboChef Technologies, Inc. (Middleby Corporation) — Carrollton TX\nContact: Adriana Lopez | 214-379-6000 Opt:7 | adriana.lopez@turbochef.com\nDemo host: Francesca Glorioso\n\nKey dates: May 15 — Exec walkthrough · May 18 — Full team training · May 20 — Go-Live\n\nEnabled features: TL Tender — Y (inbound only at go-live) · Vendor Management — Y (go-live requirement) · Product Catalog — Y (~10 products, Ovens/Ranges/Stoves, NMFC 26720/26750, 13-tier FAK) · Spot Quote — N (removed)\n\nKey config: Rate Flow Guided · Contract TURBCA · Max 143\"/7,999 lbs/7 pallets · PO Number required · Default address: Consignee only · Dims required · Freight: Inbound only at go-live · ~$2.1–2.3M spend · Blanket carriers (11 narrowed to premium set) · Bill To: All blankets = one Bill To (Lisa Belson confirming) · Billing: Standard manifest invoice, 21-day terms, PO# required on invoice · Mexico shipper: one inbound origin, customs broker TBD · Managed by Steve's team (Middleby/Paul Volkman group)\n\nFeatures needed by 5/15:\n🔄 Vendor TL Tender button — ticket on sprint board for Tuesday\n🔄 Default consignee address — Francesca submitted tech form\n\nOpen items:\n🔄 Vendor TL Tender — sprint Tuesday (Brian Franzwa)\n🔄 Default consignee address — tech form submitted (Francesca/Kev)\n🔄 Logo upload — Brian Franzwa handling\n⬜ Address book — pending from Adriana Lopez / Spencer\n⬜ GRE contract TURBCA — confirm exists (Pricing Team/Eric)\n⬜ Billing intro meeting — Francesca/Tanya, next week\n⬜ Tabs invoicing resolution — Brian Mears/Eric Porter\n⬜ Mexico customs broker — Brian Mears\n⬜ Exec walkthrough prep — Francesca/Eric, May 15" },
   { name:"AJ Manufacturing [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:699, gp:37024, complexity:"Simple-Moderate", type:"Customer", status:"Discovery", color:"qw", kam:"Spencer Walker", legacyWS:"No", dod:4,
     note:"🟡 Spike v1.1 complete. ✅ Jared review done. ✅ Monday card created 5/5. Spencer engaged — email sent 5/5. KAM: Spencer Walker. ~699 UX loads/yr. 100% UX. LTL rate shop + dispatch. Standard rate mode. No integrations, no EDI, no Legacy WS. Clean migration path.\n\nVendor portal active — 84 vendor addresses. Confirm active vendor users with Spencer.\nAllow Quote Dispatch = No — users cannot self-dispatch from quote screen.\nFixed Special Instructions on every BOL: 'DRIVER MUST CHOCK WHEELS' and 'ATTN Receiving: Inspect this shipment and note any potential damage on the BOL'\n\nKey contacts: Spencer Walker (KAM/Evans) · Krystal Blum (Primary) — kblum@ajdoor.com / 715-568-1793 ext. 10 · Carol Prince (Bill-To) — cprince@ajdoor.com\n\nConfirmed config: Account AJMABL · Rate Contract AJMABL · Standard rate flow · PPA 19% · PPA Min $15 · PPA Max $200 · PPA Key PalletRaterConfig40 · PPA Calculation Total $ · NTE 7 pallets/10,000 lbs/143\" · Default Origin 521 Main Street, Bloomer WI 54724 (address conflict — Spencer to confirm) · Default Terms Prepaid · Pickup 0700–1600, Delivery 0800–1600 · Help Email ajmfg@evanstrans.com · Help Phone 800-886-7799\n\nNMFC sub-classes: 34265 (4 subs) and 35540 (8 subs including colon-suffix variant)\n\nUsers to migrate (7): kblum, cprince, jseverson, rfisher, bsarauer, jbohl, chassemer — all @ajdoor.com. kblum = Open Book + Customer Markup; all others = Closed Book + Customer Markup.\n\nOpen items:\n✅ Jared McKeen spike review — complete\n✅ Monday card created — 5/5\n⬜ Spencer — spike review + onboarding spreadsheet (email sent 5/5)\n⬜ Shipping address confirm — Spencer\n⬜ Backup POC for Krystal Blum — Spencer\n⬜ Active vendor user confirmation — Spencer\n⬜ Vendor portal go-live confirmation — Spencer\n⬜ Fixed Special Instructions field in E3 — confirm field exists\n⬜ Customer Markup rate access tier — confirm configurable in E3\n⬜ Paul Volkman Begin Transformation approval — not submitted, early stage" },
@@ -469,8 +481,8 @@ const CUSTOMERS = [
   { name:"Wixon", tier:"Not UX", loads:6, gp:261, complexity:"Complex", type:"Type 3", status:"Integration", color:"int", note:"Legacy WS / IFS ERP integration." },
   { name:"Wunder-Bar [LTL Rate Shop + Dispatch]", tier:"Not UX", loads:2533, gp:0, complexity:"Simple-Moderate", type:"Customer", status:"Discovery", color:"qw", kam:"Spencer Walker", mondayStatus:"On Deck", dod:4,
     note:"Spike v1.9 complete — card creation next. KAM: Spencer Walker. ~2,533 UX loads/yr. LTL rate shop + dispatch. Self-service. Contracted. Vendor portal active — 3 vendor users, ~385 inbound loads/yr. MUST-HAVE for go-live.\n\n⚠️ Hard timing constraint: Leticia Navarro (primary POC) on maternity leave June 2026. Target go-live tail end of May. Backup POC TBD — confirm with Spencer before cutover.\n\nConfirmed config: Account WUNDVA · Rate Contract WUNDVA · Standard rate flow · PPA force yes · NTE 7 pallets/10,000 lbs/143\" · Default origin: 2060 Cessna Dr., Ste. 100, Vacaville CA 95688 (address conflict — Spencer to confirm vs. 820 Enterprise St) · Default Terms: Prepaid · Pickup: 1200–1600, Delivery: 0900–1600 · Default Special Instructions: ***DO NOT DOUBLE STACK FREIGHT*** (confirm E3 field with Kev) · Non-LCC reason: No · Freight Entry: Standard\n\nOpen before Volkman gate: Shipping address confirm · Backup POC · Formal vendor portal confirm · Default Special Instructions field in E3 · Other Reference Numbers at dispatch · Canada routing/FXFE support · Customer Markup rate tier · NMFC sub-class intake path · PPA key/% at rate contract level · Monday card creation · PV Begin Transformation (not submitted)" },
-  { name:"IPS [TL Tender]", tier:"Not UX", loads:0, gp:0, complexity:"Low", type:"Process", status:"Validation", color:"t2", mondayStatus:"UAT", legacyWS:"N/A", kam:"Ryan Helgason", dod:8,
-    spike:`<div style="font-size:12px;font-weight:500;margin-bottom:4px">Spike status: 🔵 UAT — TL Tender enabled PROD 5/6. Go-Live email sent PV + Ryan 5/7.</div>
+  { name:"IPS [TL Tender]", tier:"Not UX", loads:0, gp:0, complexity:"Low", type:"Process", status:"Hypercare", color:"t2", mondayStatus:"Deployed", legacyWS:"N/A", kam:"Ryan Helgason", dod:8,
+    spike:`<div style="font-size:12px;font-weight:500;margin-bottom:4px">🟢 DEPLOYED 5/12 ~22:47 EDT — Awaiting PV final sign-off</div>
 <div style="font-size:11px;color:#73726c;margin-bottom:8px">Owner: Eric Lewis · KAM: Ryan Helgason · Date: 4/27/2026</div>
 
 <div style="font-size:11px;font-weight:500;margin-bottom:3px">Targeted outcome</div>
@@ -501,19 +513,15 @@ const CUSTOMERS = [
 
 <div style="font-size:11px;font-weight:500;margin-bottom:3px">Open items</div>
 <div style="font-size:11px;color:#73726c;line-height:1.7">
-✅ Paul Volkman — Begin Transformation APPROVED 5/1/2026<br>
-✅ TL Tender feature enablement — enabled PROD by Kev 5/6/2026<br>
-✅ UAT verified 5/7 via ALTO Demo Account / IPS demo login (demo@ips.com) — equipment, ref numbers (SO#, Customer PO#, RMA), packaging, freight direction all confirmed correct<br>
-✅ IPS spike doc rebuilt from scratch — v1.0 produced against Project Meridian template v1.1. Widget type corrected to Process throughout.<br>
-✅ Go-Live email sent to Paul Volkman + Ryan Helgason, CC Brian Franzwa — 5/7/2026<br>
-⬜ Paul Volkman — Go-Live approval — email sent 5/7, awaiting response<br>
-⬜ Ryan Helgason — customer demo + Lamar Johnson feedback pending<br>
-⚠️ Standing program risk: No DEV/QA instance exists for IPS — PROD-only verification accepted for this widget. Raise with Kev for future customers.
+✅ PV Begin Transformation APPROVED 5/1 · ✅ TL Tender enabled PROD 5/6 · ✅ UAT verified 5/7 · ✅ DEPLOYED 5/12 ~22:47 EDT<br>
+⬜ Paul Volkman — Final sign-off pending<br>
+⬜ Go-live comms — Ops → Customer (post-PV)<br>
+⚠️ Standing program risk: No DEV/QA instance — PROD-only verification accepted for this widget.
 </div>`,
-    note:"Existing E3 customer — 2nd integrated client. TL Tender verified PROD 5/7 via ALTO Demo Account / IPS demo login. Spike v1.0 rebuilt against PM template v1.1. Go-Live email sent to PV + Ryan 5/7, CC Brian. Awaiting PV Go-Live approval + Ryan demo feedback. ⚠️ Standing program risk: no DEV/QA instance for IPS — PROD-only verification accepted, raise with Kev for future customers." },
-  { name:"Alto-Shaam [Bid Management]", tier:"Not UX", loads:1, gp:27, complexity:"Low", type:"Customer", status:"In Execution", color:"t2", active:true, kam:"Rich Reese", mondayStatus:"In Progress", legacyWS:"YES", dod:6,
-    pvOutreach:"✅ Begin Transformation APPROVED 4/29. ✅ Go-Live APPROVED — Paul Volkman 5/8.",
-    spike:`<div style="font-size:12px;font-weight:500;margin-bottom:4px">Spike status: ✅ Begin Transformation Approved 4/29 — Config in progress | Widget type reclassified: Customer (Rate Shop + Bid Management — reclassified from Process 4/29 per Brian/Eric)</div>
+    note:"🟢 DEPLOYED 5/12 ~22:47 EDT. Awaiting PV final sign-off. Go-live comms pending post-PV. Process widget — TL Tender. KAM: Ryan Helgason. ⚠️ No DEV/QA instance — PROD-only verification accepted." },
+  { name:"Alto-Shaam [Bid Management]", tier:"Not UX", loads:1, gp:27, complexity:"Low", type:"Customer", status:"Hypercare", color:"t2", active:true, kam:"Rich Reese", mondayStatus:"Deployed", legacyWS:"YES", dod:8,
+    pvOutreach:"✅ Begin Transformation APPROVED 4/29. ✅ Go-Live APPROVED 5/8. ✅ DEPLOYED 5/12 ~22:47 EDT. Awaiting PV final sign-off.",
+    spike:`<div style="font-size:12px;font-weight:500;margin-bottom:4px">🟢 DEPLOYED 5/12 ~22:47 EDT — Awaiting PV final sign-off</div>
 <div style="font-size:11px;color:#73726c;margin-bottom:8px">Owner: Eric Lewis · KAM: Rich Reese · Date: 4/22/2026 · Updated: 4/29/2026</div>
 
 <div style="font-size:11px;font-weight:500;margin-bottom:3px">Targeted outcome</div>
@@ -562,14 +570,14 @@ NMFC switches applied: 25970→25525, 27260→25525, 53180→53125, 123290→528
 
 <div style="font-size:11px;font-weight:500;margin-bottom:3px">Open items</div>
 <div style="font-size:11px;color:#73726c;line-height:1.7">
-✅ All discovery items closed · ✅ All NMFC tables · ✅ All onboarding spreadsheet tabs · ✅ Bid Management config complete · ✅ All bid emails confirmed · ✅ BLAST CHILLER resolved · ✅ Reporting/invoicing confirmed · ✅ PV Begin Transformation APPROVED 4/29 · ✅ PV Go-Live APPROVED 5/8<br>
-⬜ Kev response — Create Spot Quote in PROD (messaged 5/9)<br>
+✅ PV Begin Transformation APPROVED 4/29 · ✅ PV Go-Live APPROVED 5/8 · ✅ Visual UAT confirmed 5/7 + 5/9 · ✅ DEPLOYED 5/12 ~22:47 EDT<br>
+⬜ Paul Volkman — Final sign-off pending<br>
+⬜ Go-live comms — Ops → Customer (post-PV)<br>
 ⬜ T5G2G postal fix — before address book upload<br>
 ⬜ CE-36457 hazmat disposition — non-blocking<br>
-⬜ Customer Training/Communication — not started<br>
-⬜ Go-Live — target ~May 13. BOL stories on critical path.
+⬜ Customer Training/Communication — not started
 </div>`,
-    note:"CUSTOMER #1 — ✅ IN EXECUTION. PV Go-Live APPROVED 5/8. Visual UAT confirmed 5/7 + 5/9. Bid Management + TL Tender confirmed in E3. End-to-end Spot Quote test pending Kev response (messaged 5/9). Go-Live ~May 13. BOL stories on critical path." },
+    note:"🟢 DEPLOYED 5/12 ~22:47 EDT. Awaiting PV final sign-off. Go-live comms pending post-PV. Customer (Legacy UX → E3). Bid Management + TL Tender live. KAM: Rich Reese." },
 ];
 const RULES = [
   { icon:"🎯", text:"Everything off UX, everyone in E3. All decisions trace back to this." },
