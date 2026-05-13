@@ -771,7 +771,7 @@ function openDetail(c) {
       <span class="pill pill-mod" style="margin-left:3px">${c.type}</span>
       <span class="pill ${cxC(c.complexity)}" style="margin-left:3px">${c.complexity}</span>
     </div>
-    ${c.active?`<div class="success-b">Customer #1 — Active discovery in progress.</div>`:""}
+    ${c.active?`<div class="success-b">🟢 DEPLOYED 5/12 ~22:47 EDT — Awaiting PV final sign-off.</div>`:""}
     ${isQW?`<div class="success-b">First migration candidate — stand up in E3 quietly, validate internally, then demo to customer.</div>`:""}
     <div style="margin:.75rem 0">
       <div class="d-row"><span class="dl">Loads</span><span class="dv">${c.loads>0?c.loads.toLocaleString():'—'}</span></div>
