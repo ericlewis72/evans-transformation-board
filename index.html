@@ -219,7 +219,7 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 <div class="wrap">
   <div class="board-header">
     <h1>Evans Transformation Board</h1>
-    <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 6/16/2026 2:00 PM — synced from Monday.com</div>
+    <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 6/16/2026 2:30 PM — synced from Monday.com + Sprint board</div>
   </div>
   <!-- P0 BANNER -->
   <div class="p0-banner">
@@ -295,10 +295,10 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
   <div class="view active" id="v-kanban"><div class="kanban" id="kanban-grid"></div></div>
   <!-- QUICK WINS -->
   <div class="view" id="v-quickwins">
-    <div class="qw-rule"><strong>Wave 1 — updated 6/8/2026</strong><br>
+    <div class="qw-rule"><strong>Wave 1 — updated 6/16/2026</strong><br>
       ✅ Alto-Shaam [Bid Management] LIVE 5/26 &nbsp;·&nbsp; ✅ IPS LIVE 5/20 &nbsp;·&nbsp; ✅ TurboChef LIVE 5/20 &nbsp;·&nbsp;
-      🔄 Alto-Shaam [Vendor Mgmt] — Validation, PV approved 6/1 &nbsp;·&nbsp;
-      🔄 Newton Beverages — Validation, demo 6/8, training 6/11, go-live 6/15 &nbsp;·&nbsp;
+      ✅ Alto-Shaam [Vendor Mgmt] — LIVE 6/15 · Hypercare &nbsp;·&nbsp;
+      ✅ Newton Beverages — LIVE 6/15 · Hypercare &nbsp;·&nbsp;
       🔄 AJ Manufacturing — Transformation Design, spike complete, config in progress &nbsp;·&nbsp;
       🔵 Octopi — Discovery, spike + config complete, awaiting PV &nbsp;·&nbsp;
       🔵 ASI Doors — Discovery, awaiting config return &nbsp;·&nbsp;
@@ -489,7 +489,7 @@ const QW = [
   { seq:5, name:"AJ Manufacturing [LTL Rate Shop + Dispatch]", loads:"699/yr", uxpct:100, gp:37024, type:"Customer", note:"🔄 In Transformation. Corrected spike doc needed. Spencer engaged." },
   { seq:6, name:"TurboChef [TL Tender + Vendor Mgmt]", loads:"—", uxpct:"Net New", gp:"—", type:"Net New", note:"✅ LIVE 5/20." },
   { seq:7, name:"ASI Doors [LTL Rate Shop + Dispatch]", loads:"1,161/yr", uxpct:68.2, gp:30591, type:"Customer", note:"🔄 Transformation Design. Config doc out — awaiting return." },
-  { seq:8, name:"Newton Beverage Solutions", loads:"—", uxpct:"Net New", gp:"—", type:"Customer", note:"✅ Validation. Demo 6/4 · Training 6/11 · Go-Live 6/15." },
+  { seq:8, name:"Newton Beverage Solutions", loads:"—", uxpct:"Net New", gp:"—", type:"Customer", note:"✅ LIVE 6/15. Hypercare." },
   { seq:9, name:"Banker Wire", loads:1025, uxpct:97.2, gp:12704, type:"Customer", note:"⏸ PAUSED. AM: Tracy Maaser." },
   { seq:10, name:"Octopi Brewing", loads:450, uxpct:100, gp:15887, type:"Customer", note:"🔵 Discovery. Spike + config spreadsheet complete 6/8. Ready for PV approval." },
   { seq:11, name:"Best Pump and Flow [LTL Rate Shop + TL Tender]", loads:362, uxpct:100, gp:17661, type:"Customer", note:"🟠 On Deck. Low complexity. Quick win." },
@@ -514,7 +514,7 @@ const NOT_QW = [
 const CUSTOMERS = [
   { name:"TurboChef [TL Tender + Vendor Management]", tier:"Not UX", loads:0, gp:0, complexity:"Simple", type:"Net New", status:"Complete", color:"t3", kam:"Spencer Walker", mondayStatus:"Live", note:"✅ LIVE 5/20/2026. Net New Onboard." },
   { name:"AJ Manufacturing [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:699, gp:37024, complexity:"Simple-Moderate", type:"Customer", status:"Transformation Design", color:"qw", kam:"Spencer Walker", legacyWS:"No", dod:4, note:"🟡 Spike v1.1 complete. ✅ Jared review done." },
-  { name:"Newton Beverage Solutions [LTL Rate Shop + Dispatch + Vendor Management]", tier:"Net New", loads:0, gp:0, complexity:"Moderate", type:"Customer", status:"Hypercare", color:"qw", kam:"Spencer Walker", mondayStatus:"Hypercare", note:"✅ PV Begin Transformation APPROVED 5/29. Demo 6/4 · Training 6/11 · Go-Live 6/15." },
+  { name:"Newton Beverage Solutions [LTL Rate Shop + Dispatch + Vendor Management]", tier:"Net New", loads:0, gp:0, complexity:"Moderate", type:"Customer", status:"Hypercare", color:"qw", kam:"Spencer Walker", mondayStatus:"Hypercare", note:"✅ LIVE 6/15. Hypercare. Sprint 0005: Vendor Managed multi-ref in Test." },
   { name:"ASI Doors [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:1161, gp:30591, complexity:"Moderate", type:"Customer", status:"Discovery", color:"qw", kam:"Eric Bollis (AM) · Melissa Reich (Ops)", legacyWS:"NO", dod:4, note:"🔵 Discovery. Config doc out — awaiting return." },
   { name:"Clark Reliance [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:4175, gp:0, complexity:"Moderate", type:"Customer", status:"Paused", color:"qw", kam:"Rich Reese (KAM)", legacyWS:"NO", note:"🔵 Discovery. Target Go-Live: Jun 17. ⚠️ Multi-tenant scope pending." },
   { name:"FWE (Food Warming Equipment) [LTL Rate Shop + Dispatch + Integration]", tier:"Quick Win", loads:0, gp:0, complexity:"High/Complex", type:"Integration", status:"Discovery", color:"int", kam:"Shawn Cross", note:"🔵 Discovery. Added 6/8. Complex dual workstream." },
@@ -544,7 +544,7 @@ const CUSTOMERS = [
   { name:"Wunder-Bar [LTL Rate Shop + Dispatch]", tier:"Not UX", loads:2533, gp:0, complexity:"Moderate", type:"Customer", status:"Paused", color:"qw", kam:"Spencer Walker", mondayStatus:"On Deck", dod:4, note:"⏸ PAUSED ~6–8 weeks. Resume late July 2026. Leticia Navarro maternity leave." },
   { name:"Banker Wire [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:1025, gp:12704, complexity:"Low", type:"Customer", status:"Paused", color:"qw", kam:"Tracy Maaser (AM)", legacyWS:"NO", note:"⏸ PAUSED. Discovery and config spreadsheet complete." },
   { name:"IPS [TL Tender]", tier:"Not UX", loads:0, gp:0, complexity:"Low", type:"Process", status:"Complete", color:"t1", mondayStatus:"Live", legacyWS:"N/A", kam:"Ryan Helgason", dod:12, note:"✅ LIVE — Deployed 5/12. No DEV/QA instance — PROD-only verification accepted." },
-  { name:"Alto-Shaam [Vendor Management — Feature Add]", tier:"Not UX", loads:0, gp:0, complexity:"Low", type:"Process", status:"Hypercare", color:"t2", kam:"Rich Reese", mondayStatus:"Hypercare", note:"✅ Validation. PV Begin Transformation APPROVED 6/1. Vendor Management feature enablement." },
+  { name:"Alto-Shaam [Vendor Management — Feature Add]", tier:"Not UX", loads:0, gp:0, complexity:"Low", type:"Process", status:"Hypercare", color:"t2", kam:"Rich Reese", mondayStatus:"Hypercare", note:"✅ LIVE 6/15. Hypercare. Sprint 0005: Vendor Managed multi-ref in Test." },
   { name:"Alto-Shaam [Bid Management]", tier:"Not UX", loads:1, gp:27, complexity:"Low", type:"Customer", status:"Complete", color:"t2", active:false, kam:"Rich Reese", mondayStatus:"Live", legacyWS:"NO", dod:12, pvOutreach:"✅ Begin Transformation APPROVED 4/29. ✅ Go-Live APPROVED 5/8. ✅ DEPLOYED 5/12. ✅ LIVE 5/26.", note:"✅ LIVE — Credentials delivered 5/26. Four users received credentials." },
   { name:"Dollamur [Website Rate API Integration]", tier:"Quick Win", loads:1423, gp:130000, complexity:"Moderate", type:"Integration", status:"Discovery", color:"int", kam:"Shawn Cross", note:"🔵 Discovery. Spike v1.0 + config complete. Parallel API integration workstream." },
 ];
