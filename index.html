@@ -744,4 +744,13 @@ function toggleBlockers(header) {
   chevron.style.transform = open ? '' : 'rotate(180deg)';
 }
 function toggleP0(el) {
-  const d =
+  const d = document.getElementById("p0-detail");
+  d.classList.toggle("open");
+  el.textContent = d.classList.contains("open") ? "Hide gap backlog ▴" : "Show gap backlog ▾";
+}
+buildGapTable(document.getElementById("gap-inline-tbl"), true);
+buildGapTable(document.getElementById("gap-full-tbl"), false);
+renderKanban(); renderQW(); renderTable(); renderKickoff(); renderLifecycle();
+</script>
+</body>
+</html>
