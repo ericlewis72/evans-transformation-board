@@ -1,4 +1,18 @@
-<!DOCTYPE html>
+<!DOCTYPE html><script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Project Meridian Tracker",
+  "schemaVersion": 1,
+  "description": "Live transformation program tracker — Evans Transportation. Auto-synced from Monday.com board 18409782275 at 9am and 2pm daily.",
+  "mcpTools": [
+    "mcp__cb5b2dff-0f9c-4f00-a2c8-61795c0622a3__get_full_board_data",
+    "mcp__cb5b2dff-0f9c-4f00-a2c8-61795c0622a3__get_board_items_page"
+  ],
+  "mcpServerNames": [
+    "monday.com",
+    "monday.com"
+  ]
+}
+</script>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -8,12 +22,10 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f0f2f1; color: #1a1a18; font-size: 14px; line-height: 1.5; }
 .wrap { max-width: 1200px; margin: 0 auto; padding: 0 0 2rem; }
-
 /* HEADER */
 .board-header { background: #0B5362; color: #fff; padding: 1.25rem 1.5rem 1rem; border-radius: 0 0 12px 12px; margin-bottom: 1.25rem; }
 .board-header h1 { font-size: 17px; font-weight: 600; color: #fff; margin-bottom: 3px; letter-spacing: 0.01em; }
 .board-header .subtitle { font-size: 11px; color: rgba(255,255,255,0.65); margin-bottom: 0; }
-
 /* P0 */
 .p0-banner { border: 0.5px solid #d4a020; border-radius: 10px; padding: .875rem 1rem; margin: 0 1rem 1.25rem; background: #fef8e8; }
 .p0-badge { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 10px; background: #BA7517; color: #fff; }
@@ -23,14 +35,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .p0-toggle:hover { background: #0B5362; color: #fff; }
 .p0-detail { display: none; margin-top: .75rem; padding-top: .75rem; border-top: 0.5px solid #d4a020; }
 .p0-detail.open { display: block; }
-
 /* STATS */
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 0 1rem 1.25rem; }
 .stat { background: #fff; border-radius: 8px; padding: .75rem 1rem; border: 0.5px solid #d3d1c7; }
 .stat .lbl { font-size: 11px; color: #73726c; margin-bottom: 4px; }
 .stat .val { font-size: 20px; font-weight: 600; color: #0B5362; }
 .stat .sub { font-size: 11px; color: #73726c; margin-top: 2px; }
-
 /* NAV */
 .nav { display: flex; gap: 6px; margin: 0 1rem 1.25rem; flex-wrap: wrap; }
 .nav button { font-size: 12px; padding: 5px 13px; border-radius: 20px; border: 0.5px solid #b4b2a9; background: #fff; color: #73726c; cursor: pointer; transition: all .15s; }
@@ -38,7 +48,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .nav button:hover:not(.active) { border-color: #0B5362; color: #0B5362; }
 .view { display: none; padding: 0 1rem; }
 .view.active { display: block; }
-
 /* PILLS */
 .pill { display: inline-block; font-size: 10px; padding: 1px 6px; border-radius: 10px; margin-top: 3px; white-space: nowrap; }
 .pill-t1 { background: #FAEEDA; color: #854F0B; }
@@ -50,7 +59,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .pill-complex { background: #F7C1C1; color: #791F1F; }
 .pill-mod { background: #FAEEDA; color: #854F0B; }
 .pill-simple { background: #C0DD97; color: #27500A; }
-
 /* KANBAN */
 .kanban { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 5px; overflow-x: auto; }
 .col-header { font-size: 10px; font-weight: 600; color: #fff; padding: 4px 5px; border-radius: 4px; background: #0B5362; text-align: center; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: 0.02em; }
@@ -62,7 +70,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .kcard.qw { border-color: #00A984; }
 .kcard-name { font-size: 11px; font-weight: 500; line-height: 1.3; }
 .kcard-meta { font-size: 10px; color: #73726c; margin-top: 2px; }
-
 /* TABLE */
 table.main { width: 100%; border-collapse: collapse; font-size: 12px; }
 table.main thead th { font-size: 11px; font-weight: 600; color: #fff; text-align: left; padding: 6px 8px; background: #0B5362; position: sticky; top: 0; }
@@ -71,7 +78,6 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 .gp-bar-wrap { display: flex; align-items: center; gap: 5px; }
 .gp-bar { height: 4px; border-radius: 2px; background: #00A984; opacity: .6; flex-shrink: 0; }
 .ux-bar-wrap { display: flex; align-items: center; gap: 5px; font-size: 11px; }
-
 /* GAP */
 .gap-pri { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; font-size: 10px; font-weight: 500; }
 .gap-pri.high { background: #F7C1C1; color: #791F1F; }
@@ -84,10 +90,8 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 .gap-kev { background: #F7C1C1; color: #791F1F; }
 .gap-nb { background: #D3D1C7; color: #444441; }
 .gap-platform { background: #FCEBEB; color: #791F1F; border: 0.5px solid #F09595; font-weight: 500; }
-
 /* QW */
 .qw-rule { font-size: 11px; color: #73726c; padding: 5px 10px; border-radius: 6px; border-left: 3px solid #00A984; background: #f5faf8; line-height: 1.5; margin-bottom: .75rem; }
-
 /* KICKOFF */
 .koff-rule { display: flex; align-items: flex-start; gap: 10px; padding: .6rem 0; border-bottom: 0.5px solid #d3d1c7; font-size: 12px; }
 .koff-rule:last-child { border: none; }
@@ -96,7 +100,6 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 .step-cell { padding: 5px 8px; border-bottom: 0.5px solid #d3d1c7; border-right: 0.5px solid #d3d1c7; }
 .step-cell:last-child { border-right: none; }
 .step-num { font-weight: 500; color: #73726c; font-size: 11px; }
-
 /* LIFECYCLE */
 .lc-item { display: flex; align-items: flex-start; gap: 12px; padding: .7rem 0; border-bottom: 0.5px solid #d3d1c7; }
 .lc-num { min-width: 22px; height: 22px; border-radius: 50%; background: #0B5362; color: #fff; border: none; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; flex-shrink: 0; }
@@ -104,7 +107,6 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 .check-item:last-child { border: none; }
 .check-box { width: 14px; height: 14px; border: 0.5px solid #b4b2a9; border-radius: 3px; flex-shrink: 0; margin-top: 1px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 9px; }
 .check-box.done { background: #00A984; color: #fff; border-color: #00A984; }
-
 /* DETAIL PANEL */
 .detail-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0); pointer-events: none; z-index: 10; transition: background .2s; }
 .detail-overlay.open { background: rgba(0,0,0,0.25); pointer-events: all; }
@@ -119,10 +121,7 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 .alert-b { margin-top: .75rem; padding: .5rem .75rem; border-radius: 6px; background: #FCEBEB; border: 0.5px solid #F09595; font-size: 11px; font-weight: 500; color: #791F1F; }
 .warn-b { margin-top: .75rem; padding: .5rem .75rem; border-radius: 6px; background: #fef8e8; border: 0.5px solid #d4a020; font-size: 11px; font-weight: 500; color: #854F0B; }
 .success-b { margin-top: .75rem; padding: .5rem .75rem; border-radius: 6px; background: #e6f7f2; border: 0.5px solid #00A984; font-size: 11px; font-weight: 500; color: #085041; }
-
 /* ── RESPONSIVE ── */
-
-/* 4K / ultra-wide (2200px+) */
 @media (min-width: 2200px) {
   .wrap { max-width: 2100px; }
   body { font-size: 16px; }
@@ -147,8 +146,6 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
   .p0-chip { font-size: 13px; padding: 3px 12px; }
   .pill { font-size: 12px; padding: 2px 8px; }
 }
-
-/* Large monitors (1600–2199px) */
 @media (min-width: 1600px) and (max-width: 2199px) {
   .wrap { max-width: 1540px; }
   .kanban { gap: 10px; }
@@ -159,8 +156,6 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
   .stat .val { font-size: 26px; }
   .detail-panel { width: 500px; right: -520px; }
 }
-
-/* Standard large (1400–1599px) */
 @media (min-width: 1400px) and (max-width: 1599px) {
   .wrap { max-width: 1360px; }
   .kanban { gap: 8px; }
@@ -171,15 +166,11 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
   .stat .val { font-size: 24px; }
   .detail-panel { width: 460px; right: -480px; }
 }
-
-/* Standard desktop (1100–1399px) */
 @media (min-width: 1100px) and (max-width: 1399px) {
   .wrap { max-width: 1060px; }
   .kanban { gap: 6px; }
   .detail-panel { width: 420px; right: -440px; }
 }
-
-/* Tablet landscape (768–1099px) */
 @media (min-width: 768px) and (max-width: 1099px) {
   .wrap { max-width: 100%; }
   .kanban { grid-template-columns: repeat(9, minmax(80px, 1fr)); gap: 4px; }
@@ -190,8 +181,6 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
   .detail-panel { width: 360px; right: -380px; }
   .nav button { font-size: 11px; padding: 4px 10px; }
 }
-
-/* Tablet portrait (600–767px) */
 @media (min-width: 600px) and (max-width: 767px) {
   .wrap { max-width: 100%; }
   .kanban { grid-template-columns: repeat(5, minmax(100px, 1fr)); gap: 4px; }
@@ -201,8 +190,6 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
   .nav { gap: 4px; }
   .nav button { font-size: 11px; padding: 4px 9px; }
 }
-
-/* Mobile (max 599px) */
 @media (max-width: 599px) {
   body { font-size: 13px; }
   .wrap { max-width: 100%; }
@@ -232,9 +219,8 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 <div class="wrap">
   <div class="board-header">
     <h1>Evans Transformation Board</h1>
-    <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 6/15/2026 — synced from Monday.com</div>
+    <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 6/17/2026 2:30 PM — synced from Monday.com</div>
   </div>
-
   <!-- P0 BANNER -->
   <div class="p0-banner">
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
@@ -254,7 +240,6 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
       <table style="width:100%;border-collapse:collapse;font-size:11px" id="gap-inline-tbl"></table>
     </div>
   </div>
-
   <!-- STATS -->
   <div class="stats">
     <div class="stat"><div class="lbl">Total GP at stake</div><div class="val">$3.36M</div><div class="sub">89,136 loads</div></div>
@@ -262,7 +247,6 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
     <div class="stat"><div class="lbl">Tier 1 customers</div><div class="val">6</div><div class="sub">$1.5M GP</div></div>
     <div class="stat"><div class="lbl">Self-serve gaps open</div><div class="val">8</div><div class="sub">6 not built · ⚠️ 2 platform gaps</div></div>
   </div>
-
   <!-- BLOCKERS BANNER -->
   <div style="margin:0 1rem .75rem;border:1.5px solid #C0392B;border-radius:10px;overflow:hidden">
     <div style="background:#C0392B;padding:7px 12px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none" onclick="toggleBlockers(this)">
@@ -271,7 +255,7 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
         <span style="font-size:11px;color:rgba(255,255,255,0.8);font-weight:400">Resolving these unlocks go-live activity</span>
       </div>
       <div style="display:flex;align-items:center;gap:10px">
-        <span style="font-size:11px;color:rgba(255,255,255,0.7)">3 open · as of 6/15/2026</span>
+        <span style="font-size:11px;color:rgba(255,255,255,0.7)">3 open · as of 6/10/2026</span>
         <span id="blocker-chevron" style="font-size:12px;color:#fff;transition:transform .2s">▼</span>
       </div>
     </div>
@@ -291,14 +275,13 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
         <div style="padding:6px 10px;font-size:12px;color:#444;border-left:1px solid #F5C6C6">Spike review + config spreadsheet</div>
         <div style="padding:6px 10px;font-size:12px;color:#C0392B;font-weight:500;border-left:1px solid #F5C6C6">Spencer Walker</div>
       </div>
-      <div style="display:grid;grid-template-columns:160px 1fr 160px">
-        <div style="padding:6px 10px;font-size:12px;font-weight:600">Clark Reliance ⏸</div>
-        <div style="padding:6px 10px;font-size:12px;color:#444;border-left:1px solid #F5C6C6">Multi-tenant account scope confirmation (paused pending)</div>
+      <div style="display:grid;grid-template-columns:160px 1fr 160px;border-bottom:0.5px solid #F5C6C6">
+        <div style="padding:6px 10px;font-size:12px;font-weight:600">Clark Reliance</div>
+        <div style="padding:6px 10px;font-size:12px;color:#444;border-left:1px solid #F5C6C6">Multi-tenant account scope confirmation</div>
         <div style="padding:6px 10px;font-size:12px;color:#C0392B;font-weight:500;border-left:1px solid #F5C6C6">Rich Reese (KAM)</div>
       </div>
     </div>
   </div>
-
   <!-- NAV -->
   <div class="nav">
     <button class="active" onclick="switchView('kanban',this)">Kanban</button>
@@ -308,16 +291,14 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
     <button onclick="switchView('kickoff',this)">Kickoff decisions</button>
     <button onclick="switchView('lifecycle',this)">Widget lifecycle</button>
   </div>
-
   <!-- KANBAN -->
   <div class="view active" id="v-kanban"><div class="kanban" id="kanban-grid"></div></div>
-
   <!-- QUICK WINS -->
   <div class="view" id="v-quickwins">
-    <div class="qw-rule"><strong>Wave 1 — updated 6/8/2026</strong><br>
+    <div class="qw-rule"><strong>Wave 1 — updated 6/16/2026</strong><br>
       ✅ Alto-Shaam [Bid Management] LIVE 5/26 &nbsp;·&nbsp; ✅ IPS LIVE 5/20 &nbsp;·&nbsp; ✅ TurboChef LIVE 5/20 &nbsp;·&nbsp;
-      🔄 Alto-Shaam [Vendor Mgmt] — Validation, PV approved 6/1 &nbsp;·&nbsp;
-      🔄 Newton Beverages — Validation, demo 6/8, training 6/11, go-live 6/15 &nbsp;·&nbsp;
+      ✅ Alto-Shaam [Vendor Mgmt] — LIVE 6/15 · Hypercare &nbsp;·&nbsp;
+      ✅ Newton Beverages — LIVE 6/15 · Hypercare &nbsp;·&nbsp;
       🔄 AJ Manufacturing — Transformation Design, spike complete, config in progress &nbsp;·&nbsp;
       🔵 Octopi — Discovery, spike + config complete, awaiting PV &nbsp;·&nbsp;
       🔵 ASI Doors — Discovery, awaiting config return &nbsp;·&nbsp;
@@ -333,7 +314,6 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
     <div style="margin-top:1rem;font-size:12px;font-weight:500;color:#73726c;margin-bottom:6px">Confirmed NOT first candidates despite appearing simple</div>
     <table class="main"><thead><tr><th>Customer</th><th>Reason</th></tr></thead><tbody id="notqw-tbody"></tbody></table>
   </div>
-
   <!-- ALL CANDIDATES -->
   <div class="view" id="v-candidates">
     <div style="display:flex;gap:8px;margin-bottom:.75rem;flex-wrap:wrap">
@@ -355,13 +335,11 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
     </div>
     <div style="overflow-x:auto"><table class="main"><thead><tr><th>Customer</th><th>Tier</th><th>Loads</th><th>GP</th><th>Complexity</th><th>Type</th><th>Status</th></tr></thead><tbody id="table-body"></tbody></table></div>
   </div>
-
   <!-- GAPS -->
   <div class="view" id="v-gaps">
     <div style="font-size:12px;color:#73726c;margin-bottom:.75rem">Updated 4/21 from E3 SBX UI audit. Items 1 &amp; 2 clarified: download confirmed functional; bulk import not yet available (singular add only). Ben (UX) owns UI execution; Eric owns acceptance criteria.</div>
     <table class="main" id="gap-full-tbl"></table>
   </div>
-
   <!-- KICKOFF -->
   <div class="view" id="v-kickoff">
     <div style="font-size:13px;font-weight:500;margin-bottom:4px">Kickoff call — 4/21/2026</div>
@@ -394,7 +372,6 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
         <div style="padding:6px 8px;color:#73726c;border-left:0.5px solid #F09595">Config spreadsheet not returned</div>
         <div style="padding:6px 8px;color:#791F1F;border-left:0.5px solid #F09595">Melissa Reich / Eric Bollis</div>
       </div>
-
       <div style="display:grid;grid-template-columns:1fr 1fr 130px;border-top:0.5px solid #F09595">
         <div style="padding:6px 8px;font-weight:500">Wunder-Bar</div>
         <div style="padding:6px 8px;color:#73726c;border-left:0.5px solid #F09595">Backup POC for Leticia Navarro</div>
@@ -410,136 +387,35 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
         <div style="padding:6px 8px;color:#73726c;border-left:0.5px solid #F09595">Multi-tenant account scope confirmation</div>
         <div style="padding:6px 8px;color:#791F1F;border-left:0.5px solid #F09595">Rich Reese (KAM)</div>
       </div>
-
     </div>
-
     <div style="font-size:12px;font-weight:500;margin:.75rem 0 6px">Open program items — as of 5/29/2026</div>
     <div style="border:0.5px solid #d3d1c7;border-radius:8px;overflow:hidden;margin-bottom:.75rem;font-size:12px">
       <div style="display:grid;grid-template-columns:1fr 120px;background:#ebe9e2">
         <div style="padding:5px 8px;font-weight:500;color:#73726c;font-size:11px">Item</div>
         <div style="padding:5px 8px;font-weight:500;color:#73726c;font-size:11px;border-left:0.5px solid #d3d1c7">Action / timing</div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">E3 terminology — confirmed 4/27</div>
-        <div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">✅ Done</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">Alto-Shaam Begin Transformation — PV approved 4/29 11:55 CDT</div>
-        <div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">✅ Done 4/29</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">Alto-Shaam go-live — not tied to May 12 sprint end. Tuesday-night deploys as features become available.</div>
-        <div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">✅ Confirmed 4/29</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">Transformation Program doc — drafted, ready for SharePoint</div>
-        <div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">✅ Done 4/29</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">Spike Doc → Monday Handoff Process v2 — finalized, Evans-branded</div>
-        <div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">✅ Done 4/29</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">✅ Alto-Shaam — LIVE 5/26. Four users credentialed 5/26 afternoon.</div>
-        <div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">✅ Live</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">✅ IPS [TL Tender] — LIVE. Deployed 5/12 ~21:45 EDT.</div>
-        <div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">✅ Live</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">✅ TurboChef — LIVE 5/20/2026.</div>
-        <div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">✅ Live</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">AJ Manufacturing — details in place, moving from On Deck to Transformation.</div>
-        <div style="padding:6px 8px;color:#185FA5;border-left:0.5px solid #d3d1c7">🔄 In Transformation</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">Monday.com board structure: Active program board ID <strong>18409782275</strong> (Transformation). On Deck board ID <strong>18409811954</strong> — template holder only, not active program tracking.</div>
-        <div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">📋 Reference</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">UX/E3 Delta — internal vetting complete. Word doc produced. 4 items disputed by Kev 5/11 (Cost Plus/Markup visibility, Admin carrier count, PPA options, Customize rate view). Review session with Kev needed before anything goes back to Francesca/Jared. Francesca/Jared email recalled — do not resend until after Kev walkthrough. Brian Franzwa question pending: vendor visibility per customer in E3 admin. Clarifications still needed from Francesca/Jared: Notify Ops use case, Audit history scope, Density calc disable, EDI/API customization example.</div>
-        <div style="padding:6px 8px;color:#854F0B;border-left:0.5px solid #d3d1c7">⬜ Kev walkthrough first</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">AJ Manufacturing spike — had Wunder-Bar contamination. Verify corrected before Spencer review.</div>
-        <div style="padding:6px 8px;color:#854F0B;border-left:0.5px solid #d3d1c7">⬜ Verify spike</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">Wunder-Bar — card created 5/1. Spencer Walker discussion 5/7 — config spreadsheet + spike review incoming today. ⚠️ June deadline — Leticia Navarro maternity leave.</div>
-        <div style="padding:6px 8px;color:#854F0B;border-left:0.5px solid #d3d1c7">⬜ Spencer today</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">IPS — TL Tender enabled PROD 5/6. Go-Live email sent PV + Ryan 5/7. Awaiting PV Go-Live approval + Ryan demo feedback.</div>
-        <div style="padding:6px 8px;color:#185FA5;border-left:0.5px solid #d3d1c7">🔵 UAT</div>
-      </div>
-      
-      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">Transformation Board rules of engagement — meeting completed with Brian + Wyatt 4/30</div>
-        <div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">✅ Done 4/30</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">Onboarding spreadsheet — 2 new fields before Wunder-Bar: (1) forecasting bootstrap destination, (2) BOL type for multi-stop. Kev owns spreadsheet — Eric maintains side checklist until added.</div>
-        <div style="padding:6px 8px;color:#854F0B;border-left:0.5px solid #d3d1c7">⬜ Before Wunder-Bar</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">⚙️ <strong>Spike — Timezone/ZIP/Lat-Lon Data Service</strong> (Item 12158920965 · Todo). Goal: ZIP-based timezone lookup strategy for E3 and Evans API. Data contract: FE = IANA name, BE = Windows TZ ID. Known gap: ZIP → Windows TZ ID bridge missing. UTC offset + DST flag alone can't resolve (Arizona edge case). Origin: Peter Burford (Crowe) via Kev. Deliverables: gap analysis, approach recommendation (static vs API), complete mapping, expanded Hector map, data contract, integration path, follow-up stories.</div>
-        <div style="padding:6px 8px;color:#854F0B;border-left:0.5px solid #d3d1c7">⬜ Backlog</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">⚠️ Searchable product catalog gap — High severity. Potential Wunder-Bar blocker. Surfaced by Implementation Team 5/8. Needs formal escalation to Kev/Brian. Not yet on sprint backlog.</div>
-        <div style="padding:6px 8px;color:#791F1F;border-left:0.5px solid #d3d1c7">⬜ Escalate to Kev</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">⚠️ Default address by user gap — Medium. Multi-location customers expect per-user default origin/receiver. Flagged for platform backlog.</div>
-        <div style="padding:6px 8px;color:#854F0B;border-left:0.5px solid #d3d1c7">⬜ Platform backlog</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">TurboChef — Demo May 15 (exec walkthrough). Training May 18. Go-Live May 20. 2 features critical by 5/15: Vendor TL Tender (sprint Tuesday) + Default consignee address (tech form submitted).</div>
-        <div style="padding:6px 8px;color:#854F0B;border-left:0.5px solid #d3d1c7">⬜ May 15 demo</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">⚠️ Vendor TL Tender — sprint Tuesday. Required for TurboChef 5/15.</div>
-        <div style="padding:6px 8px;color:#185FA5;border-left:0.5px solid #d3d1c7">🔄 Ticket exists</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">⚠️ Default consignee address — Required for TurboChef 5/15. Francesca tech form submitted.</div>
-        <div style="padding:6px 8px;color:#185FA5;border-left:0.5px solid #d3d1c7">🔄 In progress</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">Newton Beverage Solutions — Kickoff 5/21. Go-live early-mid June. E3, no integration. Inbound + outbound vendor setup. Implementation Team lead. Spencer to be added.</div>
-        <div style="padding:6px 8px;color:#73726c;border-left:0.5px solid #d3d1c7">🔜 5/21 kickoff</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">Ice Drill — Meeting 5/14. Blanket inbound + outbound shipper. Implementation Team.</div>
-        <div style="padding:6px 8px;color:#73726c;border-left:0.5px solid #d3d1c7">🔜 5/14 meeting</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">Custom Pipe — TBD timeline. Inbound + outbound. Contract redline returned 5/9. In pipeline since 1/29. Implementation Team.</div>
-        <div style="padding:6px 8px;color:#73726c;border-left:0.5px solid #d3d1c7">🔜 Pipeline</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7">
-        <div style="padding:6px 8px">Monday.com board — KAM/AM invite permissions issue resolved with Brian</div>
-        <div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">✅ Resolved</div>
-      </div>
-    </div>
-    <div style="font-size:12px;font-weight:500;margin:.75rem 0 6px">Sprint planning — 4/29/2026 takeaways</div>
-    <div style="border:0.5px solid #97C459;border-radius:8px;padding:.75rem;background:#EAF3DE;margin-bottom:.75rem;font-size:12px;line-height:1.8">
-      <div>⬜ <strong>Onboarding spreadsheet</strong> needs two new fields before Wunder-Bar discovery: (1) forecasting bootstrap destination (Bid Management vs. TL Tender), (2) BOL type for multi-stop (single vs. multi-page)</div>
-      <div>✅ <strong>Alto-Shaam go-live</strong> not tied to May 12 sprint end — Kev confirmed smaller Tuesday-night deploys as features become available</div>
-      <div>✅ <strong>Transformation Program doc</strong> drafted — ready for SharePoint alongside PD Engineering docs</div>
-      <div>✅ <strong>Spike Doc → Monday Handoff Process v2</strong> finalized, Evans-branded</div>
-      <div>✅ <strong>Transformation Board rules of engagement</strong> meeting completed — Brian + Wyatt, 4/30</div>
+      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7"><div style="padding:6px 8px">E3 terminology — confirmed 4/27</div><div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">✅ Done</div></div>
+      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7"><div style="padding:6px 8px">Alto-Shaam Begin Transformation — PV approved 4/29 11:55 CDT</div><div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">✅ Done 4/29</div></div>
+      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7"><div style="padding:6px 8px">Alto-Shaam go-live — not tied to May 12 sprint end. Tuesday-night deploys as features become available.</div><div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">✅ Confirmed 4/29</div></div>
+      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7"><div style="padding:6px 8px">Transformation Program doc — drafted, ready for SharePoint</div><div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">✅ Done 4/29</div></div>
+      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7"><div style="padding:6px 8px">Spike Doc → Monday Handoff Process v2 — finalized, Evans-branded</div><div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">✅ Done 4/29</div></div>
+      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7"><div style="padding:6px 8px">✅ Alto-Shaam — LIVE 5/26. Four users credentialed 5/26 afternoon.</div><div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">✅ Live</div></div>
+      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7"><div style="padding:6px 8px">✅ IPS [TL Tender] — LIVE. Deployed 5/12 ~21:45 EDT.</div><div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">✅ Live</div></div>
+      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7"><div style="padding:6px 8px">✅ TurboChef — LIVE 5/20/2026.</div><div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">✅ Live</div></div>
+      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7"><div style="padding:6px 8px">AJ Manufacturing — details in place, moving from On Deck to Transformation.</div><div style="padding:6px 8px;color:#185FA5;border-left:0.5px solid #d3d1c7">🔄 In Transformation</div></div>
+      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7"><div style="padding:6px 8px">Monday.com board structure: Active program board ID <strong>18409782275</strong> (Transformation). On Deck board ID <strong>18409811954</strong> — template holder only, not active program tracking.</div><div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">📋 Reference</div></div>
+      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7"><div style="padding:6px 8px">UX/E3 Delta — internal vetting complete. Word doc produced. 4 items disputed by Kev 5/11. Review session with Kev needed.</div><div style="padding:6px 8px;color:#854F0B;border-left:0.5px solid #d3d1c7">⬜ Kev walkthrough first</div></div>
+      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7"><div style="padding:6px 8px">Wunder-Bar — ⚠️ June deadline — Leticia Navarro maternity leave.</div><div style="padding:6px 8px;color:#854F0B;border-left:0.5px solid #d3d1c7">⬜ Spencer today</div></div>
+      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7"><div style="padding:6px 8px">Transformation Board rules of engagement — meeting completed with Brian + Wyatt 4/30</div><div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">✅ Done 4/30</div></div>
+      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7"><div style="padding:6px 8px">⚠️ Searchable product catalog gap — High severity. Potential Wunder-Bar blocker.</div><div style="padding:6px 8px;color:#791F1F;border-left:0.5px solid #d3d1c7">⬜ Escalate to Kev</div></div>
+      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7"><div style="padding:6px 8px">Newton Beverage Solutions — Demo 6/4 · Training 6/11 · Go-Live 6/15.</div><div style="padding:6px 8px;color:#73726c;border-left:0.5px solid #d3d1c7">🔜 6/15 go-live</div></div>
+      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7"><div style="padding:6px 8px">Monday.com board — KAM/AM invite permissions issue resolved with Brian</div><div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">✅ Resolved</div></div>
     </div>
     <div style="font-size:12px;font-weight:500;margin:.75rem 0 6px">Key rules from kickoff</div>
     <div id="koff-rules"></div>
   </div>
-
   <div class="view" id="v-lifecycle">
     <div style="font-size:12px;color:#73726c;margin-bottom:.75rem">Widget lifecycle — gate conditions for each stage transition.</div>
-
     <div style="font-size:12px;font-weight:500;margin-bottom:6px">Finalized widget type taxonomy</div>
     <div style="border:0.5px solid #d3d1c7;border-radius:8px;overflow:hidden;margin-bottom:1rem;font-size:12px">
       <div style="display:grid;grid-template-columns:90px 1fr;background:#ebe9e2">
@@ -548,51 +424,38 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
       </div>
       <div style="display:grid;grid-template-columns:90px 1fr;border-top:0.5px solid #d3d1c7">
         <div style="padding:6px 8px;font-weight:500">Customer</div>
-        <div style="padding:6px 8px;color:#73726c;border-left:0.5px solid #d3d1c7">Full customer transfer — all sub-processes moving to E3. Clean UX-only migrations.</div>
+        <div style="padding:6px 8px;color:#73726c;border-left:0.5px solid #d3d1c7">Full customer transfer — all sub-processes moving to E3.</div>
       </div>
       <div style="display:grid;grid-template-columns:90px 1fr;border-top:0.5px solid #d3d1c7">
         <div style="padding:6px 8px;font-weight:500">Process</div>
-        <div style="padding:6px 8px;color:#73726c;border-left:0.5px solid #d3d1c7">A specific workflow or process being transformed, not the whole customer. Used when integration remains untouched and only a UI or functional process is moving.</div>
+        <div style="padding:6px 8px;color:#73726c;border-left:0.5px solid #d3d1c7">A specific workflow being transformed, not the whole customer.</div>
       </div>
       <div style="display:grid;grid-template-columns:90px 1fr;border-top:0.5px solid #d3d1c7">
         <div style="padding:6px 8px;font-weight:500">Integration</div>
-        <div style="padding:6px 8px;color:#73726c;border-left:0.5px solid #d3d1c7">Semi-integrated customers (flat-file, sFTP, EDI, Legacy WS, Windows Service, etc.) where the integration path itself is part of the transformation.</div>
+        <div style="padding:6px 8px;color:#73726c;border-left:0.5px solid #d3d1c7">Semi-integrated customers where the integration path is part of the transformation.</div>
       </div>
     </div>
-
-    <div style="font-size:11px;padding:6px 10px;border-radius:6px;background:#EAF3DE;border:0.5px solid #97C459;color:#27500A;margin-bottom:1rem">
-      <strong>✅ 4/27:</strong> E3 terminology confirmed and applied throughout board.
-    </div>
-
+    <div style="font-size:11px;padding:6px 10px;border-radius:6px;background:#EAF3DE;border:0.5px solid #97C459;color:#27500A;margin-bottom:1rem"><strong>✅ 4/27:</strong> E3 terminology confirmed and applied throughout board.</div>
     <div style="font-size:12px;font-weight:500;margin-bottom:6px">Environment mapping</div>
     <div style="border:0.5px solid #d3d1c7;border-radius:8px;overflow:hidden;margin-bottom:1rem;font-size:12px">
       <div style="display:grid;grid-template-columns:1fr 1fr;background:#ebe9e2">
         <div style="padding:5px 8px;font-weight:500;color:#73726c;font-size:11px">Legacy</div>
         <div style="padding:5px 8px;font-weight:500;color:#73726c;font-size:11px;border-left:0.5px solid #d3d1c7">E3</div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid #d3d1c7">
-        <div style="padding:5px 8px">DEV</div><div style="padding:5px 8px;border-left:0.5px solid #d3d1c7;color:#73726c">—</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid #d3d1c7">
-        <div style="padding:5px 8px">QA</div><div style="padding:5px 8px;border-left:0.5px solid #d3d1c7">DEV</div>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid #d3d1c7">
-        <div style="padding:5px 8px">PROD</div><div style="padding:5px 8px;border-left:0.5px solid #d3d1c7">PROD</div>
-      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid #d3d1c7"><div style="padding:5px 8px">DEV</div><div style="padding:5px 8px;border-left:0.5px solid #d3d1c7;color:#73726c">—</div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid #d3d1c7"><div style="padding:5px 8px">QA</div><div style="padding:5px 8px;border-left:0.5px solid #d3d1c7">DEV</div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid #d3d1c7"><div style="padding:5px 8px">PROD</div><div style="padding:5px 8px;border-left:0.5px solid #d3d1c7">PROD</div></div>
     </div>
-    <div style="font-size:11px;padding:5px 10px;border-radius:6px;background:#ebe9e2;border:0.5px solid #d3d1c7;color:#73726c;margin-bottom:1rem">Testing path: QA using Fractional wired to Seats until Dev clone process defined with Kev/Brian. · <strong>MercuryEdge</strong> — MG reporting/data extraction tool. Used for address book and location data pulls.</div>
-
+    <div style="font-size:11px;padding:5px 10px;border-radius:6px;background:#ebe9e2;border:0.5px solid #d3d1c7;color:#73726c;margin-bottom:1rem">Testing path: QA using Fractional wired to Seats until Dev clone process defined with Kev/Brian. · <strong>MercuryEdge</strong> — MG reporting/data extraction tool.</div>
     <div style="font-size:12px;font-weight:500;margin-bottom:6px">Widget lifecycle stages</div>
     <div id="lc-stages"></div>
   </div>
 </div>
-
 <div class="detail-overlay" id="overlay" onclick="closeDetail()"></div>
 <div class="detail-panel" id="detail-panel"><div id="detail-content"></div></div>
-
 <script>
 const GAPS = [
-  { pri:"—", area:"Package Types (enable/pre-select)", state:"complete", note:"All 10 types, Enable + Pre-Selected toggles confirmed" },
+  { pri:"—", area:"Package Types (enable/pre-select)", state:"complete", note:"All 10 types confirmed" },
   { pri:"—", area:"Freight Directions (enable/pre-select)", state:"complete", note:"Inbound, Outbound, ThirdParty, Transfer confirmed" },
   { pri:"—", area:"Mode (enable/pre-select)", state:"complete", note:"LTL, Truckload, Parcel, Volume LTL confirmed" },
   { pri:"—", area:"Accessorials (enable/pre-select/display name)", state:"complete", note:"Pick-Up, Delivery, Lane tabs confirmed" },
@@ -614,32 +477,32 @@ const GAPS = [
   { pri:5, area:"Bulk user import", state:"notbuilt", note:"Lower urgency — user counts typically small" },
   { pri:6, area:"Non-LCC reason required", state:"notbuilt", note:"Compliance/audit feature — no E3 equivalent" },
   { pri:7, area:"Quote expiry display", state:"notbuilt", note:"24-hour validity banner — no E3 equivalent" },
-  { pri:"⚠️", area:"Searchable product catalog — browse full list", state:"platform", note:"MEDIUM — E3 supports substring search but not full list browse. Affects customers with large catalogs. Wunder-Bar ~10 products — confirm blocker status. Needs sprint backlog." },
-  { pri:"⚠️", area:"Multi-product selection (bulk add to commodity lines)", state:"platform", note:"LOW — Select multiple products, fill dims/weight per line. Francesca flagged 5/9. Not urgent." },
+  { pri:"⚠️", area:"Searchable product catalog — browse full list", state:"platform", note:"MEDIUM — E3 supports substring search but not full list browse. Wunder-Bar ~10 products — confirm blocker status." },
+  { pri:"⚠️", area:"Multi-product selection (bulk add to commodity lines)", state:"platform", note:"LOW — Select multiple products, fill dims/weight per line. Francesca flagged 5/9." },
 ];
 const QW = [
-  { seq:1, name:"Clark Reliance [LTL Rate Shop + Dispatch]", loads:"4,175/yr", uxpct:0, gp:0, type:"Customer", note:"⏸ PAUSED. KAM: Rich Reese. Moved to Paused 6/12 — multi-tenant scope confirmation pending. Target Go-Live Jun 17. Account CLARST · WebserviceUserCLARKRELIANCEV4. PPA 0.9%. NTE 30 pallets/30,000 lbs/300\". Carrier-specific Bill To routing (CLARBLT vs EVANS). ⚠️ Multi-tenant (11 MG accounts). ⚠️ Custom Docmosis BOLs (5 templates) — RWC spike needed. ⚠️ Multi-tenant scope pending Steve Simms." },
-  { seq:"F1", name:"FWE [LTL Rate Shop + Dispatch + Integration]", loads:"TBD", uxpct:0, gp:0, type:"Integration", note:"🔵 Discovery (added 6/8). KAM: Shawn Cross. Complex dual workstream — active integration (~121 loads/mo) + UX migration. Integration profile assessment required before timeline. Details being gathered by Shawn Cross." },
+  { seq:1, name:"Clark Reliance [LTL Rate Shop + Dispatch]", loads:"4,175/yr", uxpct:0, gp:0, type:"Customer", note:"🔵 Discovery. KAM: Rich Reese. Target Go-Live Jun 17. ⚠️ Multi-tenant (11 MG accounts). ⚠️ Custom Docmosis BOLs (5 templates). ⚠️ Multi-tenant scope pending Steve Simms." },
+  { seq:"F1", name:"FWE [LTL Rate Shop + Dispatch + Integration]", loads:"TBD", uxpct:0, gp:0, type:"Integration", note:"🔵 Discovery (added 6/8). KAM: Shawn Cross. Complex dual workstream — active integration (~121 loads/mo) + UX migration. Integration profile assessment required." },
   { seq:2, name:"Alto-Shaam [Bid Management]", loads:"Low", uxpct:"Low UX", gp:"—", type:"Customer", note:"✅ LIVE 5/26. Four users received credentials 5/26 afternoon.", active:true },
-  { seq:3, name:"Wunder-Bar", loads:"2,533/yr", uxpct:93, gp:"—", type:"Customer", note:"⏸ PAUSED ~6–8 weeks. Resume late July 2026. Leticia Navarro (primary POC) on maternity leave — formal pause. Config spreadsheet partially complete — PPA, rate contract, Bill To, TL Tender tab all blank. Address book country cleanup needed (USA→US). ⚠️ Leticia Navarro maternity leave. ⚠️ SO Number default has test value." },
+  { seq:3, name:"Wunder-Bar", loads:"2,533/yr", uxpct:93, gp:"—", type:"Customer", note:"⏸ PAUSED ~6–8 weeks. Resume late July 2026. Leticia Navarro on maternity leave." },
   { seq:4, name:"IPS [TL Tender]", loads:"—", uxpct:"E3 native", gp:"—", type:"Process", note:"✅ LIVE. Deployed 5/12 ~21:45 EDT." },
   { seq:5, name:"AJ Manufacturing [LTL Rate Shop + Dispatch]", loads:"699/yr", uxpct:100, gp:37024, type:"Customer", note:"🔄 In Transformation. Corrected spike doc needed. Spencer engaged." },
   { seq:6, name:"TurboChef [TL Tender + Vendor Mgmt]", loads:"—", uxpct:"Net New", gp:"—", type:"Net New", note:"✅ LIVE 5/20." },
-  { seq:7, name:"ASI Doors [LTL Rate Shop + Dispatch]", loads:"1,161/yr", uxpct:68.2, gp:30591, type:"Customer", note:"🔄 Transformation Design. AM: Eric Bollis (AM). Ops: Melissa Reich. Spike + config spreadsheet v1.0 complete. Address book 5,500+ records loaded. Config doc out to Melissa + Eric Bollis — awaiting return." },
-  { seq:8, name:"Newton Beverage Solutions", loads:"—", uxpct:"Net New", gp:"—", type:"Customer", note:"✅ Validation. Demo 6/4 · Training 6/11 · Go-Live 6/15. PV Begin Transformation APPROVED 5/29. Demo 6/4 · Training 6/11 · Go-Live 6/15. KAM: Spencer Walker. Primary contact: Corey Richardson." },
-  { seq:9, name:"Banker Wire", loads:1025, uxpct:97.2, gp:12704, type:"Customer", note:"⏸ PAUSED. AM: Tracy Maaser — high-touch onboarding required. Low complexity. No known flags." },
-  { seq:10, name:"Octopi Brewing", loads:450, uxpct:100, gp:15887, type:"Customer", note:"🔵 Discovery. AM: Wes Cuomo. Spike + config spreadsheet complete 6/8. Ready for PV approval." },
+  { seq:7, name:"ASI Doors [LTL Rate Shop + Dispatch]", loads:"1,161/yr", uxpct:68.2, gp:30591, type:"Customer", note:"🔄 Transformation Design. Config doc out — awaiting return." },
+  { seq:8, name:"Newton Beverage Solutions", loads:"—", uxpct:"Net New", gp:"—", type:"Customer", note:"✅ LIVE 6/15. Hypercare." },
+  { seq:9, name:"Banker Wire", loads:1025, uxpct:97.2, gp:12704, type:"Customer", note:"⏸ PAUSED. AM: Tracy Maaser." },
+  { seq:10, name:"Octopi Brewing", loads:450, uxpct:100, gp:15887, type:"Customer", note:"🔵 Discovery. Spike + config spreadsheet complete 6/8. Ready for PV approval." },
   { seq:11, name:"Best Pump and Flow [LTL Rate Shop + TL Tender]", loads:362, uxpct:100, gp:17661, type:"Customer", note:"🟠 On Deck. Low complexity. Quick win." },
   { seq:12, name:"34 Degrees LLC [LTL Rate Shop + Dispatch]", loads:271, uxpct:100, gp:39378, type:"Customer", note:"🟠 On Deck. Low complexity. Quick win." },
   { seq:13, name:"Rosco Laboratories [LTL Rate Shop + Dispatch]", loads:199, uxpct:100, gp:13397, type:"Customer", note:"🟠 On Deck. Low complexity. Quick win." },
-  { seq:14, name:"WSI", loads:489, uxpct:100, gp:0, type:"Customer", note:"🟠 On Deck. Low complexity. Subsidiary of Steel King — clean migration path, no Legacy WS dependency. Steel King parent blocked." },
-  { seq:15, name:"BluLabs Brands [LTL Rate Shop + Dispatch]", loads:380, uxpct:100, gp:60444, type:"Customer", note:"🟠 On Deck. Moderate. Multi-tenant vendor flag — vendors serving multiple shippers." },
-  { seq:16, name:"Dollamur [Website Rate API Integration]", loads:1423, uxpct:0, gp:130000, type:"Integration", note:"🔵 Discovery. KAM: Shawn Cross. Type: Customer + Integration. Spike v1.0 + config complete. UX migration: 278-record address book, 5 products, 2 NMFCs. Parallel workstream: Dollamur building quote tool against E3 POST /v2/rates (greenfield). API schema sent to Shawn 6/4. Technical contact TBD." },
+  { seq:14, name:"WSI", loads:489, uxpct:100, gp:0, type:"Customer", note:"🟠 On Deck. Subsidiary of Steel King — clean migration path." },
+  { seq:15, name:"BluLabs Brands [LTL Rate Shop + Dispatch]", loads:380, uxpct:100, gp:60444, type:"Customer", note:"🟠 On Deck. Moderate. Multi-tenant vendor flag." },
+  { seq:16, name:"Dollamur [Website Rate API Integration]", loads:1423, uxpct:0, gp:130000, type:"Integration", note:"🔵 Discovery. KAM: Shawn Cross. Parallel workstream: API integration + UX migration." },
   { seq:17, name:"Durex Products", loads:1256, uxpct:0, gp:65129, type:"Customer", note:"🟠 On Deck." },
   { seq:18, name:"Integer Parent", loads:648, uxpct:0, gp:26370, type:"Customer", note:"🟠 On Deck." },
   { seq:19, name:"CAT Non-Managed", loads:0, uxpct:0, gp:0, type:"Customer", note:"🟠 On Deck. CAT Managed is separate — hold." },
-  { seq:"H1", name:"Ice Drill", loads:"—", uxpct:"Net New", gp:"—", type:"Net New", note:"🔜 Horizon. Blanket inbound + outbound. Implementation Team." },
-  { seq:"H2", name:"Custom Pipe", loads:"—", uxpct:"Net New", gp:"—", type:"Net New", note:"🔜 Horizon. TBD. Inbound + outbound. Contract returned 5/9. Pipeline since 1/29. Implementation Team." },
+  { seq:"H1", name:"Ice Drill", loads:"—", uxpct:"Net New", gp:"—", type:"Net New", note:"🔜 Horizon. Implementation Team." },
+  { seq:"H2", name:"Custom Pipe", loads:"—", uxpct:"Net New", gp:"—", type:"Net New", note:"🔜 Horizon. Pipeline since 1/29. Implementation Team." },
 ];
 const NOT_QW = [
   { name:"Bridgestone Hosepower", reason:"93.5% UX — 26 Vooma loads + multi-entity consolidation" },
@@ -649,137 +512,57 @@ const NOT_QW = [
   { name:"Solar Turbines", reason:"199 Manual loads" },
 ];
 const CUSTOMERS = [
-  { name:"TurboChef [TL Tender + Vendor Management]", tier:"Not UX", loads:0, gp:0, complexity:"Simple", type:"Net New", status:"Complete", dod:12, color:"t3", kam:"Spencer Walker", mondayStatus:"Live",
-    note:"✅ LIVE 5/20/2026. Net New Onboard. TL Tender + Vendor Management. KAM: Spencer Walker. Contact: Adriana Lopez (214-379-6000 Opt:7). Exec walkthrough 5/15, training 5/18, go-live 5/20." },
-  { name:"AJ Manufacturing [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:699, gp:37024, complexity:"Low", type:"Customer", status:"Transformation Design", color:"qw", kam:"Spencer Walker", legacyWS:"No", dod:4,
-    note:"🟡 Spike v1.1 complete. ✅ Jared review done. ✅ Monday card created 5/5. Spencer engaged — email sent 5/5. KAM: Spencer Walker. ~699 UX loads/yr. 100% UX. LTL rate shop + dispatch. Standard rate mode. No integrations, no EDI, no Legacy WS. Clean migration path.\n\nVendor portal active — 84 vendor addresses. Confirm active vendor users with Spencer.\nAllow Quote Dispatch = No — users cannot self-dispatch from quote screen.\nFixed Special Instructions on every BOL: 'DRIVER MUST CHOCK WHEELS' and 'ATTN Receiving: Inspect this shipment and note any potential damage on the BOL'\n\nKey contacts: Spencer Walker (KAM/Evans) · Krystal Blum (Primary) — kblum@ajdoor.com / 715-568-1793 ext. 10 · Carol Prince (Bill-To) — cprince@ajdoor.com\n\nConfirmed config: Account AJMABL · Rate Contract AJMABL · Standard rate flow · PPA 19% · PPA Min $15 · PPA Max $200 · PPA Key PalletRaterConfig40 · PPA Calculation Total $ · NTE 7 pallets/10,000 lbs/143\" · Default Origin 521 Main Street, Bloomer WI 54724 (address conflict — Spencer to confirm) · Default Terms Prepaid · Pickup 0700–1600, Delivery 0800–1600 · Help Email ajmfg@evanstrans.com · Help Phone 800-886-7799\n\nNMFC sub-classes: 34265 (4 subs) and 35540 (8 subs including colon-suffix variant)\n\nUsers to migrate (7): kblum, cprince, jseverson, rfisher, bsarauer, jbohl, chassemer — all @ajdoor.com. kblum = Open Book + Customer Markup; all others = Closed Book + Customer Markup.\n\nOpen items:\n✅ Jared McKeen spike review — complete\n✅ Monday card created — 5/5\n⬜ Spencer — spike review + onboarding spreadsheet (email sent 5/5)\n⬜ Shipping address confirm — Spencer\n⬜ Backup POC for Krystal Blum — Spencer\n⬜ Active vendor user confirmation — Spencer\n⬜ Vendor portal go-live confirmation — Spencer\n⬜ Fixed Special Instructions field in E3 — confirm field exists\n⬜ Customer Markup rate access tier — confirm configurable in E3\n⬜ Paul Volkman Begin Transformation approval — not submitted, early stage" },
-  { name:"Newton Beverage Solutions [LTL Rate Shop + Dispatch + Vendor Management]", tier:"Net New", loads:0, gp:0, complexity:"Moderate", type:"Customer", status:"Hypercare", color:"qw", kam:"Spencer Walker", mondayStatus:"Hypercare", dod:9,
-    note:"✅ LIVE 6/15/2026. Hypercare. Actual Go-Live: June 15. PV Begin Transformation APPROVED 5/29. NET NEW ONBOARD — not a Project Meridian migration. One-pager format.\n\nKickoff complete 5/21. Demo 6/4 · Training 6/11 · Go-Live 6/15.\nPrimary contact: Corey Richardson\nSales lead: Implementation Team. Spencer Walker to be added.\nPPA: N/A\n\nOpen items:\n✅ Paul Volkman Begin Transformation — APPROVED 5/29\n✅ One-pager — Francesca/KAM review complete\n✅ E3 config — loaded and validated\n✅ Address book — loaded\n✅ Paul Volkman Go-Live approval — obtained\n✅ KAM briefed and aligned\n✅ E3 config loaded and validated\n✅ Acceptance criteria met\n✅ Customer communication sent\n⬜ Hypercare period completed\n⬜ Legacy access decommissioned\n⬜ Customer profile updated in artifact library" },
-  { name:"ASI Doors [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:1161, gp:30591, complexity:"Moderate", type:"Customer", status:"Discovery", color:"qw", kam:"Eric Bollis (AM) · Melissa Reich (Ops)", legacyWS:"NO", dod:1,
-    note:"🔵 Discovery. AM: Eric Bollis. Ops: Melissa Reich. KAM: ⚠️ Not yet assigned — DM Jared McKeen.\n\n~1,161 UX loads/yr: 728 customer-initiated · 319 Vooma · 105 Evans ops · 9 EDI artifact.\nSpike Doc v1.0 complete. Config spreadsheet v1.0 complete. Address book: 5,500+ records loaded.\nConfig doc out to Melissa Reich + Eric Bollis — awaiting return.\nDefault Special Instructions: DO NOT STACK FREIGHT / ALL SHIPMENTS REQUIRE 24HR NOTIFY CONSIGNEE\nLegacy WS Post-Migration: NO — Vooma is Evans-owned infrastructure, excluded from customer transformation assessment.\n\nConfig: Account ASIDMI · Web Username WebserviceUserASIDOORSV4 · Rate Mode Standard · PPA Force Yes · PPA 0.5% Rate Total · NTE 4 pallets/19,999 lbs/240\" · Origin 5848 N 95th Ct, Milwaukee WI 53225 · Prepaid · Pickup 1200–1600 · Delivery 0600–1600 · Notification ASIDoors@evanstrans.com · Help 800-886-7799\n\nOpen items:\n⬜ KAM/AM assignment — DM Jared McKeen\n⬜ Config spreadsheet return — Melissa Reich / Eric Bollis\n⬜ MG contract name + rate flow — confirm in MG\n⬜ Bill To — not set in Legacy UX\n⬜ Vendor portal scope — Luis.Eucede@4frontes.com\n⬜ Product catalog content — audit with AM\n⬜ Paul Volkman Begin Transformation approval — pending spike review" },
-  { name:"Clark Reliance [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:4175, gp:0, complexity:"Moderate", type:"Customer", status:"Paused", dod:1, color:"qw", kam:"Rich Reese (KAM)", legacyWS:"NO",
-    note:"⏸ PAUSED. KAM: Rich Reese. Moved to Paused 6/12 — multi-tenant scope confirmation pending. Target Go-Live: Jun 17. Intake: Jun 1.\n~4,175 loads/yr. Account: CLARST · Web Username: WebserviceUserCLARKRELIANCEV4\n\nHQ: 16633 Foltz Parkway, Strongsville OH 44149 · Phone: 4405721500 · Email: traffic@clarkreliance.com\nPrimary contact: Shipping Department\n\n⚠️ FLAG 1 — MULTI-TENANT: 11 MG accounts under WebserviceUserCLARKRELIANCEV4: ANDEST, BOEROF, CLARST, EASTOF, ENERCA, ERNSSP, FILTST, INSTST, MANNOF, NATCOF, STROOF. Confirm active scope with Steve Simms.\n⚠️ FLAG 2 — CUSTOM DOCMOSIS BOLs: 5 templates (BOL_CLARK.doc, BOLCMS.doc, ShipUnitHaz.doc, CommercialInvoice.doc, BarcodeLabelLarge.doc). E3 doesn't natively support. Proposed path: RWC calls Docmosis Cloud on dispatch. Backlog spike required.\n⚠️ FLAG 3 — CARRIER-SPECIFIC BILL TO ROUTING: ABFS, CTII, FXFE, FXNL, ODFL, RLCA, WARD → CLARBLT | Any SCAC, CNWY, DAFG → EVANS | ODFL uses SMC3 BOL type.\n\nConfig: Rate Mode Standard · PPA 0.9% · NTE: Max Length 300\" / Max Height 300\" / Max Width 300\" / Max Pallet 30 / Max Weight 30,000 lbs · Preferred carrier: CLARBLT · Pickup/Delivery: 1000–1600 (confirm)\nFeatures: Vendor Management (use template) · Spot Quote (use template) · Forecasting (use template) · TL Tender: NO\nRef numbers: Sales Order Number required (TRUE / ShowOnBOL)\n\nVendor portal (public-vendor): PO Number required (TRUE) · SO Number (FALSE) · Dims required · Max 144\"L / 60\"W / 40\"H / 9,800 lbs / 20 qty · 1 carrier rate · Required contact + time window on origin and destination\nProduct catalog: ~139 products loaded. Extensive NMFC sub-class table.\nAddress book: ~88 consignee records loaded.\n\nOpen items:\n⬜ Multi-tenant account scope — confirm active accounts with Steve Simms\n⬜ Vendor portal scope — confirm with Steve Simms\n⬜ Pickup/delivery windows — confirm 1000–1600 is correct\n⬜ Docmosis BOL path — RWC spike required, pending Kev/team alignment\n⬜ Paul Volkman Begin Transformation approval — not submitted" },
-  { name:"FWE (Food Warming Equipment) [LTL Rate Shop + Dispatch + Integration]", tier:"Quick Win", loads:0, gp:0, complexity:"High/Complex", type:"Integration", status:"Discovery", dod:1, color:"int", kam:"Shawn Cross",
-    note:"🔵 Discovery. Added 6/8. KAM: Shawn Cross.\n\n⚠️ COMPLEX — Dual workstream required: active integration + UX user migration.\nIntegration profile: ~121 integration-created loads/month via active integration. Integration assessment required before timeline can be set.\nShawn Cross gathering integration details from customer.\n\nOpen items:\n⬜ Integration profile assessment — Shawn Cross gathering details\n⬜ UX user migration scope — confirm with Shawn\n⬜ Timeline TBD — cannot set until integration assessment complete\n⬜ Spike doc — not started\n⬜ Paul Volkman Begin Transformation approval — not submitted" },
-  { name:"Octopi Brewing [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:450, gp:15887, complexity:"Simple", type:"Customer", status:"Paused", dod:1, color:"qw", kam:"Craig Curwick (KAM)",
-    note:"⏸ PAUSED. KAM: Craig Curwick. AM: Wes Cuomo. Spike v1.0 + config complete. 308-record address book loaded. Stuck — awaiting PV approval.\n\nOpen items:\n⬜ Paul Volkman Begin Transformation approval — pending" },
-  { name:"Best Pump and Flow [LTL Rate Shop + TL Tender]", tier:"Quick Win", loads:362, gp:17661, complexity:"Simple", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Eric Bollis (AM)", note:"🔵 Discovery. AM: Eric Bollis. Low complexity.", uxpct:100 },
-  { name:"34 Degrees LLC [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:271, gp:39378, complexity:"Simple", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Mark Charlesworth (AM)", note:"🔵 Discovery. AM: Mark Charlesworth.", uxpct:100 },
-  { name:"Rosco Laboratories [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:199, gp:13397, complexity:"Simple", type:"Customer", status:"Intake", dod:0, color:"qw", kam:"Mike Stiglich (AM)", note:"🟠 On Deck. Low complexity. Quick win.", uxpct:100 },
-  { name:"Warehouse Specialists (WSI) [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:489, gp:0, complexity:"Simple", type:"Customer", status:"Intake", dod:0, color:"qw", kam:"Ryan Helgason", note:"🟠 On Deck. Low complexity. Subsidiary of Steel King — clean migration path, no Legacy WS dependency.", uxpct:100 },
-  { name:"BluLabs Brands [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:380, gp:60444, complexity:"Moderate", type:"Customer", status:"Intake", dod:0, color:"qw", kam:"Rich Reese", note:"🟠 On Deck. Moderate. Multi-tenant vendor flag — vendors serving multiple shippers.", uxpct:100 },
-  { name:"Middleby Group", tier:"Tier 1", loads:10340, gp:476559, complexity:"Complex", type:"Type 1+3", status:"On Deck", dod:0, color:"t1", note:"Largest GP. Follett/Middleby meeting 4/21. Imperial Range had bad E3 experience — do not migrate all Middleby at once." },
-  { name:"Bridgestone Hosepower", tier:"Tier 1", loads:10491, gp:393484, complexity:"Moderate-Complex", type:"Type 1", status:"On Deck", dod:0, color:"t1", note:"Highest load count. Multi-entity consolidation + catalog cleanup required. 93.5% UX — 26 Vooma loads prevent quick-win classification." },
-  { name:"Maxon Lift", tier:"Tier 1", loads:4103, gp:280634, complexity:"Moderate", type:"Type 1", status:"On Deck", dod:0, color:"t1", note:"Strong candidate. Outbound UX, UI improvement value prop. 88% UX — 13 Vooma, 6 Manual loads prevent quick-win classification." },
-  { name:"Phillips Industries", tier:"Tier 1", loads:4572, gp:160366, complexity:"Moderate", type:"Type 1", status:"On Deck", dod:0, color:"t1", note:"GP supports high priority." },
-  { name:"Steel King", tier:"Tier 1", loads:1678, gp:147837, complexity:"Complex", type:"Type 3+1", status:"On Deck", dod:0, color:"int", flag:"integration", note:"Do not start until Legacy WS sunset strategy is defined. On-prem Windows Service (Entente-built) at Rome, GA. Tender Loop + Report Loop both hard dependencies on Legacy WS. Full platform replacement required." },
-  { name:"Flambeau Inc", tier:"Tier 1", loads:1468, gp:41072, complexity:"Simple-Moderate", type:"Type 1", status:"On Deck", dod:0, color:"t1", note:"Non-integrated divisions only. Mears relationship value." },
-  { name:"Osmose Utilities", tier:"Tier 2", loads:1912, gp:173771, complexity:"Moderate", type:"Type 1", status:"On Deck", dod:0, color:"t2", note:"Active ODFL eBOL customer." },
-  { name:"Palmer Johnson", tier:"Tier 2", loads:1478, gp:55161, complexity:"Moderate", type:"Type 1", status:"On Deck", dod:0, color:"t2", note:"" },
-  { name:"Sub-Zero Group", tier:"Tier 2", loads:5192, gp:52837, complexity:"Moderate", type:"Type 1+2", status:"On Deck", dod:0, color:"t2", note:"Also Dock Scheduler candidate — two separate widgets." },
-  { name:"Anderson Process", tier:"Tier 2", loads:2879, gp:43360, complexity:"Complex", type:"Type 3+1", status:"Integration flag", color:"int", flag:"integration", note:"Shipper HQ rating integration via Legacy WS. Migration requires Shipper HQ to integrate with E3 API, or Anderson Process changes their rating workflow." },
-  { name:"Durex Products", tier:"Tier 3", loads:1256, gp:65129, complexity:"Simple", type:"Type 1", status:"On Deck", dod:0, color:"t3", note:"" },
-  { name:"Integer Parent", tier:"Tier 3", loads:648, gp:26370, complexity:"Simple", type:"Type 1", status:"On Deck", dod:0, color:"t3", note:"" },
-  { name:"CAT Non-Managed", tier:"Tier 3", loads:0, gp:0, complexity:"Simple", type:"Type 1", status:"On Deck", dod:0, color:"t3", note:"Quick win. CAT Managed is separate — hold." },
-  { name:"Manitou", tier:"Hold", loads:5332, gp:144936, complexity:"Complex", type:"Type 1", status:"Hold", color:"hold", note:"ConnectShip/WiseTech SOW gated. NMFC 050970 issue. 113 EDI/210 Corp loads." },
-  { name:"Solar Turbines", tier:"Hold", loads:9401, gp:97149, complexity:"Unknown", type:"Type 1", status:"Hold", color:"hold", note:"High volume. Complexity TBD. 199 Manual loads." },
-  { name:"Caterpillar Managed", tier:"Hold", loads:1669, gp:27894, complexity:"Complex", type:"Type 1", status:"Hold", color:"hold", note:"Complexity. CAT Non-Managed is separate." },
+  { name:"TurboChef [TL Tender + Vendor Management]", tier:"Not UX", loads:0, gp:0, complexity:"Simple", type:"Net New", status:"Complete", color:"t3", kam:"Spencer Walker", mondayStatus:"Live", note:"✅ LIVE 5/20/2026. Net New Onboard." },
+  { name:"AJ Manufacturing [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:699, gp:37024, complexity:"Simple-Moderate", type:"Customer", status:"Transformation Design", color:"qw", kam:"Spencer Walker", legacyWS:"No", dod:4, note:"🟡 Spike v1.1 complete. ✅ Jared review done." },
+  { name:"Newton Beverage Solutions [LTL Rate Shop + Dispatch + Vendor Management]", tier:"Net New", loads:0, gp:0, complexity:"Moderate", type:"Customer", status:"Hypercare", color:"qw", kam:"Spencer Walker", mondayStatus:"Hypercare", note:"✅ LIVE 6/15. Hypercare. Sprint 0005: Vendor Managed multi-ref in Test." },
+  { name:"ASI Doors [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:1161, gp:30591, complexity:"Moderate", type:"Customer", status:"Discovery", color:"qw", kam:"Eric Bollis (AM) · Melissa Reich (Ops)", legacyWS:"NO", dod:4, note:"🔵 Discovery. Config doc out — awaiting return." },
+  { name:"Clark Reliance [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:4175, gp:0, complexity:"Moderate", type:"Customer", status:"Paused", color:"qw", kam:"Rich Reese (KAM)", legacyWS:"NO", note:"🔵 Discovery. Target Go-Live: Jun 17. ⚠️ Multi-tenant scope pending." },
+  { name:"FWE (Food Warming Equipment) [LTL Rate Shop + Dispatch + Integration]", tier:"Quick Win", loads:0, gp:0, complexity:"High/Complex", type:"Integration", status:"Discovery", color:"int", kam:"Shawn Cross", note:"🔵 Discovery. Added 6/8. Complex dual workstream." },
+  { name:"Octopi Brewing [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:450, gp:15887, complexity:"Simple", type:"Customer", status:"Paused", color:"qw", kam:"Craig Curwick (KAM)", note:"🔵 Discovery. Spike + config complete. Ready for PV approval." },
+  { name:"Best Pump and Flow [LTL Rate Shop + TL Tender]", tier:"Quick Win", loads:362, gp:17661, complexity:"Simple", type:"Customer", status:"Discovery", color:"qw", kam:"Eric Bollis (AM)", note:"🔵 Discovery. Low complexity.", uxpct:100 },
+  { name:"34 Degrees LLC [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:271, gp:39378, complexity:"Simple", type:"Customer", status:"Discovery", color:"qw", kam:"Mark Charlesworth (AM)", note:"🟠 On Deck. Low complexity. Quick win.", uxpct:100 },
+  { name:"Rosco Laboratories [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:199, gp:13397, complexity:"Simple", type:"Customer", status:"Discovery", color:"qw", kam:"Mike Stiglich (AM)", note:"🟠 On Deck. Low complexity. Quick win.", uxpct:100 },
+  { name:"Warehouse Specialists (WSI) [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:489, gp:0, complexity:"Simple", type:"Customer", status:"Intake", color:"qw", kam:"Ryan Helgason", note:"🟠 On Deck. Subsidiary of Steel King.", uxpct:100 },
+  { name:"BluLabs Brands [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:380, gp:60444, complexity:"Moderate", type:"Customer", status:"Intake", color:"qw", kam:"Rich Reese", note:"🟠 On Deck. Multi-tenant vendor flag.", uxpct:100 },
+  { name:"Middleby Group", tier:"Tier 1", loads:10340, gp:476559, complexity:"Complex", type:"Type 1+3", status:"On Deck", color:"t1", note:"Largest GP. Do not migrate all Middleby at once." },
+  { name:"Bridgestone Hosepower", tier:"Tier 1", loads:10491, gp:393484, complexity:"Moderate-Complex", type:"Type 1", status:"On Deck", color:"t1", note:"Highest load count. Multi-entity consolidation required." },
+  { name:"Maxon Lift", tier:"Tier 1", loads:4103, gp:280634, complexity:"Moderate", type:"Type 1", status:"On Deck", color:"t1", note:"Strong candidate. Outbound UX." },
+  { name:"Phillips Industries", tier:"Tier 1", loads:4572, gp:160366, complexity:"Moderate", type:"Type 1", status:"On Deck", color:"t1", note:"GP supports high priority." },
+  { name:"Steel King", tier:"Tier 1", loads:1678, gp:147837, complexity:"Complex", type:"Type 3+1", status:"On Deck", color:"int", flag:"integration", note:"Do not start until Legacy WS sunset strategy defined." },
+  { name:"Flambeau Inc", tier:"Tier 1", loads:1468, gp:41072, complexity:"Simple-Moderate", type:"Type 1", status:"On Deck", color:"t1", note:"Non-integrated divisions only." },
+  { name:"Osmose Utilities", tier:"Tier 2", loads:1912, gp:173771, complexity:"Moderate", type:"Type 1", status:"On Deck", color:"t2", note:"Active ODFL eBOL customer." },
+  { name:"Palmer Johnson", tier:"Tier 2", loads:1478, gp:55161, complexity:"Moderate", type:"Type 1", status:"On Deck", color:"t2", note:"" },
+  { name:"Sub-Zero Group", tier:"Tier 2", loads:5192, gp:52837, complexity:"Moderate", type:"Type 1+2", status:"On Deck", color:"t2", note:"Dock Scheduler candidate — two separate widgets." },
+  { name:"Anderson Process", tier:"Tier 2", loads:2879, gp:43360, complexity:"Complex", type:"Type 3+1", status:"Integration flag", color:"int", flag:"integration", note:"Shipper HQ rating integration via Legacy WS." },
+  { name:"Durex Products", tier:"Tier 3", loads:1256, gp:65129, complexity:"Simple", type:"Type 1", status:"On Deck", color:"t3", note:"" },
+  { name:"Integer Parent", tier:"Tier 3", loads:648, gp:26370, complexity:"Simple", type:"Type 1", status:"On Deck", color:"t3", note:"" },
+  { name:"CAT Non-Managed", tier:"Tier 3", loads:0, gp:0, complexity:"Simple", type:"Type 1", status:"On Deck", color:"t3", note:"Quick win. CAT Managed separate — hold." },
+  { name:"Manitou", tier:"Hold", loads:5332, gp:144936, complexity:"Complex", type:"Type 1", status:"Hold", color:"hold", note:"ConnectShip/WiseTech SOW gated." },
+  { name:"Solar Turbines", tier:"Hold", loads:9401, gp:97149, complexity:"Unknown", type:"Type 1", status:"Hold", color:"hold", note:"High volume. Complexity TBD." },
+  { name:"Caterpillar Managed", tier:"Hold", loads:1669, gp:27894, complexity:"Complex", type:"Type 1", status:"Hold", color:"hold", note:"Complexity. CAT Non-Managed separate." },
   { name:"Wixon", tier:"Not UX", loads:6, gp:261, complexity:"Complex", type:"Type 3", status:"Integration", color:"int", note:"Legacy WS / IFS ERP integration." },
-  { name:"Wunder-Bar [LTL Rate Shop + Dispatch]", tier:"Not UX", loads:2533, gp:0, complexity:"Moderate", type:"Customer", status:"Paused", color:"qw", kam:"Spencer Walker", mondayStatus:"On Deck", dod:1,
-    note:"⏸ PAUSED ~6–8 weeks. Resume late July 2026. Leticia Navarro (primary POC) on maternity leave — formal pause. Config spreadsheet partially complete — several critical fields blank. KAM: Spencer Walker.\n\n~2,533 UX loads/yr. Vendor portal — 3 users, ~385 inbound loads/yr. Must-have for go-live.\n⚠️ June constraint — Leticia Navarro (primary POC, 707-448-5151 ext. 109) on maternity leave.\n⚠️ Address book country field uses 'USA' — needs cleanup to 'US' before load.\n\nConfig confirmed: Account WUNDVA · Web Username Wunder-Bar · Rate Flow Standard · Rate Contract WUNDVA · NTE 7 pallets/10,000 lbs/143\" · Origin 2060 Cessna Dr. Ste 100, Vacaville CA 95688 · Prepaid · Pickup 1200–1600 · Delivery 0900–1600 · Fixed Special Instructions: DO NOT DOUBLE STACK FREIGHT · 13-tier FAK = YES · TL Tender = YES · Vendor Management = YES · Forecasting = NO · Spot Quote = NO\nRef numbers: SO Number (required, show on BOL + invoice) · PO Number (required, show on BOL + invoice) — ⚠️ SO Number has 'elewis' as default value — test artifact, needs clearing.\nVendor portal: PO required (TRUE) · SO (FALSE) · Dims required · Max 144\"L/60\"W/40\"H/9,800 lbs/20 qty · 1 carrier rate\nProduct catalog: 12 products (Coffee Makers, Condiment Dispensers, Joe Tap, Machine Parts, PJ-12 Plastic Lid, Pizza Saucer, Q Tea, Tea + variants) — NMFC and NmfcSub fields not populated in product tab, only in NMFC sub-class sheet.\nNMFC sub-class table: 150400 (13-tier) · 118235 (13-tier) · 50970 (13-tier) · 25525 (13-tier) · 156600 (13-tier) · 198080 (13-tier) · 61700 (13-tier) · 133300 (13-tier) · 119610 (4-tier) · 118230 (3-tier)\n\nOpen items:\n⬜ Rate contract + rate flow — confirm in MG/GRE (blank in spreadsheet)\n⬜ PPA % — not set, confirm with Spencer/Pricing\n⬜ Bill To — not configured\n⬜ SO Number default value 'elewis' — clear before go-live\n⬜ Product catalog NMFC/NmfcSub — populate product tab fields\n⬜ Address book country cleanup — USA → US\n⬜ Backup POC for Leticia Navarro\n⬜ TL Tender tab — empty, needs completing if TL Tender is in scope\n⬜ Paul Volkman Begin Transformation — pending Spencer sign-off first" },
-  { name:"Banker Wire [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:1025, gp:12704, complexity:"Low", type:"Customer", status:"Paused", dod:1, color:"qw", kam:"Tracy Maaser (AM)", legacyWS:"NO",
-    note:"⏸ PAUSED. AM: Tracy Maaser. Discovery and config spreadsheet complete. Path forward TBD." },
-  { name:"IPS [TL Tender]", tier:"Not UX", loads:0, gp:0, complexity:"Low", type:"Process", status:"Complete", color:"t1", mondayStatus:"Live", legacyWS:"N/A", kam:"Ryan Helgason", dod:12,
-    spike:`<div style="font-size:12px;font-weight:500;margin-bottom:4px">✅ LIVE — Deployed 5/12 ~21:45 EDT</div>
-<div style="font-size:11px;color:#73726c;margin-bottom:8px">Owner: Eric Lewis · KAM: Ryan Helgason · Date: 4/27/2026</div>
-
-<div style="font-size:11px;font-weight:500;margin-bottom:3px">Targeted outcome</div>
-<div style="font-size:11px;color:#73726c;margin-bottom:8px">IPS gains TL Tender in E3 — self-serve TL shipment creation, carrier selection, BOL generation. Existing E3 customer (2nd integrated client). No UX migration required.</div>
-
-<div style="font-size:11px;font-weight:500;margin-bottom:3px">Key contacts</div>
-<div style="font-size:11px;color:#73726c;margin-bottom:8px">Ryan Helgason (KAM/Evans) · Lamar Johnson (IPS) — ljohnson@ipack.com / 864-862-1500</div>
-
-<div style="font-size:11px;font-weight:500;margin-bottom:3px">Confirmed config</div>
-<div style="font-size:11px;color:#73726c;margin-bottom:8px">Default Origin: 6365 Buckhorn Industrial Parkway, Mebane NC 27302 · Equipment: Dry Van, Straight Truck · Direction: Outbound · Terms: Prepaid · References: PO Number, Sales Order Number · Bill To: Evans Transportation, 440 Wells St Suite 200, Delafield WI 53018</div>
-
-<div style="font-size:11px;font-weight:500;margin-bottom:3px">Open items</div>
-<div style="font-size:11px;color:#73726c;line-height:1.7">
-✅ PV Begin Transformation APPROVED 5/1 · ✅ TL Tender enabled PROD 5/6 · ✅ UAT verified 5/7 · ✅ DEPLOYED 5/12 ~21:45 EDT · ✅ LIVE<br>
-⚠️ Standing program risk: No DEV/QA instance — PROD-only verification accepted for this widget.
-</div>`,
-    note:"✅ LIVE — Deployed 5/12. Target Go-Live: May 13. Actual Go-Live: May 20. Process widget — TL Tender. KAM: Ryan Helgason. ⚠️ No DEV/QA instance — PROD-only verification accepted." },
-  { name:"Alto-Shaam [Vendor Management — Feature Add]", tier:"Not UX", loads:0, gp:0, complexity:"Low", type:"Process", status:"Hypercare", dod:9, color:"t2", kam:"Rich Reese", mondayStatus:"Validation",
-    note:"✅ LIVE 6/15/2026. Hypercare. Actual Go-Live: June 15. PV Begin Transformation APPROVED 6/1. Process widget — Feature Add. Separate from completed Bid Management widget. Rich Reese KAM. Intake: Jun 1. Vendor Management feature enablement for existing Alto-Shaam E3 account. Pricing contract review in progress — Rachel Latus. Spike v1.0 complete." },
-  { name:"Alto-Shaam [Bid Management]", tier:"Not UX", loads:1, gp:27, complexity:"Low", type:"Customer", status:"Complete", color:"t2", active:false, kam:"Rich Reese", mondayStatus:"Live", legacyWS:"NO", dod:12,
-    pvOutreach:"✅ Begin Transformation APPROVED 4/29. ✅ Go-Live APPROVED 5/8. ✅ DEPLOYED 5/12. ✅ LIVE 5/26 — four users received credentials 5/26 afternoon.",
-    spike:`<div style="font-size:12px;font-weight:500;margin-bottom:4px">✅ LIVE — 5/26/2026. Four users received credentials 5/26 afternoon.</div>
-<div style="font-size:11px;color:#73726c;margin-bottom:8px">Owner: Eric Lewis · KAM: Rich Reese · Date: 4/22/2026 · Updated: 5/26/2026</div>
-
-<div style="font-size:11px;font-weight:500;margin-bottom:3px">Targeted outcome</div>
-<div style="font-size:11px;color:#73726c;margin-bottom:8px">Alto-Shaam users move from Legacy UX to E3 for LTL rate shopping. Bid Management enabled — displaces Planet Freight (incumbent TL provider). Legacy WS untouched. Freight entry scope: quote-only at launch — vendor order entry deferred post-go-live. Hazmat: not currently supported in E3 — on roadmap. CE-36457 ships non-hazmat at launch. Reporting: SO Number, PO Number, BOL — no special needs confirmed by Mitch Bruch 4/29. Invoicing: no special rules — confirmed verbally 4/29.</div>
-
-<div style="font-size:11px;font-weight:500;margin-bottom:3px">Key contacts</div>
-<div style="font-size:11px;color:#73726c;margin-bottom:8px">Rich Reese (KAM/Evans) — single POC for all Calissa/Alto-Shaam questions · Calissa Sorenson (Shipping Manager) — calissav@alto-shaam.com / 262-509-6406 · E3 operational contact: southshipping@alto-shaam.com / 262-509-6406 · Vivian Wagner (Billing) — vivianw@alto-shaam.com / 262-251-3800 X-8526</div>
-
-<div style="font-size:11px;font-weight:500;margin-bottom:3px">MG config confirmed</div>
-<div style="font-size:11px;color:#73726c;margin-bottom:8px">Account: ALTOSHAAM · Web User: WebserviceUserALTOSHAAMV4 · Rate Flow: Standard · Rate Contract: ALTOSHAA · PPA: 0.17 (Rate Total) · NTE: 6 pallets / 6,000 lbs / 143" L/W/H · Default Origin: W164 N9221 Water St, Menomonee Falls WI 53051 · Default Terms: Prepaid · Pickup/Delivery: 0800–1600 · Carrier Bill-To: ALTOMEN for most; EVANS for CTBV and PITD</div>
-
-<div style="font-size:11px;font-weight:500;margin-bottom:3px">NMFC density tables</div>
-<div style="font-size:11px;color:#73726c;margin-bottom:8px">✅ 25525 — 13-tier · ✅ 53125 — 12-tier (captured 4/27) · ✅ 52880 (formerly 123290) — 13-tier (captured 4/28, Rich confirmed switch)</div>
-
-<div style="font-size:11px;font-weight:500;margin-bottom:3px">Bid Management config</div>
-<div style="font-size:11px;color:#73726c;line-height:1.7;margin-bottom:8px">
-Participant Flow: Readonly · Bid Rounds: 1 · Duration: 120 minutes · Margin Type: Fixed Amount · Margin: $25 incumbents / $0 Evans<br>
-Carriers: Evans (EVTW) — Bid Email: ✅ Confirmed (4/28) · Planet Freight (PVLG) — altoshaam@planetfreight.com ✅ · eShipping (ESHI) — jchitwood@eshipping.biz ✅ · Superior — tlquotes@superiortranslog.com ✅<br>
-All bid emails confirmed. Equipment types confirmed 4/29.
-</div>
-
-<div style="font-size:11px;font-weight:500;margin-bottom:3px">Onboarding spreadsheet status</div>
-<div style="font-size:11px;color:#73726c;line-height:1.7;margin-bottom:8px">
-✅ Summary · ✅ TL-Tender · ✅ NMFC (25525, 53125, 52880 all complete) · ✅ Ref-Numbers · ✅ Product-Catalog (99 SKUs — AltoShaam_ProductCatalog_E3_Ready_v2.xlsx. BLAST CHILLER NMFC 53125 confirmed. CE-36457 hazmat non-blocking.) · ✅ Address-Book (418 rows — AltoShaam_AddressBook_E3_Ready.xlsx. T5G2G postal fix needed before upload.) · ✅ Public-Vendor (N/A) · ✅ Data (N/A) · ✅ Bid-Mgmt (all carriers + bid emails confirmed)<br>
-N/A: Forecasting (feature disabled)
-</div>
-
-<div style="font-size:11px;font-weight:500;margin-bottom:3px">Artifacts</div>
-<div style="font-size:11px;color:#73726c;margin-bottom:8px">AltoShaam_ProductCatalog_E3_Ready_v2.xlsx (153 SKUs) · AltoShaam_AddressBook_E3_Ready.xlsx (418 rows, T5G2G fix pending)</div>
-
-<div style="font-size:11px;font-weight:500;margin-bottom:3px">Product catalog notes</div>
-<div style="font-size:11px;color:#73726c;line-height:1.7;margin-bottom:8px">
-NMFC switches applied: 25970→25525, 27260→25525, 53180→53125, 123290→52880 · 26720 resolved via deletion · ✅ STAND 7-20 &amp; 10-20 COMBI duplicate resolved<br>
-⚠️ BLAST CHILLER — NMFC = PENDING. Resolve with Rich.<br>
-⚠️ CE-36457 — description: MUST SHIP AS HAZMAT, IsHazardous = false. Hazmat not in E3 — confirm disposition with Rich.
-</div>
-
-<div style="font-size:11px;font-weight:500;margin-bottom:3px">Address book notes</div>
-<div style="font-size:11px;color:#73726c;margin-bottom:8px">418 rows, 21 excluded (Carrier Terminals, Remit To, Germany, Netherlands, duplicates). ⚠️ T5G2G (HOTEEDALTOSHAAM_V / Edmonton AB) — 5-char postal, invalid CAN. Manual fix before upload.</div>
-
-<div style="font-size:11px;font-weight:500;margin-bottom:3px">Legacy UX flow (confirmed)</div>
-<div style="font-size:11px;color:#73726c;margin-bottom:8px">Step 1: Origin defaults Menomonee Falls WI · Step 2: Product catalog, pieces only, weight/dims/class locked · Step 3: Services (residential, lift gate, limited access, notify, inside delivery, haz) · Step 4: Rate view only, no dispatch. 24hr validity banner.</div>
-
-<div style="font-size:11px;font-weight:500;margin-bottom:3px">Gap delta</div>
-<div style="font-size:11px;color:#73726c;margin-bottom:8px">Special handling message: Low · Help email/phone: Low · Non-LCC reason: Low · Quote expiry banner: Low · Carrier exclusion lists: <span style="color:#791F1F;font-weight:500">Medium</span> — needs E3 equivalent or Kev config · NTE settings: Low</div>
-
-<div style="font-size:11px;font-weight:500;margin-bottom:3px">Open items</div>
-<div style="font-size:11px;color:#73726c;line-height:1.7">
-✅ PV Begin Transformation APPROVED 4/29 · ✅ PV Go-Live APPROVED 5/8 · ✅ DEPLOYED 5/12 · ✅ LIVE 5/26 — four users received credentials 5/26 afternoon
-</div>`,
-    note:"✅ LIVE — Credentials delivered 5/26. Actual go-live: 5/13.. Four users received credentials 5/26 afternoon. Customer (Legacy UX → E3). Bid Management + TL Tender live. KAM: Rich Reese." },
+  { name:"Wunder-Bar [LTL Rate Shop + Dispatch]", tier:"Not UX", loads:2533, gp:0, complexity:"Moderate", type:"Customer", status:"Paused", color:"qw", kam:"Spencer Walker", mondayStatus:"On Deck", dod:4, note:"⏸ PAUSED ~6–8 weeks. Resume late July 2026. Leticia Navarro maternity leave." },
+  { name:"Banker Wire [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:1025, gp:12704, complexity:"Low", type:"Customer", status:"Paused", color:"qw", kam:"Tracy Maaser (AM)", legacyWS:"NO", note:"⏸ PAUSED. Discovery and config spreadsheet complete." },
+  { name:"IPS [TL Tender]", tier:"Not UX", loads:0, gp:0, complexity:"Low", type:"Process", status:"Complete", color:"t1", mondayStatus:"Live", legacyWS:"N/A", kam:"Ryan Helgason", dod:12, note:"✅ LIVE — Deployed 5/12. No DEV/QA instance — PROD-only verification accepted." },
+  { name:"Alto-Shaam [Vendor Management — Feature Add]", tier:"Not UX", loads:0, gp:0, complexity:"Low", type:"Process", status:"Hypercare", color:"t2", kam:"Rich Reese", mondayStatus:"Hypercare", note:"✅ LIVE 6/15. Hypercare. Sprint 0005: Vendor Managed multi-ref in Test." },
+  { name:"Alto-Shaam [Bid Management]", tier:"Not UX", loads:1, gp:27, complexity:"Low", type:"Customer", status:"Complete", color:"t2", active:false, kam:"Rich Reese", mondayStatus:"Live", legacyWS:"NO", dod:12, pvOutreach:"✅ Begin Transformation APPROVED 4/29. ✅ Go-Live APPROVED 5/8. ✅ DEPLOYED 5/12. ✅ LIVE 5/26.", note:"✅ LIVE — Credentials delivered 5/26. Four users received credentials." },
+  { name:"Dollamur [Website Rate API Integration]", tier:"Quick Win", loads:1423, gp:130000, complexity:"Moderate", type:"Integration", status:"Discovery", color:"int", kam:"Shawn Cross", note:"🔵 Discovery. Spike v1.0 + config complete. Parallel API integration workstream." },
 ];
 const RULES = [
   { icon:"🎯", text:"Everything off UX, everyone in E3. All decisions trace back to this." },
-  { icon:"🔀", text:"Multiple transformations in flight is standard — not an exception. Priority tags signal focus when needed." },
-  { icon:"📅", text:"Transformations are independent of sprints. Sprint cadence does not gate go-live. Feature readiness does." },
-  { icon:"📣", text:"Go-live is a communication event, not a config event. Config can be done and held. Go-live fires when Ops and customer are briefed." },
-  { icon:"👤", text:"Eric runs the program. Brian monitors. Kev stays out unless a feature gap or blocker surfaces. Marcel to own feature enablement path going forward." },
-  { icon:"📋", text:"Documentation is non-negotiable. Spike docs, gap analyses, open items — all open and on the board. Spike doc created at discovery start → SharePoint hosted → linked from Monday card on creation. Spike doc freezes at discovery complete." },
-  { icon:"🚩", text:"Flag feature gaps early. Surface before they become blockers. Work with Brian and Kev to get a feature card in front of the sprint." },
-  { icon:"🔒", text:"Paul Volkman is the hard gate. No customer goes to execution without PV approval. No exceptions. Teams DM for approvals. 'Emerald.' = go." },
+  { icon:"🔀", text:"Multiple transformations in flight is standard. Priority tags signal focus when needed." },
+  { icon:"📅", text:"Transformations are independent of sprints. Feature readiness gates go-live, not sprint cadence." },
+  { icon:"📣", text:"Go-live is a communication event, not a config event. Config can be done and held." },
+  { icon:"👤", text:"Eric runs the program. Brian monitors. Kev stays out unless a feature gap or blocker surfaces." },
+  { icon:"📋", text:"Documentation is non-negotiable. Spike docs, gap analyses, open items — all open and on the board." },
+  { icon:"🚩", text:"Flag feature gaps early. Surface before they become blockers." },
+  { icon:"🔒", text:"Paul Volkman is the hard gate. No customer goes to execution without PV approval. 'Emerald.' = go." },
   { icon:"🚀", text:"After the first wins, go back to Paul — full gas. Who's next." },
-  { icon:"📄", text:"Spike Doc → Monday Card Handoff: Transformation_SpikeDoc_Monday_Handoff_Process_v2.docx (SharePoint: Product Development / Transformation / Program / Board Documentation). Project Meridian template v1.1 is canonical — 10 sections, gap analysis in Section 6 only." },
-  { icon:"🔍", text:"Configured ≠ used — confirm actual usage during discovery. Don't promise enhancements during migration. Imperial Range flag — Middleby Group had bad E3 experience." },
-  { icon:"📦", text:"Vendor Management = go-live requirement when active. Not a gap or future upsell. BOL: Evans selected → hold BOL, show UI message. Multi-stop BOL and forecasting bootstrap are per-customer settings." },
-  { icon:"🚫", text:"Legacy WS Post-Migration = NO for all standard UX-to-E3 migrations. Vooma is Evans-owned infrastructure — explicitly excluded from Legacy WS post-migration assessment. Vooma migrates on its own timeline, independent of any customer transformation. Not a customer dependency, not a blocker." },
-  { icon:"📁", text:"Address book export rules (all migrations): Country = 2-alpha (USA→US, CAN→CA, MEX→MX). Phone = 10 digits only — strip leading 1 if 11 digits, blank if unresolvable. Reusable script: LegacyUX_AddressBook_Export.js (SharePoint: Program folder). Edit account + token at top, run in browser console on Legacy UX address book page. Limit = 25 per page. Downloads as {ACCOUNT}_address_book.csv." },
+  { icon:"📄", text:"Spike Doc → Monday Card Handoff: Transformation_SpikeDoc_Monday_Handoff_Process_v2.docx." },
+  { icon:"🔍", text:"Configured ≠ used — confirm actual usage during discovery. Don't promise enhancements during migration." },
+  { icon:"📦", text:"Vendor Management = go-live requirement when active." },
+  { icon:"🚫", text:"Legacy WS Post-Migration = NO for all standard UX-to-E3 migrations. Vooma is Evans-owned infrastructure — excluded." },
+  { icon:"📁", text:"Address book export rules: Country = 2-alpha (USA→US). Phone = 10 digits only." },
 ];
 const STAGES = [
   { col:"On Deck", gate:"Identified as candidate — not yet in active discovery", owner:"Eric" },
@@ -807,7 +590,6 @@ const DOD = [
   "Customer profile updated in artifact library",
 ];
 const COLS = ["On Deck","Paused","Intake","Discovery","Transformation Design","In Execution","Validation","Hypercare","Complete"];
-
 function fmt(n) { return n > 0 ? "$" + n.toLocaleString() : "—"; }
 function pillC(c) { return {qw:"pill-qw",t1:"pill-t1",t2:"pill-t2",t3:"pill-t3",hold:"pill-hold"}[c]||"pill-int"; }
 function pillL(c) { return {qw:"Quick Win",t1:"Tier 1",t2:"Tier 2",t3:"Tier 3",hold:"Hold"}[c]||"Integration"; }
@@ -817,7 +599,6 @@ function gapBadge(s) {
   return m[s]||"";
 }
 function priC(i) { return i<=3?"high":i<=7?"med":"low"; }
-
 function buildGapTable(el, compact) {
   el.innerHTML = `<thead><tr>
     <th style="text-align:left;padding:4px 7px;font-size:11px;font-weight:500;color:#73726c;border-bottom:0.5px solid #b4b2a9;background:#f5f4f0">#</th>
@@ -832,7 +613,6 @@ function buildGapTable(el, compact) {
     ${compact?"":`<td style="padding:4px 7px;font-size:11px;color:#73726c">${g.note}</td>`}
   </tr>`).join("") + `</tbody>`;
 }
-
 function renderKanban() {
   const grid = document.getElementById("kanban-grid");
   grid.innerHTML = "";
@@ -841,7 +621,6 @@ function renderKanban() {
     const hdr = document.createElement("div"); hdr.className = "col-header" + (col === "Paused" ? " paused" : ""); hdr.title = col; hdr.textContent = col;
     wrap.appendChild(hdr);
     const cards = document.createElement("div"); cards.className = "col-cards";
-
     CUSTOMERS.filter(c => c.status === col).forEach(c => {
       const card = document.createElement("div"); card.className = "kcard" + (c.color==="qw"?" qw":"");
       card.onclick = () => openDetail(c);
@@ -854,13 +633,12 @@ function renderKanban() {
     wrap.appendChild(cards); grid.appendChild(wrap);
   });
 }
-
 function renderQW() {
   document.getElementById("qw-tbody").innerHTML = QW.map(c => {
     const bw = typeof c.gp === "number" && c.gp > 0 ? Math.round((c.gp/65000)*60) : 0;
     const loadsStr = typeof c.loads === "number" ? c.loads.toLocaleString() : c.loads;
     const uxStr = typeof c.uxpct === "number" ? c.uxpct+"%" : c.uxpct;
-    const gpStr = typeof c.gp === "number" && c.gp > 0 ? `<div class="gp-bar-wrap">$${c.gp.toLocaleString()}<div class="gp-bar" style="width:${bw}px"></div></div>` : "—";
+    const gpStr = typeof c.gp === "number" && c.gp > 0 ? `<div class="gp-bar-wrap">${fmt(c.gp)}<div class="gp-bar" style="width:${bw}px"></div></div>` : c.gp;
     const typeStyle = c.type === "Process" ? "background:#E6F1FB;color:#0C447C" : "background:#ebe9e2;color:#73726c";
     return `<tr onclick="openDetailByName('${c.name}')">
       <td style="font-weight:500;color:#73726c">${c.seq}</td>
@@ -875,7 +653,6 @@ function renderQW() {
     `<tr><td style="font-weight:500">${c.name}</td><td style="font-size:12px;color:#73726c">${c.reason}</td></tr>`
   ).join("");
 }
-
 function renderTable() {
   const tier = document.getElementById("tier-filter").value;
   const sort = document.getElementById("sort-col").value;
@@ -898,13 +675,11 @@ function renderTable() {
       <td style="font-size:11px;color:#73726c">${c.status}</td></tr>`;
   }).join("");
 }
-
 function renderKickoff() {
   document.getElementById("koff-rules").innerHTML = RULES.map(r =>
     `<div class="koff-rule"><span style="font-size:14px;flex-shrink:0;margin-top:1px">${r.icon}</span><span>${r.text}</span></div>`
   ).join("");
 }
-
 function renderLifecycle() {
   document.getElementById("lc-stages").innerHTML = STAGES.map((s,i) => `
     <div class="lc-item">
@@ -918,36 +693,7 @@ function renderLifecycle() {
       ${DOD.map(d=>`<div class="check-item"><div class="check-box" onclick="this.classList.toggle('done');this.textContent=this.classList.contains('done')?'✓':''"></div><span>${d}</span></div>`).join("")}
     </div>`;
 }
-
-function openP0Detail() {
-  document.getElementById("detail-content").innerHTML = `
-    <button class="detail-close" onclick="closeDetail()">×</button>
-    <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px"><span class="pill" style="background:#FAEEDA;color:#854F0B">Priority Zero</span></div>
-    <div style="font-size:15px;font-weight:500;line-height:1.4">E3 Self-Serve Configuration</div>
-    <div style="font-size:12px;color:#73726c;margin-top:3px">Type 4 — Internal / Enterprise</div>
-    <div class="warn-b">Gates all customer migrations. Customer Transitions do not begin at scale until self-serve config is sufficiently built out.</div>
-    <div style="margin:.75rem 0">
-      <div class="d-row"><span class="dl">Execution owner</span><span class="dv">Marcel, Hector, Ben (UX)</span></div>
-      <div class="d-row"><span class="dl">Eric's role</span><span class="dv">Gap list input only — not execution owner</span></div>
-      <div class="d-row"><span class="dl">Eric's current focus</span><span class="dv">Alto-Shaam (customer #1)</span></div>
-      <div class="d-row"><span class="dl">UI complete</span><span class="dv">10 items</span></div>
-      <div class="d-row"><span class="dl">Needs validation</span><span class="dv">2 — download OK, bulk import not yet available</span></div>
-      <div class="d-row"><span class="dl">Spreadsheet/Kev-only</span><span class="dv">8 items</span></div>
-      <div class="d-row"><span class="dl">Not built</span><span class="dv">7 items</span></div>
-    </div>
-    <div style="font-size:12px;font-weight:500;margin-bottom:6px">Open gaps</div>
-    <table style="width:100%;border-collapse:collapse;font-size:11px"><tbody>
-      ${GAPS.filter(g=>g.state!=="complete").map(g=>`<tr>
-        <td style="padding:3px 6px;width:24px">${typeof g.pri==="number"?`<span class="gap-pri ${priC(g.pri)}" style="width:16px;height:16px;font-size:9px">${g.pri}</span>`:""}</td>
-        <td style="padding:3px 6px;font-weight:500">${g.area}</td>
-        <td style="padding:3px 6px">${gapBadge(g.state)}</td></tr>`).join("")}
-    </tbody></table>`;
-  document.getElementById("overlay").classList.add("open");
-  document.getElementById("detail-panel").classList.add("open");
-}
-
 function openDetailByName(name) { const c = CUSTOMERS.find(x=>x.name===name); if(c) openDetail(c); }
-
 function openDetail(c) {
   if (typeof c === "string") c = JSON.parse(c);
   const isQW = c.color === "qw";
@@ -959,21 +705,20 @@ function openDetail(c) {
       <span class="pill pill-mod" style="margin-left:3px">${c.type}</span>
       <span class="pill ${cxC(c.complexity)}" style="margin-left:3px">${c.complexity}</span>
     </div>
-    ${c.active?`<div class="success-b">✅ LIVE — Credentials delivered 5/26. Actual go-live: 5/13. — Four users received credentials.</div>`:""}
-    ${isQW?`<div class="success-b">First migration candidate — stand up in E3 quietly, validate internally, then demo to customer.</div>`:""}
+    ${c.active?`<div class="success-b">✅ LIVE — Credentials delivered 5/26.</div>`:""}
+    ${isQW?`<div class="success-b">First migration candidate.</div>`:""}
     <div style="margin:.75rem 0">
       <div class="d-row"><span class="dl">Loads</span><span class="dv">${c.loads>0?c.loads.toLocaleString():'—'}</span></div>
       <div class="d-row"><span class="dl">Gross profit</span><span class="dv">${fmt(c.gp)}</span></div>
       ${c.uxpct!==undefined?`<div class="d-row"><span class="dl">% UX</span><span class="dv">${c.uxpct}%</span></div>`:""}
       ${c.kam?`<div class="d-row"><span class="dl">KAM</span><span class="dv">${c.kam}</span></div>`:""}
       ${c.mondayStatus?`<div class="d-row"><span class="dl">monday.com status</span><span class="dv">${c.mondayStatus}</span></div>`:""}
-      ${c.legacyWS?`<div class="d-row"><span class="dl">Legacy WS active post-migration</span><span class="dv">${c.legacyWS}</span></div>`:""}
+      ${c.legacyWS?`<div class="d-row"><span class="dl">Legacy WS post-migration</span><span class="dv">${c.legacyWS}</span></div>`:""}
       ${c.pvOutreach?`<div class="d-row"><span class="dl">Paul Volkman</span><span class="dv" style="color:#854F0B">${c.pvOutreach}</span></div>`:""}
       <div class="d-row"><span class="dl">Status</span><span class="dv">${c.status}</span></div>
       <div class="d-row"><span class="dl">Widget type</span><span class="dv">${c.type}</span></div>
     </div>
     ${c.note?`<div class="d-note">${c.note.replace(/\n/g,'<br>')}</div>`:""}
-    ${c.spike?`<div style="margin-top:.75rem;padding:.75rem;background:#f5f4f0;border-radius:8px;border:0.5px solid #d3d1c7">${c.spike}</div>`:""}
     ${c.flag==="integration"?`<div class="alert-b">Integration flag — do not begin UX migration until full integration audit is complete.</div>`:""}
     ${c.status==="Hold"?`<div class="warn-b">On hold — do not migrate until blocking condition is resolved.</div>`:""}
     <div style="margin-top:1rem">
@@ -983,19 +728,16 @@ function openDetail(c) {
   document.getElementById("overlay").classList.add("open");
   document.getElementById("detail-panel").classList.add("open");
 }
-
 function closeDetail() {
   document.getElementById("overlay").classList.remove("open");
   document.getElementById("detail-panel").classList.remove("open");
 }
-
 function switchView(id, btn) {
   document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));
   document.querySelectorAll(".nav button").forEach(b=>b.classList.remove("active"));
   document.getElementById("v-"+id).classList.add("active");
   btn.classList.add("active");
 }
-
 function toggleBlockers(header) {
   const body = document.getElementById('blocker-body');
   const chevron = document.getElementById('blocker-chevron');
@@ -1003,13 +745,11 @@ function toggleBlockers(header) {
   body.style.display = open ? 'none' : 'block';
   chevron.style.transform = open ? '' : 'rotate(180deg)';
 }
-
 function toggleP0(el) {
   const d = document.getElementById("p0-detail");
   d.classList.toggle("open");
   el.textContent = d.classList.contains("open") ? "Hide gap backlog ▴" : "Show gap backlog ▾";
 }
-
 buildGapTable(document.getElementById("gap-inline-tbl"), true);
 buildGapTable(document.getElementById("gap-full-tbl"), false);
 renderKanban(); renderQW(); renderTable(); renderKickoff(); renderLifecycle();
