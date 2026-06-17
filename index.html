@@ -20,30 +20,30 @@
 <title>Evans Transformation Board</title>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f0f2f1; color: #1a1a18; font-size: 14px; line-height: 1.5; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #F5F0EA; color: #0C0018; font-size: 14px; line-height: 1.5; }
 .wrap { max-width: 1200px; margin: 0 auto; padding: 0 0 2rem; }
 /* HEADER */
 .board-header { background: #0B5362; color: #fff; padding: 1.25rem 1.5rem 1rem; border-radius: 0 0 12px 12px; margin-bottom: 1.25rem; }
 .board-header h1 { font-size: 17px; font-weight: 600; color: #fff; margin-bottom: 3px; letter-spacing: 0.01em; }
 .board-header .subtitle { font-size: 11px; color: rgba(255,255,255,0.65); margin-bottom: 0; }
 /* P0 */
-.p0-banner { border: 0.5px solid #d4a020; border-radius: 10px; padding: .875rem 1rem; margin: 0 1rem 1.25rem; background: #fef8e8; }
-.p0-badge { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 10px; background: #BA7517; color: #fff; }
+.p0-banner { border: 0.5px solid #FF8200; border-radius: 10px; padding: .875rem 1rem; margin: 0 1rem 1.25rem; background: #FFF2E5; }
+.p0-badge { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 10px; background: #FF8200; color: #fff; }
 .p0-chips { display: flex; gap: 7px; margin-top: 8px; flex-wrap: wrap; }
 .p0-chip { font-size: 11px; padding: 2px 9px; border-radius: 6px; background: #fff; border: 0.5px solid #d3d1c7; color: #5f5e5a; }
 .p0-toggle { font-size: 11px; color: #0B5362; cursor: pointer; padding: 3px 8px; border-radius: 4px; border: 0.5px solid #0B5362; margin-top: 8px; display: inline-block; font-weight: 500; }
 .p0-toggle:hover { background: #0B5362; color: #fff; }
-.p0-detail { display: none; margin-top: .75rem; padding-top: .75rem; border-top: 0.5px solid #d4a020; }
+.p0-detail { display: none; margin-top: .75rem; padding-top: .75rem; border-top: 0.5px solid #FF8200; }
 .p0-detail.open { display: block; }
 /* STATS */
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 0 1rem 1.25rem; }
 .stat { background: #fff; border-radius: 8px; padding: .75rem 1rem; border: 0.5px solid #d3d1c7; }
-.stat .lbl { font-size: 11px; color: #73726c; margin-bottom: 4px; }
+.stat .lbl { font-size: 11px; color: #4B4B4B; margin-bottom: 4px; }
 .stat .val { font-size: 20px; font-weight: 600; color: #0B5362; }
-.stat .sub { font-size: 11px; color: #73726c; margin-top: 2px; }
+.stat .sub { font-size: 11px; color: #4B4B4B; margin-top: 2px; }
 /* NAV */
 .nav { display: flex; gap: 6px; margin: 0 1rem 1.25rem; flex-wrap: wrap; }
-.nav button { font-size: 12px; padding: 5px 13px; border-radius: 20px; border: 0.5px solid #b4b2a9; background: #fff; color: #73726c; cursor: pointer; transition: all .15s; }
+.nav button { font-size: 12px; padding: 5px 13px; border-radius: 20px; border: 0.5px solid #b4b2a9; background: #fff; color: #4B4B4B; cursor: pointer; transition: all .15s; }
 .nav button.active { background: #0B5362; color: #fff; border-color: transparent; }
 .nav button:hover:not(.active) { border-color: #0B5362; color: #0B5362; }
 .view { display: none; padding: 0 1rem; }
@@ -66,10 +66,10 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .col-cards { display: flex; flex-direction: column; gap: 4px; }
 .kcard { border: 0.5px solid #d3d1c7; border-radius: 6px; padding: 6px 7px; background: #fff; cursor: pointer; transition: border-color .15s, box-shadow .15s; }
 .kcard:hover { border-color: #0B5362; box-shadow: 0 1px 4px rgba(11,83,98,0.10); }
-.kcard.p0 { border-color: #BA7517; background: #fef8e8; }
+.kcard.p0 { border-color: #FF8200; background: #FFF2E5; }
 .kcard.qw { border-color: #00A984; }
 .kcard-name { font-size: 11px; font-weight: 500; line-height: 1.3; }
-.kcard-meta { font-size: 10px; color: #73726c; margin-top: 2px; }
+.kcard-meta { font-size: 10px; color: #4B4B4B; margin-top: 2px; }
 /* TABLE */
 table.main { width: 100%; border-collapse: collapse; font-size: 12px; }
 table.main thead th { font-size: 11px; font-weight: 600; color: #fff; text-align: left; padding: 6px 8px; background: #0B5362; position: sticky; top: 0; }
@@ -91,7 +91,7 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 .gap-nb { background: #D3D1C7; color: #444441; }
 .gap-platform { background: #FCEBEB; color: #791F1F; border: 0.5px solid #F09595; font-weight: 500; }
 /* QW */
-.qw-rule { font-size: 11px; color: #73726c; padding: 5px 10px; border-radius: 6px; border-left: 3px solid #00A984; background: #f5faf8; line-height: 1.5; margin-bottom: .75rem; }
+.qw-rule { font-size: 11px; color: #4B4B4B; padding: 5px 10px; border-radius: 6px; border-left: 3px solid #00A984; background: #f5faf8; line-height: 1.5; margin-bottom: .75rem; }
 /* KICKOFF */
 .koff-rule { display: flex; align-items: flex-start; gap: 10px; padding: .6rem 0; border-bottom: 0.5px solid #d3d1c7; font-size: 12px; }
 .koff-rule:last-child { border: none; }
@@ -99,11 +99,11 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 .step-head { font-size: 11px; font-weight: 600; color: #fff; padding: 5px 8px; border-bottom: 0.5px solid #b4b2a9; background: #0B5362; }
 .step-cell { padding: 5px 8px; border-bottom: 0.5px solid #d3d1c7; border-right: 0.5px solid #d3d1c7; }
 .step-cell:last-child { border-right: none; }
-.step-num { font-weight: 500; color: #73726c; font-size: 11px; }
+.step-num { font-weight: 500; color: #4B4B4B; font-size: 11px; }
 /* LIFECYCLE */
 .lc-item { display: flex; align-items: flex-start; gap: 12px; padding: .7rem 0; border-bottom: 0.5px solid #d3d1c7; }
 .lc-num { min-width: 22px; height: 22px; border-radius: 50%; background: #0B5362; color: #fff; border: none; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; flex-shrink: 0; }
-.check-item { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; color: #73726c; padding: 4px 0; border-bottom: 0.5px solid #d3d1c7; }
+.check-item { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; color: #4B4B4B; padding: 4px 0; border-bottom: 0.5px solid #d3d1c7; }
 .check-item:last-child { border: none; }
 .check-box { width: 14px; height: 14px; border: 0.5px solid #b4b2a9; border-radius: 3px; flex-shrink: 0; margin-top: 1px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 9px; }
 .check-box.done { background: #00A984; color: #fff; border-color: #00A984; }
@@ -112,14 +112,14 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 .detail-overlay.open { background: rgba(0,0,0,0.25); pointer-events: all; }
 .detail-panel { position: fixed; right: -420px; top: 0; bottom: 0; width: 380px; background: #fff; border-left: 2px solid #0B5362; overflow-y: auto; transition: right .25s; padding: 1.25rem; z-index: 11; }
 .detail-panel.open { right: 0; }
-.detail-close { float: right; cursor: pointer; font-size: 18px; color: #73726c; line-height: 1; padding: 2px 4px; }
+.detail-close { float: right; cursor: pointer; font-size: 18px; color: #4B4B4B; line-height: 1; padding: 2px 4px; }
 .detail-close:hover { color: #0B5362; }
 .d-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 0.5px solid #d3d1c7; font-size: 13px; }
-.d-row .dl { color: #73726c; }
+.d-row .dl { color: #4B4B4B; }
 .d-row .dv { font-weight: 500; text-align: right; max-width: 58%; }
-.d-note { font-size: 12px; color: #73726c; line-height: 1.6; margin-top: .75rem; padding: .75rem; background: #f0f2f1; border-radius: 8px; border-left: 3px solid #00A984; }
+.d-note { font-size: 12px; color: #4B4B4B; line-height: 1.6; margin-top: .75rem; padding: .75rem; background: #F5F0EA; border-radius: 8px; border-left: 3px solid #00A984; }
 .alert-b { margin-top: .75rem; padding: .5rem .75rem; border-radius: 6px; background: #FCEBEB; border: 0.5px solid #F09595; font-size: 11px; font-weight: 500; color: #791F1F; }
-.warn-b { margin-top: .75rem; padding: .5rem .75rem; border-radius: 6px; background: #fef8e8; border: 0.5px solid #d4a020; font-size: 11px; font-weight: 500; color: #854F0B; }
+.warn-b { margin-top: .75rem; padding: .5rem .75rem; border-radius: 6px; background: #FFF2E5; border: 0.5px solid #FF8200; font-size: 11px; font-weight: 500; color: #854F0B; }
 .success-b { margin-top: .75rem; padding: .5rem .75rem; border-radius: 6px; background: #e6f7f2; border: 0.5px solid #00A984; font-size: 11px; font-weight: 500; color: #085041; }
 /* ── RESPONSIVE ── */
 @media (min-width: 2200px) {
@@ -228,7 +228,7 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
       <span style="font-size:10px;color:#854F0B;font-weight:500">Gates all customer migrations</span>
     </div>
     <div style="font-size:13px;font-weight:500">E3 Self-Serve Configuration — Platform Readiness</div>
-    <div style="font-size:11px;color:#73726c;margin-top:3px">Type 4 · Internal · Execution: Marcel, Hector, Ben (UX) · Eric: gap list input only — not execution owner</div>
+    <div style="font-size:11px;color:#4B4B4B;margin-top:3px">Type 4 · Internal · Execution: Marcel, Hector, Ben (UX) · Eric: gap list input only — not execution owner</div>
     <div class="p0-chips">
       <span class="p0-chip" style="background:#EAF3DE;color:#27500A;border-color:#97C459">15 complete</span>
       <span class="p0-chip">6 not built</span>
@@ -307,11 +307,11 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
       🔵 Dollamur — Discovery &nbsp;·&nbsp;
       ⏸ Wunder-Bar · Banker Wire — Paused<br>
       <strong>Sequencing criterion:</strong> % UX of total loads. Ideal profile: 100% UX · low volume · no integration · outbound simple.</div>
-    <div style="font-size:11px;color:#73726c;padding:5px 10px;border-radius:6px;border:0.5px solid #d3d1c7;background:#ebe9e2;margin-bottom:.75rem">
+    <div style="font-size:11px;color:#4B4B4B;padding:5px 10px;border-radius:6px;border:0.5px solid #d3d1c7;background:#EDE5D8;margin-bottom:.75rem">
       <strong>Data source:</strong> UX_E3_Project.xlsx — Web Services Pivot and Load Entry Type % tabs available as reference. Updated 4/22 by James.
     </div>
     <table class="main"><thead><tr><th>#</th><th>Customer</th><th>March loads</th><th>% UX</th><th>Type</th><th>GP</th><th>Notes</th></tr></thead><tbody id="qw-tbody"></tbody></table>
-    <div style="margin-top:1rem;font-size:12px;font-weight:500;color:#73726c;margin-bottom:6px">Confirmed NOT first candidates despite appearing simple</div>
+    <div style="margin-top:1rem;font-size:12px;font-weight:500;color:#4B4B4B;margin-bottom:6px">Confirmed NOT first candidates despite appearing simple</div>
     <table class="main"><thead><tr><th>Customer</th><th>Reason</th></tr></thead><tbody id="notqw-tbody"></tbody></table>
   </div>
   <!-- ALL CANDIDATES -->
@@ -337,13 +337,13 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
   </div>
   <!-- GAPS -->
   <div class="view" id="v-gaps">
-    <div style="font-size:12px;color:#73726c;margin-bottom:.75rem">Updated 4/21 from E3 SBX UI audit. Items 1 &amp; 2 clarified: download confirmed functional; bulk import not yet available (singular add only). Ben (UX) owns UI execution; Eric owns acceptance criteria.</div>
+    <div style="font-size:12px;color:#4B4B4B;margin-bottom:.75rem">Updated 4/21 from E3 SBX UI audit. Items 1 &amp; 2 clarified: download confirmed functional; bulk import not yet available (singular add only). Ben (UX) owns UI execution; Eric owns acceptance criteria.</div>
     <table class="main" id="gap-full-tbl"></table>
   </div>
   <!-- KICKOFF -->
   <div class="view" id="v-kickoff">
     <div style="font-size:13px;font-weight:500;margin-bottom:4px">Kickoff call — 4/21/2026</div>
-    <div style="font-size:12px;color:#73726c;margin-bottom:1rem">Attendees: James Schlosser, Kevin Foster, Paul Volkman, Travis West, Jared McKeen, Brian Franzwa, Eric Lewis, Wyatt Hassemer</div>
+    <div style="font-size:12px;color:#4B4B4B;margin-bottom:1rem">Attendees: James Schlosser, Kevin Foster, Paul Volkman, Travis West, Jared McKeen, Brian Franzwa, Eric Lewis, Wyatt Hassemer</div>
     <div style="padding:.5rem .75rem;border-radius:6px;background:#EAF3DE;border:0.5px solid #97C459;font-size:12px;color:#27500A;font-weight:500;margin-bottom:1rem">Eric Lewis officially announced as Director of Product Transformation</div>
     <div style="font-size:12px;font-weight:500;margin-bottom:6px">James' 7-step process framework</div>
     <div class="step-grid">
@@ -358,7 +358,7 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
       <div class="step-cell step-num" style="border-bottom:none">8</div><div class="step-cell" style="border-bottom:none">Issue Follow Up — empower POC, reduce game of telephone</div><div class="step-cell" style="border-bottom:none"></div><div class="step-cell" style="border-bottom:none"></div>
     </div>
     <div style="font-size:12px;font-weight:500;margin:.75rem 0 6px">Agreed first action — 3 to 5 simple customers</div>
-    <div style="font-size:12px;color:#1a1a18;line-height:1.7;margin-bottom:.5rem">Stand them up quietly in E3 <strong>without telling the customer first</strong> → run test shipments internally, validate, clear it out → demo to the customer: "Here it is, it's already built." Builds repeatability. Jared offered to help build the checklist based on lessons learned from first 4–5 onboardings.</div>
+    <div style="font-size:12px;color:#0C0018;line-height:1.7;margin-bottom:.5rem">Stand them up quietly in E3 <strong>without telling the customer first</strong> → run test shipments internally, validate, clear it out → demo to the customer: "Here it is, it's already built." Builds repeatability. Jared offered to help build the checklist based on lessons learned from first 4–5 onboardings.</div>
     <div style="font-size:11px;padding:6px 10px;border-radius:6px;background:#EAF3DE;border:0.5px solid #97C459;color:#27500A;margin-bottom:.75rem;line-height:1.6"><strong>4/22:</strong> Confirmed list sent to James — replied to James' email. Kev confirmed Alto-Shaam on sprint priority list via Teams DM.</div>
     <div style="font-size:12px;font-weight:600;margin:.75rem 0 6px;color:#791F1F">🚧 Active blockers — as of 6/10/2026</div>
     <div style="border:0.5px solid #F09595;border-radius:8px;overflow:hidden;margin-bottom:1rem;font-size:12px">
@@ -369,30 +369,30 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr 130px;border-top:0.5px solid #F09595">
         <div style="padding:6px 8px;font-weight:500">ASI Doors</div>
-        <div style="padding:6px 8px;color:#73726c;border-left:0.5px solid #F09595">Config spreadsheet not returned</div>
+        <div style="padding:6px 8px;color:#4B4B4B;border-left:0.5px solid #F09595">Config spreadsheet not returned</div>
         <div style="padding:6px 8px;color:#791F1F;border-left:0.5px solid #F09595">Melissa Reich / Eric Bollis</div>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr 130px;border-top:0.5px solid #F09595">
         <div style="padding:6px 8px;font-weight:500">Wunder-Bar</div>
-        <div style="padding:6px 8px;color:#73726c;border-left:0.5px solid #F09595">Backup POC for Leticia Navarro</div>
+        <div style="padding:6px 8px;color:#4B4B4B;border-left:0.5px solid #F09595">Backup POC for Leticia Navarro</div>
         <div style="padding:6px 8px;color:#791F1F;border-left:0.5px solid #F09595">Spencer Walker</div>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr 130px;border-top:0.5px solid #F09595">
         <div style="padding:6px 8px;font-weight:500">AJ Manufacturing</div>
-        <div style="padding:6px 8px;color:#73726c;border-left:0.5px solid #F09595">Spike review + config spreadsheet</div>
+        <div style="padding:6px 8px;color:#4B4B4B;border-left:0.5px solid #F09595">Spike review + config spreadsheet</div>
         <div style="padding:6px 8px;color:#791F1F;border-left:0.5px solid #F09595">Spencer Walker</div>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr 130px;border-top:0.5px solid #F09595">
         <div style="padding:6px 8px;font-weight:500">Clark Reliance</div>
-        <div style="padding:6px 8px;color:#73726c;border-left:0.5px solid #F09595">Multi-tenant account scope confirmation</div>
+        <div style="padding:6px 8px;color:#4B4B4B;border-left:0.5px solid #F09595">Multi-tenant account scope confirmation</div>
         <div style="padding:6px 8px;color:#791F1F;border-left:0.5px solid #F09595">Rich Reese (KAM)</div>
       </div>
     </div>
     <div style="font-size:12px;font-weight:500;margin:.75rem 0 6px">Open program items — as of 5/29/2026</div>
     <div style="border:0.5px solid #d3d1c7;border-radius:8px;overflow:hidden;margin-bottom:.75rem;font-size:12px">
-      <div style="display:grid;grid-template-columns:1fr 120px;background:#ebe9e2">
-        <div style="padding:5px 8px;font-weight:500;color:#73726c;font-size:11px">Item</div>
-        <div style="padding:5px 8px;font-weight:500;color:#73726c;font-size:11px;border-left:0.5px solid #d3d1c7">Action / timing</div>
+      <div style="display:grid;grid-template-columns:1fr 120px;background:#EDE5D8">
+        <div style="padding:5px 8px;font-weight:500;color:#4B4B4B;font-size:11px">Item</div>
+        <div style="padding:5px 8px;font-weight:500;color:#4B4B4B;font-size:11px;border-left:0.5px solid #d3d1c7">Action / timing</div>
       </div>
       <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7"><div style="padding:6px 8px">E3 terminology — confirmed 4/27</div><div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">✅ Done</div></div>
       <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7"><div style="padding:6px 8px">Alto-Shaam Begin Transformation — PV approved 4/29 11:55 CDT</div><div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">✅ Done 4/29</div></div>
@@ -408,45 +408,45 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
       <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7"><div style="padding:6px 8px">Wunder-Bar — ⚠️ June deadline — Leticia Navarro maternity leave.</div><div style="padding:6px 8px;color:#854F0B;border-left:0.5px solid #d3d1c7">⬜ Spencer today</div></div>
       <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7"><div style="padding:6px 8px">Transformation Board rules of engagement — meeting completed with Brian + Wyatt 4/30</div><div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">✅ Done 4/30</div></div>
       <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7"><div style="padding:6px 8px">⚠️ Searchable product catalog gap — High severity. Potential Wunder-Bar blocker.</div><div style="padding:6px 8px;color:#791F1F;border-left:0.5px solid #d3d1c7">⬜ Escalate to Kev</div></div>
-      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7"><div style="padding:6px 8px">Newton Beverage Solutions — Demo 6/4 · Training 6/11 · Go-Live 6/15.</div><div style="padding:6px 8px;color:#73726c;border-left:0.5px solid #d3d1c7">🔜 6/15 go-live</div></div>
+      <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7"><div style="padding:6px 8px">Newton Beverage Solutions — Demo 6/4 · Training 6/11 · Go-Live 6/15.</div><div style="padding:6px 8px;color:#4B4B4B;border-left:0.5px solid #d3d1c7">🔜 6/15 go-live</div></div>
       <div style="display:grid;grid-template-columns:1fr 120px;border-top:0.5px solid #d3d1c7"><div style="padding:6px 8px">Monday.com board — KAM/AM invite permissions issue resolved with Brian</div><div style="padding:6px 8px;color:#27500A;border-left:0.5px solid #d3d1c7">✅ Resolved</div></div>
     </div>
     <div style="font-size:12px;font-weight:500;margin:.75rem 0 6px">Key rules from kickoff</div>
     <div id="koff-rules"></div>
   </div>
   <div class="view" id="v-lifecycle">
-    <div style="font-size:12px;color:#73726c;margin-bottom:.75rem">Widget lifecycle — gate conditions for each stage transition.</div>
+    <div style="font-size:12px;color:#4B4B4B;margin-bottom:.75rem">Widget lifecycle — gate conditions for each stage transition.</div>
     <div style="font-size:12px;font-weight:500;margin-bottom:6px">Finalized widget type taxonomy</div>
     <div style="border:0.5px solid #d3d1c7;border-radius:8px;overflow:hidden;margin-bottom:1rem;font-size:12px">
-      <div style="display:grid;grid-template-columns:90px 1fr;background:#ebe9e2">
-        <div style="padding:5px 8px;font-weight:500;color:#73726c;font-size:11px">Type</div>
-        <div style="padding:5px 8px;font-weight:500;color:#73726c;font-size:11px;border-left:0.5px solid #d3d1c7">Definition</div>
+      <div style="display:grid;grid-template-columns:90px 1fr;background:#EDE5D8">
+        <div style="padding:5px 8px;font-weight:500;color:#4B4B4B;font-size:11px">Type</div>
+        <div style="padding:5px 8px;font-weight:500;color:#4B4B4B;font-size:11px;border-left:0.5px solid #d3d1c7">Definition</div>
       </div>
       <div style="display:grid;grid-template-columns:90px 1fr;border-top:0.5px solid #d3d1c7">
         <div style="padding:6px 8px;font-weight:500">Customer</div>
-        <div style="padding:6px 8px;color:#73726c;border-left:0.5px solid #d3d1c7">Full customer transfer — all sub-processes moving to E3.</div>
+        <div style="padding:6px 8px;color:#4B4B4B;border-left:0.5px solid #d3d1c7">Full customer transfer — all sub-processes moving to E3.</div>
       </div>
       <div style="display:grid;grid-template-columns:90px 1fr;border-top:0.5px solid #d3d1c7">
         <div style="padding:6px 8px;font-weight:500">Process</div>
-        <div style="padding:6px 8px;color:#73726c;border-left:0.5px solid #d3d1c7">A specific workflow being transformed, not the whole customer.</div>
+        <div style="padding:6px 8px;color:#4B4B4B;border-left:0.5px solid #d3d1c7">A specific workflow being transformed, not the whole customer.</div>
       </div>
       <div style="display:grid;grid-template-columns:90px 1fr;border-top:0.5px solid #d3d1c7">
         <div style="padding:6px 8px;font-weight:500">Integration</div>
-        <div style="padding:6px 8px;color:#73726c;border-left:0.5px solid #d3d1c7">Semi-integrated customers where the integration path is part of the transformation.</div>
+        <div style="padding:6px 8px;color:#4B4B4B;border-left:0.5px solid #d3d1c7">Semi-integrated customers where the integration path is part of the transformation.</div>
       </div>
     </div>
     <div style="font-size:11px;padding:6px 10px;border-radius:6px;background:#EAF3DE;border:0.5px solid #97C459;color:#27500A;margin-bottom:1rem"><strong>✅ 4/27:</strong> E3 terminology confirmed and applied throughout board.</div>
     <div style="font-size:12px;font-weight:500;margin-bottom:6px">Environment mapping</div>
     <div style="border:0.5px solid #d3d1c7;border-radius:8px;overflow:hidden;margin-bottom:1rem;font-size:12px">
-      <div style="display:grid;grid-template-columns:1fr 1fr;background:#ebe9e2">
-        <div style="padding:5px 8px;font-weight:500;color:#73726c;font-size:11px">Legacy</div>
-        <div style="padding:5px 8px;font-weight:500;color:#73726c;font-size:11px;border-left:0.5px solid #d3d1c7">E3</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;background:#EDE5D8">
+        <div style="padding:5px 8px;font-weight:500;color:#4B4B4B;font-size:11px">Legacy</div>
+        <div style="padding:5px 8px;font-weight:500;color:#4B4B4B;font-size:11px;border-left:0.5px solid #d3d1c7">E3</div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid #d3d1c7"><div style="padding:5px 8px">DEV</div><div style="padding:5px 8px;border-left:0.5px solid #d3d1c7;color:#73726c">—</div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid #d3d1c7"><div style="padding:5px 8px">DEV</div><div style="padding:5px 8px;border-left:0.5px solid #d3d1c7;color:#4B4B4B">—</div></div>
       <div style="display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid #d3d1c7"><div style="padding:5px 8px">QA</div><div style="padding:5px 8px;border-left:0.5px solid #d3d1c7">DEV</div></div>
       <div style="display:grid;grid-template-columns:1fr 1fr;border-top:0.5px solid #d3d1c7"><div style="padding:5px 8px">PROD</div><div style="padding:5px 8px;border-left:0.5px solid #d3d1c7">PROD</div></div>
     </div>
-    <div style="font-size:11px;padding:5px 10px;border-radius:6px;background:#ebe9e2;border:0.5px solid #d3d1c7;color:#73726c;margin-bottom:1rem">Testing path: QA using Fractional wired to Seats until Dev clone process defined with Kev/Brian. · <strong>MercuryEdge</strong> — MG reporting/data extraction tool.</div>
+    <div style="font-size:11px;padding:5px 10px;border-radius:6px;background:#EDE5D8;border:0.5px solid #d3d1c7;color:#4B4B4B;margin-bottom:1rem">Testing path: QA using Fractional wired to Seats until Dev clone process defined with Kev/Brian. · <strong>MercuryEdge</strong> — MG reporting/data extraction tool.</div>
     <div style="font-size:12px;font-weight:500;margin-bottom:6px">Widget lifecycle stages</div>
     <div id="lc-stages"></div>
   </div>
@@ -602,16 +602,16 @@ function gapBadge(s) {
 function priC(i) { return i<=3?"high":i<=7?"med":"low"; }
 function buildGapTable(el, compact) {
   el.innerHTML = `<thead><tr>
-    <th style="text-align:left;padding:4px 7px;font-size:11px;font-weight:500;color:#73726c;border-bottom:0.5px solid #b4b2a9;background:#f5f4f0">#</th>
-    <th style="text-align:left;padding:4px 7px;font-size:11px;font-weight:500;color:#73726c;border-bottom:0.5px solid #b4b2a9;background:#f5f4f0">Gap area</th>
-    <th style="text-align:left;padding:4px 7px;font-size:11px;font-weight:500;color:#73726c;border-bottom:0.5px solid #b4b2a9;background:#f5f4f0">Status</th>
-    ${compact?"":`<th style="text-align:left;padding:4px 7px;font-size:11px;font-weight:500;color:#73726c;border-bottom:0.5px solid #b4b2a9;background:#f5f4f0">Notes</th>`}
+    <th style="text-align:left;padding:4px 7px;font-size:11px;font-weight:500;color:#4B4B4B;border-bottom:0.5px solid #b4b2a9;background:#f5f4f0">#</th>
+    <th style="text-align:left;padding:4px 7px;font-size:11px;font-weight:500;color:#4B4B4B;border-bottom:0.5px solid #b4b2a9;background:#f5f4f0">Gap area</th>
+    <th style="text-align:left;padding:4px 7px;font-size:11px;font-weight:500;color:#4B4B4B;border-bottom:0.5px solid #b4b2a9;background:#f5f4f0">Status</th>
+    ${compact?"":`<th style="text-align:left;padding:4px 7px;font-size:11px;font-weight:500;color:#4B4B4B;border-bottom:0.5px solid #b4b2a9;background:#f5f4f0">Notes</th>`}
   </tr></thead><tbody>` +
   GAPS.map(g => `<tr>
-    <td style="padding:4px 7px">${typeof g.pri==="number"?`<span class="gap-pri ${priC(g.pri)}">${g.pri}</span>`:`<span style="font-size:11px;color:#73726c">✓</span>`}</td>
-    <td style="padding:4px 7px;font-size:12px;${g.state==="complete"?"color:#73726c":"font-weight:500"}">${g.area}</td>
+    <td style="padding:4px 7px">${typeof g.pri==="number"?`<span class="gap-pri ${priC(g.pri)}">${g.pri}</span>`:`<span style="font-size:11px;color:#4B4B4B">✓</span>`}</td>
+    <td style="padding:4px 7px;font-size:12px;${g.state==="complete"?"color:#4B4B4B":"font-weight:500"}">${g.area}</td>
     <td style="padding:4px 7px">${gapBadge(g.state)}</td>
-    ${compact?"":`<td style="padding:4px 7px;font-size:11px;color:#73726c">${g.note}</td>`}
+    ${compact?"":`<td style="padding:4px 7px;font-size:11px;color:#4B4B4B">${g.note}</td>`}
   </tr>`).join("") + `</tbody>`;
 }
 function renderKanban() {
@@ -640,18 +640,18 @@ function renderQW() {
     const loadsStr = typeof c.loads === "number" ? c.loads.toLocaleString() : c.loads;
     const uxStr = typeof c.uxpct === "number" ? c.uxpct+"%" : c.uxpct;
     const gpStr = typeof c.gp === "number" && c.gp > 0 ? `<div class="gp-bar-wrap">${fmt(c.gp)}<div class="gp-bar" style="width:${bw}px"></div></div>` : c.gp;
-    const typeStyle = c.type === "Process" ? "background:#E6F1FB;color:#0C447C" : "background:#ebe9e2;color:#73726c";
+    const typeStyle = c.type === "Process" ? "background:#E6F1FB;color:#0C447C" : "background:#EDE5D8;color:#4B4B4B";
     return `<tr onclick="openDetailByName('${c.name}')">
-      <td style="font-weight:500;color:#73726c">${c.seq}</td>
+      <td style="font-weight:500;color:#4B4B4B">${c.seq}</td>
       <td style="font-weight:500">${c.name}${c.active?' <span style="font-size:9px;padding:1px 5px;border-radius:8px;background:#EAF3DE;color:#27500A;font-weight:500">ACTIVE</span>':''}</td>
       <td>${loadsStr}</td>
       <td><div class="ux-bar-wrap">${typeof c.uxpct==="number"?`<div style="height:4px;border-radius:2px;width:${Math.round(c.uxpct)}px;background:#1D9E75;opacity:.7;max-width:100px"></div>`:''}${uxStr}</div></td>
       <td><span style="font-size:10px;padding:1px 7px;border-radius:10px;${typeStyle}">${c.type}</span></td>
       <td>${gpStr}</td>
-      <td style="font-size:11px;color:#73726c">${c.note}</td></tr>`;
+      <td style="font-size:11px;color:#4B4B4B">${c.note}</td></tr>`;
   }).join("");
   document.getElementById("notqw-tbody").innerHTML = NOT_QW.map(c =>
-    `<tr><td style="font-weight:500">${c.name}</td><td style="font-size:12px;color:#73726c">${c.reason}</td></tr>`
+    `<tr><td style="font-weight:500">${c.name}</td><td style="font-size:12px;color:#4B4B4B">${c.reason}</td></tr>`
   ).join("");
 }
 function renderTable() {
@@ -672,8 +672,8 @@ function renderTable() {
       <td>${c.loads>0?c.loads.toLocaleString():'—'}</td>
       <td><div class="gp-bar-wrap">${fmt(c.gp)}<div class="gp-bar" style="width:${bw}px"></div></div></td>
       <td><span class="pill ${cxC(c.complexity)}">${c.complexity||'—'}</span></td>
-      <td style="font-size:11px;color:#73726c">${c.type}</td>
-      <td style="font-size:11px;color:#73726c">${c.status}</td></tr>`;
+      <td style="font-size:11px;color:#4B4B4B">${c.type}</td>
+      <td style="font-size:11px;color:#4B4B4B">${c.status}</td></tr>`;
   }).join("");
 }
 function renderKickoff() {
@@ -686,8 +686,8 @@ function renderLifecycle() {
     <div class="lc-item">
       <div class="lc-num">${i+1}</div>
       <div><div style="font-size:13px;font-weight:500">${s.col}</div>
-      <div style="font-size:12px;color:#73726c;margin-top:2px">Gate: ${s.gate}</div>
-      <div style="font-size:11px;color:#73726c;margin-top:2px">Owner: ${s.owner}</div></div>
+      <div style="font-size:12px;color:#4B4B4B;margin-top:2px">Gate: ${s.gate}</div>
+      <div style="font-size:11px;color:#4B4B4B;margin-top:2px">Owner: ${s.owner}</div></div>
     </div>`).join("") + `
     <div style="margin-top:1rem">
       <div style="font-size:12px;font-weight:500;margin-bottom:.5rem">Definition of done</div>
