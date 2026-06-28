@@ -57,7 +57,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .col-header.paused { background: #7a7a72; }
 .col-cards { display: flex; flex-direction: column; gap: 4px; }
 .kcard { border: 0.5px solid #d3d1c7; border-radius: 6px; padding: 6px 7px; background: #fff; cursor: pointer; transition: border-color .15s, box-shadow .15s; }
-.kcard:hover { border-color: #0B5362; box-shadow: 0 1px 4px rgba(57,62,70,0.10); }
+.kcard:hover { border-color: #0B5362; box-shadow: 0 1px 4px rgba(11,83,98,0.10); }
 .kcard.p0 { border-color: #BA7517; background: #fef8e8; }
 .kcard.qw { border-color: #00A984; }
 .kcard-name { font-size: 11px; font-weight: 500; line-height: 1.3; }
@@ -232,7 +232,7 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 <div class="wrap">
   <div class="board-header">
     <h1>Evans Transformation Board</h1>
-    <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 6/28/2026 9:00 AM · AM — synced from Monday.com</div>
+    <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 6/15/2026 — synced from Monday.com</div>
   </div>
 
   <!-- P0 BANNER -->
@@ -263,8 +263,43 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
     <div class="stat"><div class="lbl">Self-serve gaps open</div><div class="val">8</div><div class="sub">6 not built · ⚠️ 2 platform gaps</div></div>
   </div>
 
+  <!-- BLOCKERS BANNER -->
+  <div style="margin:0 1rem .75rem;border:1.5px solid #C0392B;border-radius:10px;overflow:hidden">
+    <div style="background:#C0392B;padding:7px 12px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none" onclick="toggleBlockers(this)">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:13px;font-weight:700;color:#fff;letter-spacing:0.03em">🚧 BLOCKERS</span>
+        <span style="font-size:11px;color:rgba(255,255,255,0.8);font-weight:400">Resolving these unlocks go-live activity</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <span style="font-size:11px;color:rgba(255,255,255,0.7)">3 open · as of 6/15/2026</span>
+        <span id="blocker-chevron" style="font-size:12px;color:#fff;transition:transform .2s">▼</span>
+      </div>
+    </div>
+    <div id="blocker-body" style="background:#fff;display:none">
+      <div style="display:grid;grid-template-columns:160px 1fr 160px;background:#FDECEA;border-bottom:1px solid #F09595">
+        <div style="padding:5px 10px;font-size:11px;font-weight:600;color:#C0392B">Customer</div>
+        <div style="padding:5px 10px;font-size:11px;font-weight:600;color:#C0392B;border-left:1px solid #F09595">Blocker</div>
+        <div style="padding:5px 10px;font-size:11px;font-weight:600;color:#C0392B;border-left:1px solid #F09595">Waiting on</div>
+      </div>
+      <div style="display:grid;grid-template-columns:160px 1fr 160px;border-bottom:0.5px solid #F5C6C6">
+        <div style="padding:6px 10px;font-size:12px;font-weight:600">ASI Doors</div>
+        <div style="padding:6px 10px;font-size:12px;color:#444;border-left:1px solid #F5C6C6">Config spreadsheet not returned</div>
+        <div style="padding:6px 10px;font-size:12px;color:#C0392B;font-weight:500;border-left:1px solid #F5C6C6">Melissa Reich / Eric Bollis</div>
+      </div>
+      <div style="display:grid;grid-template-columns:160px 1fr 160px;border-bottom:0.5px solid #F5C6C6">
+        <div style="padding:6px 10px;font-size:12px;font-weight:600">AJ Manufacturing</div>
+        <div style="padding:6px 10px;font-size:12px;color:#444;border-left:1px solid #F5C6C6">Spike review + config spreadsheet</div>
+        <div style="padding:6px 10px;font-size:12px;color:#C0392B;font-weight:500;border-left:1px solid #F5C6C6">Spencer Walker</div>
+      </div>
+      <div style="display:grid;grid-template-columns:160px 1fr 160px">
+        <div style="padding:6px 10px;font-size:12px;font-weight:600">Clark Reliance ⏸</div>
+        <div style="padding:6px 10px;font-size:12px;color:#444;border-left:1px solid #F5C6C6">Multi-tenant account scope confirmation (paused pending)</div>
+        <div style="padding:6px 10px;font-size:12px;color:#C0392B;font-weight:500;border-left:1px solid #F5C6C6">Rich Reese (KAM)</div>
+      </div>
+    </div>
+  </div>
 
-    <!-- NAV -->
+  <!-- NAV -->
   <div class="nav">
     <button class="active" onclick="switchView('kanban',this)">Kanban</button>
     <button onclick="switchView('quickwins',this)">Quick wins</button>
@@ -614,13 +649,13 @@ const NOT_QW = [
   { name:"Solar Turbines", reason:"199 Manual loads" },
 ];
 const CUSTOMERS = [
-  { name:"TurboChef [TL Tender + Vendor Management]", tier:"Not UX", loads:0, gp:0, complexity:"Simple", type:"Net New", status:"Complete", dod:12, color:"t3", kam:"Spencer Walker", mondayStatus:"Live", targetGoLive:"May 20, 2026", actualGoLive:"May 20, 2026",
+  { name:"TurboChef [TL Tender + Vendor Management]", tier:"Not UX", loads:0, gp:0, complexity:"Simple", type:"Net New", status:"Complete", dod:12, color:"t3", kam:"Spencer Walker", mondayStatus:"Live",
     note:"✅ LIVE 5/20/2026. Net New Onboard. TL Tender + Vendor Management. KAM: Spencer Walker. Contact: Adriana Lopez (214-379-6000 Opt:7). Exec walkthrough 5/15, training 5/18, go-live 5/20." },
-  { name:"AJ Manufacturing [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:699, gp:37024, complexity:"Low", type:"Customer", status:"In Execution", color:"qw", kam:"Spencer Walker", legacyWS:"No", dod:5, targetGoLive:"Jul 1, 2026",
+  { name:"AJ Manufacturing [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:699, gp:37024, complexity:"Low", type:"Customer", status:"Transformation Design", color:"qw", kam:"Spencer Walker", legacyWS:"No", dod:4,
     note:"🟡 Spike v1.1 complete. ✅ Jared review done. ✅ Monday card created 5/5. Spencer engaged — email sent 5/5. KAM: Spencer Walker. ~699 UX loads/yr. 100% UX. LTL rate shop + dispatch. Standard rate mode. No integrations, no EDI, no Legacy WS. Clean migration path.\n\nVendor portal active — 84 vendor addresses. Confirm active vendor users with Spencer.\nAllow Quote Dispatch = No — users cannot self-dispatch from quote screen.\nFixed Special Instructions on every BOL: 'DRIVER MUST CHOCK WHEELS' and 'ATTN Receiving: Inspect this shipment and note any potential damage on the BOL'\n\nKey contacts: Spencer Walker (KAM/Evans) · Krystal Blum (Primary) — kblum@ajdoor.com / 715-568-1793 ext. 10 · Carol Prince (Bill-To) — cprince@ajdoor.com\n\nConfirmed config: Account AJMABL · Rate Contract AJMABL · Standard rate flow · PPA 19% · PPA Min $15 · PPA Max $200 · PPA Key PalletRaterConfig40 · PPA Calculation Total $ · NTE 7 pallets/10,000 lbs/143\" · Default Origin 521 Main Street, Bloomer WI 54724 (address conflict — Spencer to confirm) · Default Terms Prepaid · Pickup 0700–1600, Delivery 0800–1600 · Help Email ajmfg@evanstrans.com · Help Phone 800-886-7799\n\nNMFC sub-classes: 34265 (4 subs) and 35540 (8 subs including colon-suffix variant)\n\nUsers to migrate (7): kblum, cprince, jseverson, rfisher, bsarauer, jbohl, chassemer — all @ajdoor.com. kblum = Open Book + Customer Markup; all others = Closed Book + Customer Markup.\n\nOpen items:\n✅ Jared McKeen spike review — complete\n✅ Monday card created — 5/5\n⬜ Spencer — spike review + onboarding spreadsheet (email sent 5/5)\n⬜ Shipping address confirm — Spencer\n⬜ Backup POC for Krystal Blum — Spencer\n⬜ Active vendor user confirmation — Spencer\n⬜ Vendor portal go-live confirmation — Spencer\n⬜ Fixed Special Instructions field in E3 — confirm field exists\n⬜ Customer Markup rate access tier — confirm configurable in E3\n⬜ Paul Volkman Begin Transformation approval — not submitted, early stage" },
-  { name:"Newton Beverage Solutions [LTL Rate Shop + Dispatch + Vendor Management]", tier:"Net New", loads:0, gp:0, complexity:"Moderate", type:"Customer", status:"Hypercare", color:"qw", kam:"Spencer Walker", mondayStatus:"Hypercare", dod:9, targetGoLive:"Jun 15, 2026", actualGoLive:"Jun 15, 2026",
+  { name:"Newton Beverage Solutions [LTL Rate Shop + Dispatch + Vendor Management]", tier:"Net New", loads:0, gp:0, complexity:"Moderate", type:"Customer", status:"Hypercare", color:"qw", kam:"Spencer Walker", mondayStatus:"Hypercare", dod:9,
     note:"✅ LIVE 6/15/2026. Hypercare. Actual Go-Live: June 15. PV Begin Transformation APPROVED 5/29. NET NEW ONBOARD — not a Project Meridian migration. One-pager format.\n\nKickoff complete 5/21. Demo 6/4 · Training 6/11 · Go-Live 6/15.\nPrimary contact: Corey Richardson\nSales lead: Implementation Team. Spencer Walker to be added.\nPPA: N/A\n\nOpen items:\n✅ Paul Volkman Begin Transformation — APPROVED 5/29\n✅ One-pager — Francesca/KAM review complete\n✅ E3 config — loaded and validated\n✅ Address book — loaded\n✅ Paul Volkman Go-Live approval — obtained\n✅ KAM briefed and aligned\n✅ E3 config loaded and validated\n✅ Acceptance criteria met\n✅ Customer communication sent\n⬜ Hypercare period completed\n⬜ Legacy access decommissioned\n⬜ Customer profile updated in artifact library" },
-  { name:"ASI Doors [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:1161, gp:30591, complexity:"Moderate", type:"Customer", status:"In Execution", color:"qw", kam:"Eric Bollis (AM) · Melissa Reich (Ops)", legacyWS:"NO", dod:5, targetGoLive:"Jul 8, 2026",
+  { name:"ASI Doors [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:1161, gp:30591, complexity:"Moderate", type:"Customer", status:"Discovery", color:"qw", kam:"Eric Bollis (AM) · Melissa Reich (Ops)", legacyWS:"NO", dod:1,
     note:"🔵 Discovery. AM: Eric Bollis. Ops: Melissa Reich. KAM: ⚠️ Not yet assigned — DM Jared McKeen.\n\n~1,161 UX loads/yr: 728 customer-initiated · 319 Vooma · 105 Evans ops · 9 EDI artifact.\nSpike Doc v1.0 complete. Config spreadsheet v1.0 complete. Address book: 5,500+ records loaded.\nConfig doc out to Melissa Reich + Eric Bollis — awaiting return.\nDefault Special Instructions: DO NOT STACK FREIGHT / ALL SHIPMENTS REQUIRE 24HR NOTIFY CONSIGNEE\nLegacy WS Post-Migration: NO — Vooma is Evans-owned infrastructure, excluded from customer transformation assessment.\n\nConfig: Account ASIDMI · Web Username WebserviceUserASIDOORSV4 · Rate Mode Standard · PPA Force Yes · PPA 0.5% Rate Total · NTE 4 pallets/19,999 lbs/240\" · Origin 5848 N 95th Ct, Milwaukee WI 53225 · Prepaid · Pickup 1200–1600 · Delivery 0600–1600 · Notification ASIDoors@evanstrans.com · Help 800-886-7799\n\nOpen items:\n⬜ KAM/AM assignment — DM Jared McKeen\n⬜ Config spreadsheet return — Melissa Reich / Eric Bollis\n⬜ MG contract name + rate flow — confirm in MG\n⬜ Bill To — not set in Legacy UX\n⬜ Vendor portal scope — Luis.Eucede@4frontes.com\n⬜ Product catalog content — audit with AM\n⬜ Paul Volkman Begin Transformation approval — pending spike review" },
   { name:"Clark Reliance [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:4175, gp:0, complexity:"Moderate", type:"Customer", status:"Paused", dod:1, color:"qw", kam:"Rich Reese (KAM)", legacyWS:"NO",
     note:"⏸ PAUSED. KAM: Rich Reese. Moved to Paused 6/12 — multi-tenant scope confirmation pending. Target Go-Live: Jun 17. Intake: Jun 1.\n~4,175 loads/yr. Account: CLARST · Web Username: WebserviceUserCLARKRELIANCEV4\n\nHQ: 16633 Foltz Parkway, Strongsville OH 44149 · Phone: 4405721500 · Email: traffic@clarkreliance.com\nPrimary contact: Shipping Department\n\n⚠️ FLAG 1 — MULTI-TENANT: 11 MG accounts under WebserviceUserCLARKRELIANCEV4: ANDEST, BOEROF, CLARST, EASTOF, ENERCA, ERNSSP, FILTST, INSTST, MANNOF, NATCOF, STROOF. Confirm active scope with Steve Simms.\n⚠️ FLAG 2 — CUSTOM DOCMOSIS BOLs: 5 templates (BOL_CLARK.doc, BOLCMS.doc, ShipUnitHaz.doc, CommercialInvoice.doc, BarcodeLabelLarge.doc). E3 doesn't natively support. Proposed path: RWC calls Docmosis Cloud on dispatch. Backlog spike required.\n⚠️ FLAG 3 — CARRIER-SPECIFIC BILL TO ROUTING: ABFS, CTII, FXFE, FXNL, ODFL, RLCA, WARD → CLARBLT | Any SCAC, CNWY, DAFG → EVANS | ODFL uses SMC3 BOL type.\n\nConfig: Rate Mode Standard · PPA 0.9% · NTE: Max Length 300\" / Max Height 300\" / Max Width 300\" / Max Pallet 30 / Max Weight 30,000 lbs · Preferred carrier: CLARBLT · Pickup/Delivery: 1000–1600 (confirm)\nFeatures: Vendor Management (use template) · Spot Quote (use template) · Forecasting (use template) · TL Tender: NO\nRef numbers: Sales Order Number required (TRUE / ShowOnBOL)\n\nVendor portal (public-vendor): PO Number required (TRUE) · SO Number (FALSE) · Dims required · Max 144\"L / 60\"W / 40\"H / 9,800 lbs / 20 qty · 1 carrier rate · Required contact + time window on origin and destination\nProduct catalog: ~139 products loaded. Extensive NMFC sub-class table.\nAddress book: ~88 consignee records loaded.\n\nOpen items:\n⬜ Multi-tenant account scope — confirm active accounts with Steve Simms\n⬜ Vendor portal scope — confirm with Steve Simms\n⬜ Pickup/delivery windows — confirm 1000–1600 is correct\n⬜ Docmosis BOL path — RWC spike required, pending Kev/team alignment\n⬜ Paul Volkman Begin Transformation approval — not submitted" },
@@ -628,10 +663,10 @@ const CUSTOMERS = [
     note:"🔵 Discovery. Added 6/8. KAM: Shawn Cross.\n\n⚠️ COMPLEX — Dual workstream required: active integration + UX user migration.\nIntegration profile: ~121 integration-created loads/month via active integration. Integration assessment required before timeline can be set.\nShawn Cross gathering integration details from customer.\n\nOpen items:\n⬜ Integration profile assessment — Shawn Cross gathering details\n⬜ UX user migration scope — confirm with Shawn\n⬜ Timeline TBD — cannot set until integration assessment complete\n⬜ Spike doc — not started\n⬜ Paul Volkman Begin Transformation approval — not submitted" },
   { name:"Octopi Brewing [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:450, gp:15887, complexity:"Simple", type:"Customer", status:"Paused", dod:1, color:"qw", kam:"Craig Curwick (KAM)",
     note:"⏸ PAUSED. KAM: Craig Curwick. AM: Wes Cuomo. Spike v1.0 + config complete. 308-record address book loaded. Stuck — awaiting PV approval.\n\nOpen items:\n⬜ Paul Volkman Begin Transformation approval — pending" },
-  { name:"Best Pump and Flow [LTL Rate Shop + TL Tender]", tier:"Quick Win", loads:362, gp:17661, complexity:"Simple", type:"Customer", status:"In Execution", dod:5, color:"qw", kam:"Eric Bollis (AM)", note:"🔵 Discovery. AM: Eric Bollis. Low complexity.", uxpct:100 },
-  { name:"34 Degrees LLC [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:271, gp:39378, complexity:"Simple", type:"Customer", status:"In Execution", dod:5, color:"qw", kam:"Mark Charlesworth (AM)", note:"🔵 Discovery. AM: Mark Charlesworth.", uxpct:100 },
-  { name:"Rosco Laboratories [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:199, gp:13397, complexity:"Simple", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Mike Stiglich (AM)", note:"🟠 On Deck. Low complexity. Quick win.", uxpct:100 },
-  { name:"Warehouse Specialists (WSI) [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:489, gp:0, complexity:"Simple", type:"Customer", status:"Intake", dod:1, color:"qw", kam:"Ryan Helgason", note:"🟠 On Deck. Low complexity. Subsidiary of Steel King — clean migration path, no Legacy WS dependency.", uxpct:100 },
+  { name:"Best Pump and Flow [LTL Rate Shop + TL Tender]", tier:"Quick Win", loads:362, gp:17661, complexity:"Simple", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Eric Bollis (AM)", note:"🔵 Discovery. AM: Eric Bollis. Low complexity.", uxpct:100 },
+  { name:"34 Degrees LLC [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:271, gp:39378, complexity:"Simple", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Mark Charlesworth (AM)", note:"🔵 Discovery. AM: Mark Charlesworth.", uxpct:100 },
+  { name:"Rosco Laboratories [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:199, gp:13397, complexity:"Simple", type:"Customer", status:"Intake", dod:0, color:"qw", kam:"Mike Stiglich (AM)", note:"🟠 On Deck. Low complexity. Quick win.", uxpct:100 },
+  { name:"Warehouse Specialists (WSI) [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:489, gp:0, complexity:"Simple", type:"Customer", status:"Intake", dod:0, color:"qw", kam:"Ryan Helgason", note:"🟠 On Deck. Low complexity. Subsidiary of Steel King — clean migration path, no Legacy WS dependency.", uxpct:100 },
   { name:"BluLabs Brands [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:380, gp:60444, complexity:"Moderate", type:"Customer", status:"Intake", dod:0, color:"qw", kam:"Rich Reese", note:"🟠 On Deck. Moderate. Multi-tenant vendor flag — vendors serving multiple shippers.", uxpct:100 },
   { name:"Middleby Group", tier:"Tier 1", loads:10340, gp:476559, complexity:"Complex", type:"Type 1+3", status:"On Deck", dod:0, color:"t1", note:"Largest GP. Follett/Middleby meeting 4/21. Imperial Range had bad E3 experience — do not migrate all Middleby at once." },
   { name:"Bridgestone Hosepower", tier:"Tier 1", loads:10491, gp:393484, complexity:"Moderate-Complex", type:"Type 1", status:"On Deck", dod:0, color:"t1", note:"Highest load count. Multi-entity consolidation + catalog cleanup required. 93.5% UX — 26 Vooma loads prevent quick-win classification." },
@@ -654,7 +689,7 @@ const CUSTOMERS = [
     note:"⏸ PAUSED ~6–8 weeks. Resume late July 2026. Leticia Navarro (primary POC) on maternity leave — formal pause. Config spreadsheet partially complete — several critical fields blank. KAM: Spencer Walker.\n\n~2,533 UX loads/yr. Vendor portal — 3 users, ~385 inbound loads/yr. Must-have for go-live.\n⚠️ June constraint — Leticia Navarro (primary POC, 707-448-5151 ext. 109) on maternity leave.\n⚠️ Address book country field uses 'USA' — needs cleanup to 'US' before load.\n\nConfig confirmed: Account WUNDVA · Web Username Wunder-Bar · Rate Flow Standard · Rate Contract WUNDVA · NTE 7 pallets/10,000 lbs/143\" · Origin 2060 Cessna Dr. Ste 100, Vacaville CA 95688 · Prepaid · Pickup 1200–1600 · Delivery 0900–1600 · Fixed Special Instructions: DO NOT DOUBLE STACK FREIGHT · 13-tier FAK = YES · TL Tender = YES · Vendor Management = YES · Forecasting = NO · Spot Quote = NO\nRef numbers: SO Number (required, show on BOL + invoice) · PO Number (required, show on BOL + invoice) — ⚠️ SO Number has 'elewis' as default value — test artifact, needs clearing.\nVendor portal: PO required (TRUE) · SO (FALSE) · Dims required · Max 144\"L/60\"W/40\"H/9,800 lbs/20 qty · 1 carrier rate\nProduct catalog: 12 products (Coffee Makers, Condiment Dispensers, Joe Tap, Machine Parts, PJ-12 Plastic Lid, Pizza Saucer, Q Tea, Tea + variants) — NMFC and NmfcSub fields not populated in product tab, only in NMFC sub-class sheet.\nNMFC sub-class table: 150400 (13-tier) · 118235 (13-tier) · 50970 (13-tier) · 25525 (13-tier) · 156600 (13-tier) · 198080 (13-tier) · 61700 (13-tier) · 133300 (13-tier) · 119610 (4-tier) · 118230 (3-tier)\n\nOpen items:\n⬜ Rate contract + rate flow — confirm in MG/GRE (blank in spreadsheet)\n⬜ PPA % — not set, confirm with Spencer/Pricing\n⬜ Bill To — not configured\n⬜ SO Number default value 'elewis' — clear before go-live\n⬜ Product catalog NMFC/NmfcSub — populate product tab fields\n⬜ Address book country cleanup — USA → US\n⬜ Backup POC for Leticia Navarro\n⬜ TL Tender tab — empty, needs completing if TL Tender is in scope\n⬜ Paul Volkman Begin Transformation — pending Spencer sign-off first" },
   { name:"Banker Wire [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:1025, gp:12704, complexity:"Low", type:"Customer", status:"Paused", dod:1, color:"qw", kam:"Tracy Maaser (AM)", legacyWS:"NO",
     note:"⏸ PAUSED. AM: Tracy Maaser. Discovery and config spreadsheet complete. Path forward TBD." },
-  { name:"IPS [TL Tender]", tier:"Not UX", loads:0, gp:0, complexity:"Low", type:"Process", status:"Complete", color:"t1", mondayStatus:"Live", legacyWS:"N/A", kam:"Ryan Helgason", dod:12, targetGoLive:"May 13, 2026", actualGoLive:"May 20, 2026",
+  { name:"IPS [TL Tender]", tier:"Not UX", loads:0, gp:0, complexity:"Low", type:"Process", status:"Complete", color:"t1", mondayStatus:"Live", legacyWS:"N/A", kam:"Ryan Helgason", dod:12,
     spike:`<div style="font-size:12px;font-weight:500;margin-bottom:4px">✅ LIVE — Deployed 5/12 ~21:45 EDT</div>
 <div style="font-size:11px;color:#73726c;margin-bottom:8px">Owner: Eric Lewis · KAM: Ryan Helgason · Date: 4/27/2026</div>
 
@@ -673,9 +708,9 @@ const CUSTOMERS = [
 ⚠️ Standing program risk: No DEV/QA instance — PROD-only verification accepted for this widget.
 </div>`,
     note:"✅ LIVE — Deployed 5/12. Target Go-Live: May 13. Actual Go-Live: May 20. Process widget — TL Tender. KAM: Ryan Helgason. ⚠️ No DEV/QA instance — PROD-only verification accepted." },
-  { name:"Alto-Shaam [Vendor Management — Feature Add]", tier:"Not UX", loads:0, gp:0, complexity:"Low", type:"Process", status:"Hypercare", dod:9, color:"t2", kam:"Rich Reese", mondayStatus:"Validation", targetGoLive:"Jun 15, 2026", actualGoLive:"Jun 15, 2026",
+  { name:"Alto-Shaam [Vendor Management — Feature Add]", tier:"Not UX", loads:0, gp:0, complexity:"Low", type:"Process", status:"Hypercare", dod:9, color:"t2", kam:"Rich Reese", mondayStatus:"Validation",
     note:"✅ LIVE 6/15/2026. Hypercare. Actual Go-Live: June 15. PV Begin Transformation APPROVED 6/1. Process widget — Feature Add. Separate from completed Bid Management widget. Rich Reese KAM. Intake: Jun 1. Vendor Management feature enablement for existing Alto-Shaam E3 account. Pricing contract review in progress — Rachel Latus. Spike v1.0 complete." },
-  { name:"Alto-Shaam [Bid Management]", tier:"Not UX", loads:1, gp:27, complexity:"Low", type:"Customer", status:"Complete", color:"t2", active:false, kam:"Rich Reese", mondayStatus:"Live", legacyWS:"NO", dod:12, targetGoLive:"May 13, 2026", actualGoLive:"May 13, 2026",
+  { name:"Alto-Shaam [Bid Management]", tier:"Not UX", loads:1, gp:27, complexity:"Low", type:"Customer", status:"Complete", color:"t2", active:false, kam:"Rich Reese", mondayStatus:"Live", legacyWS:"NO", dod:12,
     pvOutreach:"✅ Begin Transformation APPROVED 4/29. ✅ Go-Live APPROVED 5/8. ✅ DEPLOYED 5/12. ✅ LIVE 5/26 — four users received credentials 5/26 afternoon.",
     spike:`<div style="font-size:12px;font-weight:500;margin-bottom:4px">✅ LIVE — 5/26/2026. Four users received credentials 5/26 afternoon.</div>
 <div style="font-size:11px;color:#73726c;margin-bottom:8px">Owner: Eric Lewis · KAM: Rich Reese · Date: 4/22/2026 · Updated: 5/26/2026</div>
@@ -980,4 +1015,4 @@ buildGapTable(document.getElementById("gap-full-tbl"), false);
 renderKanban(); renderQW(); renderTable(); renderKickoff(); renderLifecycle();
 </script>
 </body>
-</html>         
+</html>
