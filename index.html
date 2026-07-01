@@ -621,6 +621,8 @@ const CUSTOMERS = [
     note:"🟡 Spike v1.1 complete. ✅ Jared review done. ✅ Monday card created 5/5. Spencer engaged — email sent 5/5. KAM: Spencer Walker. ~699 UX loads/yr. 100% UX. LTL rate shop + dispatch. Standard rate mode. No integrations, no EDI, no Legacy WS. Clean migration path.\n\nVendor portal active — 84 vendor addresses. Confirm active vendor users with Spencer.\nAllow Quote Dispatch = No — users cannot self-dispatch from quote screen.\nFixed Special Instructions on every BOL: 'DRIVER MUST CHOCK WHEELS' and 'ATTN Receiving: Inspect this shipment and note any potential damage on the BOL'\n\nKey contacts: Spencer Walker (KAM/Evans) · Krystal Blum (Primary) — kblum@ajdoor.com / 715-568-1793 ext. 10 · Carol Prince (Bill-To) — cprince@ajdoor.com\n\nConfirmed config: Account AJMABL · Rate Contract AJMABL · Standard rate flow · PPA 19% · PPA Min $15 · PPA Max $200 · PPA Key PalletRaterConfig40 · PPA Calculation Total $ · NTE 7 pallets/10,000 lbs/143\" · Default Origin 521 Main Street, Bloomer WI 54724 (address conflict — Spencer to confirm) · Default Terms Prepaid · Pickup 0700–1600, Delivery 0800–1600 · Help Email ajmfg@evanstrans.com · Help Phone 800-886-7799\n\nNMFC sub-classes: 34265 (4 subs) and 35540 (8 subs including colon-suffix variant)\n\nUsers to migrate (7): kblum, cprince, jseverson, rfisher, bsarauer, jbohl, chassemer — all @ajdoor.com. kblum = Open Book + Customer Markup; all others = Closed Book + Customer Markup.\n\nOpen items:\n✅ Jared McKeen spike review — complete\n✅ Monday card created — 5/5\n⬜ Spencer — spike review + onboarding spreadsheet (email sent 5/5)\n⬜ Shipping address confirm — Spencer\n⬜ Backup POC for Krystal Blum — Spencer\n⬜ Active vendor user confirmation — Spencer\n⬜ Vendor portal go-live confirmation — Spencer\n⬜ Fixed Special Instructions field in E3 — confirm field exists\n⬜ Customer Markup rate access tier — confirm configurable in E3\n⬜ Paul Volkman Begin Transformation approval — not submitted, early stage" },
   { name:"Newton Beverage Solutions [LTL Rate Shop + Dispatch + Vendor Management]", tier:"Net New", loads:0, gp:0, complexity:"Moderate", type:"Customer", status:"Hypercare", color:"qw", kam:"Spencer Walker", mondayStatus:"Hypercare", dod:9, targetGoLive:"Jun 15, 2026", actualGoLive:"Jun 15, 2026",
     note:"✅ LIVE 6/15/2026. Hypercare. Actual Go-Live: June 15. PV Begin Transformation APPROVED 5/29. NET NEW ONBOARD — not a Project Meridian migration. One-pager format.\n\nKickoff complete 5/21. Demo 6/4 · Training 6/11 · Go-Live 6/15.\nPrimary contact: Corey Richardson\nSales lead: Implementation Team. Spencer Walker to be added.\nPPA: N/A\n\nOpen items:\n✅ Paul Volkman Begin Transformation — APPROVED 5/29\n✅ One-pager — Francesca/KAM review complete\n✅ E3 config — loaded and validated\n✅ Address book — loaded\n✅ Paul Volkman Go-Live approval — obtained\n✅ KAM briefed and aligned\n✅ E3 config loaded and validated\n✅ Acceptance criteria met\n✅ Customer communication sent\n⬜ Hypercare period completed\n⬜ Legacy access decommissioned\n⬜ Customer profile updated in artifact library" },
+  { name:"Blachford Acoustics [Net New]", tier:"Net New", loads:0, gp:0, complexity:"Low", type:"Net New", status:"In Execution", dod:5, color:"qw", kam:"TBD", targetGoLive:"Jul 13, 2026",
+    note:"🔵 In Execution. Net New — Managed Light customer. Added 6/30/2026. Vendor portal requires TL Tender button. Tentative go-live: Jul 13, 2026.\n\n✅ Discovery document — complete\n✅ Onboarding doc — complete\n✅ Gap Analysis — complete\n✅ Enhance doc — complete\n✅ RWC integration config — complete\n✅ Invoicing (Special Rules) — complete\n✅ Reporting (Special Needs) — complete\n\nOpen items:\n⬜ Paul Volkman Begin Transformation approval — pending\n⬜ Paul Volkman Go-Live approval — pending\n⬜ Customer training/communication — pending" },
   { name:"ASI Doors [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:1161, gp:30591, complexity:"Moderate", type:"Customer", status:"In Execution", color:"qw", kam:"Eric Bollis (AM) · Melissa Reich (Ops)", legacyWS:"NO", dod:5, targetGoLive:"Jul 8, 2026",
     note:"🔵 Discovery. AM: Eric Bollis. Ops: Melissa Reich. KAM: ⚠️ Not yet assigned — DM Jared McKeen.\n\n~1,161 UX loads/yr: 728 customer-initiated · 319 Vooma · 105 Evans ops · 9 EDI artifact.\nSpike Doc v1.0 complete. Config spreadsheet v1.0 complete. Address book: 5,500+ records loaded.\nConfig doc out to Melissa Reich + Eric Bollis — awaiting return.\nDefault Special Instructions: DO NOT STACK FREIGHT / ALL SHIPMENTS REQUIRE 24HR NOTIFY CONSIGNEE\nLegacy WS Post-Migration: NO — Vooma is Evans-owned infrastructure, excluded from customer transformation assessment.\n\nConfig: Account ASIDMI · Web Username WebserviceUserASIDOORSV4 · Rate Mode Standard · PPA Force Yes · PPA 0.5% Rate Total · NTE 4 pallets/19,999 lbs/240\" · Origin 5848 N 95th Ct, Milwaukee WI 53225 · Prepaid · Pickup 1200–1600 · Delivery 0600–1600 · Notification ASIDoors@evanstrans.com · Help 800-886-7799\n\nOpen items:\n⬜ KAM/AM assignment — DM Jared McKeen\n⬜ Config spreadsheet return — Melissa Reich / Eric Bollis\n⬜ MG contract name + rate flow — confirm in MG\n⬜ Bill To — not set in Legacy UX\n⬜ Vendor portal scope — Luis.Eucede@4frontes.com\n⬜ Product catalog content — audit with AM\n⬜ Paul Volkman Begin Transformation approval — pending spike review" },
   { name:"Clark Reliance [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:4175, gp:0, complexity:"Moderate", type:"Customer", status:"Paused", dod:1, color:"qw", kam:"Rich Reese (KAM)", legacyWS:"NO",
@@ -959,26 +961,4 @@ function switchView(id, btn) {
   document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));
   document.querySelectorAll(".nav button").forEach(b=>b.classList.remove("active"));
   document.getElementById("v-"+id).classList.add("active");
-  btn.classList.add("active");
-}
-
-function toggleBlockers(header) {
-  const body = document.getElementById('blocker-body');
-  const chevron = document.getElementById('blocker-chevron');
-  const open = body.style.display === 'block';
-  body.style.display = open ? 'none' : 'block';
-  chevron.style.transform = open ? '' : 'rotate(180deg)';
-}
-
-function toggleP0(el) {
-  const d = document.getElementById("p0-detail");
-  d.classList.toggle("open");
-  el.textContent = d.classList.contains("open") ? "Hide gap backlog ▴" : "Show gap backlog ▾";
-}
-
-buildGapTable(document.getElementById("gap-inline-tbl"), true);
-buildGapTable(document.getElementById("gap-full-tbl"), false);
-renderKanban(); renderQW(); renderTable(); renderKickoff(); renderLifecycle();
-</script>
-</body>
-</html>      
+  b
