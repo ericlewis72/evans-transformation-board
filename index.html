@@ -10,7 +10,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .wrap { max-width: 1200px; margin: 0 auto; padding: 0 0 2rem; }
 
 /* HEADER */
-.board-header { background: #0B5362; color: #fff; padding: 1.25rem 1.5rem 1rem; border-radius: 0 0 12px 12px; margin-bottom: 1.25rem; }
+.board-header { background: #393E46; color: #fff; padding: 1.25rem 1.5rem 1rem; border-radius: 0 0 12px 12px; margin-bottom: 1.25rem; }
 .board-header h1 { font-size: 17px; font-weight: 600; color: #fff; margin-bottom: 3px; letter-spacing: 0.01em; }
 .board-header .subtitle { font-size: 11px; color: rgba(255,255,255,0.65); margin-bottom: 0; }
 
@@ -19,8 +19,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .p0-badge { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 10px; background: #BA7517; color: #fff; }
 .p0-chips { display: flex; gap: 7px; margin-top: 8px; flex-wrap: wrap; }
 .p0-chip { font-size: 11px; padding: 2px 9px; border-radius: 6px; background: #fff; border: 0.5px solid #d3d1c7; color: #5f5e5a; }
-.p0-toggle { font-size: 11px; color: #0B5362; cursor: pointer; padding: 3px 8px; border-radius: 4px; border: 0.5px solid #0B5362; margin-top: 8px; display: inline-block; font-weight: 500; }
-.p0-toggle:hover { background: #0B5362; color: #fff; }
+.p0-toggle { font-size: 11px; color: #393E46; cursor: pointer; padding: 3px 8px; border-radius: 4px; border: 0.5px solid #393E46; margin-top: 8px; display: inline-block; font-weight: 500; }
+.p0-toggle:hover { background: #393E46; color: #fff; }
 .p0-detail { display: none; margin-top: .75rem; padding-top: .75rem; border-top: 0.5px solid #d4a020; }
 .p0-detail.open { display: block; }
 
@@ -28,14 +28,14 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 0 1rem 1.25rem; }
 .stat { background: #fff; border-radius: 8px; padding: .75rem 1rem; border: 0.5px solid #d3d1c7; }
 .stat .lbl { font-size: 11px; color: #73726c; margin-bottom: 4px; }
-.stat .val { font-size: 20px; font-weight: 600; color: #0B5362; }
+.stat .val { font-size: 20px; font-weight: 600; color: #393E46; }
 .stat .sub { font-size: 11px; color: #73726c; margin-top: 2px; }
 
 /* NAV */
 .nav { display: flex; gap: 6px; margin: 0 1rem 1.25rem; flex-wrap: wrap; }
 .nav button { font-size: 12px; padding: 5px 13px; border-radius: 20px; border: 0.5px solid #b4b2a9; background: #fff; color: #73726c; cursor: pointer; transition: all .15s; }
-.nav button.active { background: #0B5362; color: #fff; border-color: transparent; }
-.nav button:hover:not(.active) { border-color: #0B5362; color: #0B5362; }
+.nav button.active { background: #393E46; color: #fff; border-color: transparent; }
+.nav button:hover:not(.active) { border-color: #393E46; color: #393E46; }
 .view { display: none; padding: 0 1rem; }
 .view.active { display: block; }
 
@@ -53,11 +53,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 
 /* KANBAN */
 .kanban { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 5px; overflow-x: auto; }
-.col-header { font-size: 10px; font-weight: 600; color: #fff; padding: 4px 5px; border-radius: 4px; background: #0B5362; text-align: center; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: 0.02em; }
+.col-header { font-size: 10px; font-weight: 600; color: #fff; padding: 4px 5px; border-radius: 4px; background: #393E46; text-align: center; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: 0.02em; }
 .col-header.paused { background: #7a7a72; }
 .col-cards { display: flex; flex-direction: column; gap: 4px; }
 .kcard { border: 0.5px solid #d3d1c7; border-radius: 6px; padding: 6px 7px; background: #fff; cursor: pointer; transition: border-color .15s, box-shadow .15s; }
-.kcard:hover { border-color: #0B5362; box-shadow: 0 1px 4px rgba(57,62,70,0.10); }
+.kcard:hover { border-color: #393E46; box-shadow: 0 1px 4px rgba(57,62,70,0.10); }
 .kcard.p0 { border-color: #BA7517; background: #fef8e8; }
 .kcard.qw { border-color: #00A984; }
 .kcard-name { font-size: 11px; font-weight: 500; line-height: 1.3; }
@@ -65,7 +65,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 
 /* TABLE */
 table.main { width: 100%; border-collapse: collapse; font-size: 12px; }
-table.main thead th { font-size: 11px; font-weight: 600; color: #fff; text-align: left; padding: 6px 8px; background: #0B5362; position: sticky; top: 0; }
+table.main thead th { font-size: 11px; font-weight: 600; color: #fff; text-align: left; padding: 6px 8px; background: #393E46; position: sticky; top: 0; }
 table.main tbody td { padding: 5px 8px; border-bottom: 0.5px solid #d3d1c7; vertical-align: middle; }
 table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 .gp-bar-wrap { display: flex; align-items: center; gap: 5px; }
@@ -92,14 +92,14 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 .koff-rule { display: flex; align-items: flex-start; gap: 10px; padding: .6rem 0; border-bottom: 0.5px solid #d3d1c7; font-size: 12px; }
 .koff-rule:last-child { border: none; }
 .step-grid { display: grid; grid-template-columns: 24px 1fr 90px 1fr; gap: 0; font-size: 12px; margin-bottom: 1rem; border: 0.5px solid #d3d1c7; border-radius: 6px; overflow: hidden; }
-.step-head { font-size: 11px; font-weight: 600; color: #fff; padding: 5px 8px; border-bottom: 0.5px solid #b4b2a9; background: #0B5362; }
+.step-head { font-size: 11px; font-weight: 600; color: #fff; padding: 5px 8px; border-bottom: 0.5px solid #b4b2a9; background: #393E46; }
 .step-cell { padding: 5px 8px; border-bottom: 0.5px solid #d3d1c7; border-right: 0.5px solid #d3d1c7; }
 .step-cell:last-child { border-right: none; }
 .step-num { font-weight: 500; color: #73726c; font-size: 11px; }
 
 /* LIFECYCLE */
 .lc-item { display: flex; align-items: flex-start; gap: 12px; padding: .7rem 0; border-bottom: 0.5px solid #d3d1c7; }
-.lc-num { min-width: 22px; height: 22px; border-radius: 50%; background: #0B5362; color: #fff; border: none; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; flex-shrink: 0; }
+.lc-num { min-width: 22px; height: 22px; border-radius: 50%; background: #393E46; color: #fff; border: none; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; flex-shrink: 0; }
 .check-item { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; color: #73726c; padding: 4px 0; border-bottom: 0.5px solid #d3d1c7; }
 .check-item:last-child { border: none; }
 .check-box { width: 14px; height: 14px; border: 0.5px solid #b4b2a9; border-radius: 3px; flex-shrink: 0; margin-top: 1px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 9px; }
@@ -108,10 +108,10 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 /* DETAIL PANEL */
 .detail-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0); pointer-events: none; z-index: 10; transition: background .2s; }
 .detail-overlay.open { background: rgba(0,0,0,0.25); pointer-events: all; }
-.detail-panel { position: fixed; right: -420px; top: 0; bottom: 0; width: 380px; background: #fff; border-left: 2px solid #0B5362; overflow-y: auto; transition: right .25s; padding: 1.25rem; z-index: 11; }
+.detail-panel { position: fixed; right: -420px; top: 0; bottom: 0; width: 380px; background: #fff; border-left: 2px solid #393E46; overflow-y: auto; transition: right .25s; padding: 1.25rem; z-index: 11; }
 .detail-panel.open { right: 0; }
 .detail-close { float: right; cursor: pointer; font-size: 18px; color: #73726c; line-height: 1; padding: 2px 4px; }
-.detail-close:hover { color: #0B5362; }
+.detail-close:hover { color: #393E46; }
 .d-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 0.5px solid #d3d1c7; font-size: 13px; }
 .d-row .dl { color: #73726c; }
 .d-row .dv { font-weight: 500; text-align: right; max-width: 58%; }
@@ -232,7 +232,7 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 <div class="wrap">
   <div class="board-header">
     <h1>Evans Transformation Board</h1>
-    <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 7/1/2026 9:00 AM · AM — synced from Monday.com</div>
+    <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 7/1/2026 6:45 PM · PM — synced from Monday.com</div>
   </div>
 
   <!-- P0 BANNER -->
@@ -627,7 +627,7 @@ const CUSTOMERS = [
     note:"🔵 Discovery. AM: Eric Bollis. Ops: Melissa Reich. KAM: ⚠️ Not yet assigned — DM Jared McKeen.\n\n~1,161 UX loads/yr: 728 customer-initiated · 319 Vooma · 105 Evans ops · 9 EDI artifact.\nSpike Doc v1.0 complete. Config spreadsheet v1.0 complete. Address book: 5,500+ records loaded.\nConfig doc out to Melissa Reich + Eric Bollis — awaiting return.\nDefault Special Instructions: DO NOT STACK FREIGHT / ALL SHIPMENTS REQUIRE 24HR NOTIFY CONSIGNEE\nLegacy WS Post-Migration: NO — Vooma is Evans-owned infrastructure, excluded from customer transformation assessment.\n\nConfig: Account ASIDMI · Web Username WebserviceUserASIDOORSV4 · Rate Mode Standard · PPA Force Yes · PPA 0.5% Rate Total · NTE 4 pallets/19,999 lbs/240\" · Origin 5848 N 95th Ct, Milwaukee WI 53225 · Prepaid · Pickup 1200–1600 · Delivery 0600–1600 · Notification ASIDoors@evanstrans.com · Help 800-886-7799\n\nOpen items:\n⬜ KAM/AM assignment — DM Jared McKeen\n⬜ Config spreadsheet return — Melissa Reich / Eric Bollis\n⬜ MG contract name + rate flow — confirm in MG\n⬜ Bill To — not set in Legacy UX\n⬜ Vendor portal scope — Luis.Eucede@4frontes.com\n⬜ Product catalog content — audit with AM\n⬜ Paul Volkman Begin Transformation approval — pending spike review" },
   { name:"Clark Reliance [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:4175, gp:0, complexity:"Moderate", type:"Customer", status:"Paused", dod:1, color:"qw", kam:"Rich Reese (KAM)", legacyWS:"NO",
     note:"⏸ PAUSED. KAM: Rich Reese. Moved to Paused 6/12 — multi-tenant scope confirmation pending. Target Go-Live: Jun 17. Intake: Jun 1.\n~4,175 loads/yr. Account: CLARST · Web Username: WebserviceUserCLARKRELIANCEV4\n\nHQ: 16633 Foltz Parkway, Strongsville OH 44149 · Phone: 4405721500 · Email: traffic@clarkreliance.com\nPrimary contact: Shipping Department\n\n⚠️ FLAG 1 — MULTI-TENANT: 11 MG accounts under WebserviceUserCLARKRELIANCEV4: ANDEST, BOEROF, CLARST, EASTOF, ENERCA, ERNSSP, FILTST, INSTST, MANNOF, NATCOF, STROOF. Confirm active scope with Steve Simms.\n⚠️ FLAG 2 — CUSTOM DOCMOSIS BOLs: 5 templates (BOL_CLARK.doc, BOLCMS.doc, ShipUnitHaz.doc, CommercialInvoice.doc, BarcodeLabelLarge.doc). E3 doesn't natively support. Proposed path: RWC calls Docmosis Cloud on dispatch. Backlog spike required.\n⚠️ FLAG 3 — CARRIER-SPECIFIC BILL TO ROUTING: ABFS, CTII, FXFE, FXNL, ODFL, RLCA, WARD → CLARBLT | Any SCAC, CNWY, DAFG → EVANS | ODFL uses SMC3 BOL type.\n\nConfig: Rate Mode Standard · PPA 0.9% · NTE: Max Length 300\" / Max Height 300\" / Max Width 300\" / Max Pallet 30 / Max Weight 30,000 lbs · Preferred carrier: CLARBLT · Pickup/Delivery: 1000–1600 (confirm)\nFeatures: Vendor Management (use template) · Spot Quote (use template) · Forecasting (use template) · TL Tender: NO\nRef numbers: Sales Order Number required (TRUE / ShowOnBOL)\n\nVendor portal (public-vendor): PO Number required (TRUE) · SO Number (FALSE) · Dims required · Max 144\"L / 60\"W / 40\"H / 9,800 lbs / 20 qty · 1 carrier rate · Required contact + time window on origin and destination\nProduct catalog: ~139 products loaded. Extensive NMFC sub-class table.\nAddress book: ~88 consignee records loaded.\n\nOpen items:\n⬜ Multi-tenant account scope — confirm active accounts with Steve Simms\n⬜ Vendor portal scope — confirm with Steve Simms\n⬜ Pickup/delivery windows — confirm 1000–1600 is correct\n⬜ Docmosis BOL path — RWC spike required, pending Kev/team alignment\n⬜ Paul Volkman Begin Transformation approval — not submitted" },
-  { name:"FWE (Food Warming Equipment) [LTL Rate Shop + Dispatch + Integration]", tier:"Quick Win", loads:0, gp:0, complexity:"High/Complex", type:"Integration", status:"Discovery", dod:1, color:"int", kam:"Shawn Cross",
+  { name:"FWE (Food Warming Equipment) [LTL Rate Shop + Dispatch + Integration]", tier:"Quick Win", loads:0, gp:0, complexity:"High/Complex", type:"Integration", status:"Transformation Design", dod:4, color:"int", kam:"Shawn Cross",
     note:"🔵 Discovery. Added 6/8. KAM: Shawn Cross.\n\n⚠️ COMPLEX — Dual workstream required: active integration + UX user migration.\nIntegration profile: ~121 integration-created loads/month via active integration. Integration assessment required before timeline can be set.\nShawn Cross gathering integration details from customer.\n\nOpen items:\n⬜ Integration profile assessment — Shawn Cross gathering details\n⬜ UX user migration scope — confirm with Shawn\n⬜ Timeline TBD — cannot set until integration assessment complete\n⬜ Spike doc — not started\n⬜ Paul Volkman Begin Transformation approval — not submitted" },
   { name:"Octopi Brewing [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:450, gp:15887, complexity:"Simple", type:"Customer", status:"Paused", dod:1, color:"qw", kam:"Craig Curwick (KAM)",
     note:"⏸ PAUSED. KAM: Craig Curwick. AM: Wes Cuomo. Spike v1.0 + config complete. 308-record address book loaded. Stuck — awaiting PV approval.\n\nOpen items:\n⬜ Paul Volkman Begin Transformation approval — pending" },
@@ -636,7 +636,7 @@ const CUSTOMERS = [
   { name:"Rosco Laboratories [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:199, gp:13397, complexity:"Simple", type:"Customer", status:"In Execution", dod:5, color:"qw", kam:"Mike Stiglich (AM)", note:"🟠 On Deck. Low complexity. Quick win.", uxpct:100 },
   { name:"Warehouse Specialists (WSI) [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:489, gp:0, complexity:"Simple", type:"Customer", status:"Intake", dod:1, color:"qw", kam:"Ryan Helgason", note:"🟠 On Deck. Low complexity. Subsidiary of Steel King — clean migration path, no Legacy WS dependency.", uxpct:100 },
   { name:"BluLabs Brands [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:380, gp:60444, complexity:"Moderate", type:"Customer", status:"Intake", dod:0, color:"qw", kam:"Rich Reese", note:"🟠 On Deck. Moderate. Multi-tenant vendor flag — vendors serving multiple shippers.", uxpct:100 },
-  { name:"Dollamur [Website Rate API Integration]", tier:"Quick Win", loads:2419, gp:130000, complexity:"Moderate", type:"Integration", status:"Discovery", dod:1, color:"int", kam:"Shawn Cross", legacyWS:"NO",
+  { name:"Dollamur [Website Rate API Integration]", tier:"Quick Win", loads:2419, gp:130000, complexity:"Moderate", type:"Integration", status:"Transformation Design", dod:4, color:"int", kam:"Shawn Cross", legacyWS:"NO",
     note:"🔵 Discovery. Website Rate API Integration. KAM: Shawn Cross. Intake: Jun 1. Complexity: Moderate. Legacy WS active post-migration: NO. Spike v1.0 + config complete.\n\nDollamur Sport Surfaces — sport flooring/mat systems for gymnastics, MMA, wrestling facilities. ~2,419 UX loads/yr on Legacy UX (DOLLFO) + ~1,867 other-method loads (majority manual TMS entry by Evans ops — explicitly out of scope for this transformation) + 23 Vooma + 17 EDI 210 inbound invoice conversion. No active customer-side API integration today. Primary UX users: cassie.schuler, sinead.ireland. Address book: 278 records. Product catalog: 5 entries. Fixed Special Instructions: 'Accessories are included in box'. Two NMFCs with density-based sub-class rules. 30 active customer users to migrate with existing rate access.\n\nParallel workstream: Dollamur dev team integrating customer-facing quote tool against E3 POST /v2/rates (greenfield) — EVACAR/no-rate responses surface as 'Call for Quote'. API schema sent to Shawn 6/4. Technical contact TBD.\n\nArtifacts on file: Spike Doc (DollamurSportSurfaces_SpikeDoc_v1.docx), Onboarding doc (20260604_Customer_DOLLFO_customer-onboarding.xlsx).\n\nOpen items:\n⬜ Onboarding doc — in progress\n⬜ Customer training/communication\n⬜ Paul Volkman Begin Transformation approval — not submitted\n⬜ Paul Volkman Go-Live approval — not submitted" },
   { name:"Trinity Industries [Integration Transformation]", tier:"Quick Win", loads:10121, gp:0, complexity:"High", type:"Integration", status:"Transformation Design", dod:4, color:"int", kam:"Shawn Cross (KAM) / Mike Stiglich (AM)", legacyWS:"YES",
     note:"🔵 Transformation Design. Integration Transformation. KAM: Shawn Cross (KAM) / Mike Stiglich (AM). Intake: Jun 17. Complexity: High. Legacy WS active post-migration: YES. Internal status: Waiting on Data.\n\nHigh-volume, fully-integrated customer — zero Legacy UX usage. ~7,521 loads/yr via Legacy Web Services integration (webserviceUserTrinityV4) + ~2,600 loads/yr via trin.net users with direct MG dispatch access. Dev team (Charles Dam, Aditya Lakshmi Narayanan), coordinated by Kev Foster and Brian Franzwa, building net-new integration against E3 ShipperAPI (POST /v2/rates, POST /v2/shipments). Successful end-to-end E3 PROD booking confirmed 6/16/2026.\n\nConsolidation: five MG entities (TRINDAP, TRINDAL, TRINDAPC, TRINDAIB, TRINFR) merging into single renamed 'Trinity Industries' parent account per Dan Bertino decision 6/23/2026. Child entities inactivate once outstanding loads reach Delivered/Invoiced.\n\nArtifacts on file: Decision Brief (Trinity_DecisionBrief_v1.0_3.docx), Spike Doc (Trinity_SpikeDoc_v1_0.docx), Config Doc (Trinity_ConfigDoc_v1_0.xlsx). Gap Analysis and headless E3 integration complete. Invoicing/Reporting special-needs review complete — no special reporting needs per Mitch Bruch.\n\nOpen items:\n⬜ Customer training/communication\n⬜ Paul Volkman Begin Transformation approval — not submitted\n⬜ Paul Volkman Go-Live approval — not submitted" },
