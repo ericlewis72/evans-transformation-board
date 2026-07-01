@@ -636,12 +636,12 @@ const CUSTOMERS = [
   { name:"Rosco Laboratories [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:199, gp:13397, complexity:"Simple", type:"Customer", status:"In Execution", dod:5, color:"qw", kam:"Mike Stiglich (AM)", note:"🟠 On Deck. Low complexity. Quick win.", uxpct:100 },
   { name:"Warehouse Specialists (WSI) [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:489, gp:0, complexity:"Simple", type:"Customer", status:"Intake", dod:1, color:"qw", kam:"Ryan Helgason", note:"🟠 On Deck. Low complexity. Subsidiary of Steel King — clean migration path, no Legacy WS dependency.", uxpct:100 },
   { name:"BluLabs Brands [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:380, gp:60444, complexity:"Moderate", type:"Customer", status:"Intake", dod:0, color:"qw", kam:"Rich Reese", note:"🟠 On Deck. Moderate. Multi-tenant vendor flag — vendors serving multiple shippers.", uxpct:100 },
-  { name:"Dollamur [Website Rate API Integration]", tier:"Quick Win", loads:2419, gp:0, complexity:"Moderate", type:"Integration", status:"Discovery", dod:1, color:"int", kam:"Shawn Cross", legacyWS:"NO",
-    note:"🔵 Discovery. Website Rate API Integration. KAM: Shawn Cross. Intake: Jun 1. Complexity: Moderate. Legacy WS active post-migration: NO.\n\nDollamur Sport Surfaces — sport flooring/mat systems for gymnastics, MMA, wrestling facilities. ~2,419 UX loads/yr on Legacy UX (DOLLFO) + ~1,867 other-method loads (majority manual TMS entry by Evans ops — explicitly out of scope for this transformation) + 23 Vooma + 17 EDI 210 inbound invoice conversion. No active customer-side API integration today. Primary UX users: cassie.schuler, sinead.ireland. Address book: 278 records. Product catalog: 5 entries. Fixed Special Instructions: 'Accessories are included in box'. Two NMFCs with density-based sub-class rules. 30 active customer users to migrate with existing rate access.\n\nParallel workstream: Dollamur dev team integrating customer-facing quote tool against E3 POST /v2/rates — EVACAR/no-rate responses surface as 'Call for Quote'.\n\nArtifacts on file: Spike Doc (DollamurSportSurfaces_SpikeDoc_v1.docx), Onboarding doc (20260604_Customer_DOLLFO_customer-onboarding.xlsx).\n\nOpen items:\n⬜ Onboarding doc — in progress\n⬜ Customer training/communication\n⬜ Paul Volkman Begin Transformation approval — not submitted\n⬜ Paul Volkman Go-Live approval — not submitted" },
+  { name:"Dollamur [Website Rate API Integration]", tier:"Quick Win", loads:2419, gp:130000, complexity:"Moderate", type:"Integration", status:"Discovery", dod:1, color:"int", kam:"Shawn Cross", legacyWS:"NO",
+    note:"🔵 Discovery. Website Rate API Integration. KAM: Shawn Cross. Intake: Jun 1. Complexity: Moderate. Legacy WS active post-migration: NO. Spike v1.0 + config complete.\n\nDollamur Sport Surfaces — sport flooring/mat systems for gymnastics, MMA, wrestling facilities. ~2,419 UX loads/yr on Legacy UX (DOLLFO) + ~1,867 other-method loads (majority manual TMS entry by Evans ops — explicitly out of scope for this transformation) + 23 Vooma + 17 EDI 210 inbound invoice conversion. No active customer-side API integration today. Primary UX users: cassie.schuler, sinead.ireland. Address book: 278 records. Product catalog: 5 entries. Fixed Special Instructions: 'Accessories are included in box'. Two NMFCs with density-based sub-class rules. 30 active customer users to migrate with existing rate access.\n\nParallel workstream: Dollamur dev team integrating customer-facing quote tool against E3 POST /v2/rates (greenfield) — EVACAR/no-rate responses surface as 'Call for Quote'. API schema sent to Shawn 6/4. Technical contact TBD.\n\nArtifacts on file: Spike Doc (DollamurSportSurfaces_SpikeDoc_v1.docx), Onboarding doc (20260604_Customer_DOLLFO_customer-onboarding.xlsx).\n\nOpen items:\n⬜ Onboarding doc — in progress\n⬜ Customer training/communication\n⬜ Paul Volkman Begin Transformation approval — not submitted\n⬜ Paul Volkman Go-Live approval — not submitted" },
   { name:"Trinity Industries [Integration Transformation]", tier:"Quick Win", loads:10121, gp:0, complexity:"High", type:"Integration", status:"Transformation Design", dod:4, color:"int", kam:"Shawn Cross (KAM) / Mike Stiglich (AM)", legacyWS:"YES",
     note:"🔵 Transformation Design. Integration Transformation. KAM: Shawn Cross (KAM) / Mike Stiglich (AM). Intake: Jun 17. Complexity: High. Legacy WS active post-migration: YES. Internal status: Waiting on Data.\n\nHigh-volume, fully-integrated customer — zero Legacy UX usage. ~7,521 loads/yr via Legacy Web Services integration (webserviceUserTrinityV4) + ~2,600 loads/yr via trin.net users with direct MG dispatch access. Dev team (Charles Dam, Aditya Lakshmi Narayanan), coordinated by Kev Foster and Brian Franzwa, building net-new integration against E3 ShipperAPI (POST /v2/rates, POST /v2/shipments). Successful end-to-end E3 PROD booking confirmed 6/16/2026.\n\nConsolidation: five MG entities (TRINDAP, TRINDAL, TRINDAPC, TRINDAIB, TRINFR) merging into single renamed 'Trinity Industries' parent account per Dan Bertino decision 6/23/2026. Child entities inactivate once outstanding loads reach Delivered/Invoiced.\n\nArtifacts on file: Decision Brief (Trinity_DecisionBrief_v1.0_3.docx), Spike Doc (Trinity_SpikeDoc_v1_0.docx), Config Doc (Trinity_ConfigDoc_v1_0.xlsx). Gap Analysis and headless E3 integration complete. Invoicing/Reporting special-needs review complete — no special reporting needs per Mitch Bruch.\n\nOpen items:\n⬜ Customer training/communication\n⬜ Paul Volkman Begin Transformation approval — not submitted\n⬜ Paul Volkman Go-Live approval — not submitted" },
   { name:"Integer Corp DBA Greatbatch (INTECL2) [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:2418, gp:0, complexity:"Low", type:"Customer", status:"Intake", dod:0, color:"qw", kam:"Rich Reese", legacyWS:"NO",
-    note:"🟠 Intake. LTL Rate Shop + Dispatch. KAM: Rich Reese. Complexity: Low. Legacy WS active post-migration: NO. Added 7/1.\n\nStandalone MG entity INTECL2 (WS account INTEGER2). ~2,418 loads/yr: 1,175 Legacy UX (WebserviceUserINTEGERCORPV4) · 1,050 Vooma (OCR/XML → proxy WS) · 28 EVA EZ Loader (EDI-210 conversion) · 165 CSR manual. Mode split: LTL 86% / TL 9% / Expedite 2%. 11 bill-to carriers (CNWY → EVANS Third Party; all others → INTEGER C/O EVANS TRANSPORTATION). 1,509 address book records. No product catalog.\n\nTargeted outcome: Integer Corp staff and Evans CSRs dispatch via E3 portal (LTL Rate Shop + Dispatch), replacing deprecated Legacy UX. Vooma OCR translation and EVA EZ Loader continue unchanged via proxy WS — no external re-pointing required.\n\nArtifacts drafted: Discovery doc (INTEGER_SpikeDoc_v1_1.docx), Onboarding doc (INTEGER_customer-onboarding_v1_0.xlsx). Gap Analysis, Enhance doc, RWC integration config, Invoicing (Special Rules), and Reporting (Special Needs) all complete.\n\nOpen items:\n⬜ Discovery document — finalize\n⬜ Onboarding doc — finalize\n⬜ Customer training/communication\n⬜ Paul Volkman Begin Transformation approval — not submitted\n⬜ Paul Volkman Go-Live approval — not submitted" },
+    note:"🟠 Intake. LTL Rate Shop + Dispatch. KAM: Rich Reese. Complexity: Low. Legacy WS active post-migration: NO. Added 7/1. Note: distinct from 'Integer Parent' (Tier 3 backlog) — separate standalone entity.\n\nStandalone MG entity INTECL2 (WS account INTEGER2). ~2,418 loads/yr: 1,175 Legacy UX (WebserviceUserINTEGERCORPV4) · 1,050 Vooma (OCR/XML → proxy WS) · 28 EVA EZ Loader (EDI-210 conversion) · 165 CSR manual. Mode split: LTL 86% / TL 9% / Expedite 2%. 11 bill-to carriers (CNWY → EVANS Third Party; all others → INTEGER C/O EVANS TRANSPORTATION). 1,509 address book records. No product catalog.\n\nTargeted outcome: Integer Corp staff and Evans CSRs dispatch via E3 portal (LTL Rate Shop + Dispatch), replacing deprecated Legacy UX. Vooma OCR translation and EVA EZ Loader continue unchanged via proxy WS — no external re-pointing required.\n\nArtifacts drafted: Discovery doc (INTEGER_SpikeDoc_v1_1.docx), Onboarding doc (INTEGER_customer-onboarding_v1_0.xlsx). Gap Analysis, Enhance doc, RWC integration config, Invoicing (Special Rules), and Reporting (Special Needs) all complete.\n\nOpen items:\n⬜ Discovery document — finalize\n⬜ Onboarding doc — finalize\n⬜ Customer training/communication\n⬜ Paul Volkman Begin Transformation approval — not submitted\n⬜ Paul Volkman Go-Live approval — not submitted" },
   { name:"Middleby Group", tier:"Tier 1", loads:10340, gp:476559, complexity:"Complex", type:"Type 1+3", status:"On Deck", dod:0, color:"t1", note:"Largest GP. Follett/Middleby meeting 4/21. Imperial Range had bad E3 experience — do not migrate all Middleby at once." },
   { name:"Bridgestone Hosepower", tier:"Tier 1", loads:10491, gp:393484, complexity:"Moderate-Complex", type:"Type 1", status:"On Deck", dod:0, color:"t1", note:"Highest load count. Multi-entity consolidation + catalog cleanup required. 93.5% UX — 26 Vooma loads prevent quick-win classification." },
   { name:"Maxon Lift", tier:"Tier 1", loads:4103, gp:280634, complexity:"Moderate", type:"Type 1", status:"On Deck", dod:0, color:"t1", note:"Strong candidate. Outbound UX, UI improvement value prop. 88% UX — 13 Vooma, 6 Manual loads prevent quick-win classification." },
@@ -913,4 +913,80 @@ function openP0Detail() {
     <table style="width:100%;border-collapse:collapse;font-size:11px"><tbody>
       ${GAPS.filter(g=>g.state!=="complete").map(g=>`<tr>
         <td style="padding:3px 6px;width:24px">${typeof g.pri==="number"?`<span class="gap-pri ${priC(g.pri)}" style="width:16px;height:16px;font-size:9px">${g.pri}</span>`:""}</td>
-        <td style="pa
+        <td style="padding:3px 6px;font-weight:500">${g.area}</td>
+        <td style="padding:3px 6px">${gapBadge(g.state)}</td></tr>`).join("")}
+    </tbody></table>`;
+  document.getElementById("overlay").classList.add("open");
+  document.getElementById("detail-panel").classList.add("open");
+}
+
+function openDetailByName(name) { const c = CUSTOMERS.find(x=>x.name===name); if(c) openDetail(c); }
+
+function openDetail(c) {
+  if (typeof c === "string") c = JSON.parse(c);
+  const isQW = c.color === "qw";
+  document.getElementById("detail-content").innerHTML = `
+    <button class="detail-close" onclick="closeDetail()">×</button>
+    <div style="font-size:15px;font-weight:500;padding-right:28px;line-height:1.3;margin-bottom:6px">${c.name}</div>
+    <div style="margin-bottom:.75rem">
+      <span class="pill ${pillC(c.color)}">${c.tier}</span>
+      <span class="pill pill-mod" style="margin-left:3px">${c.type}</span>
+      <span class="pill ${cxC(c.complexity)}" style="margin-left:3px">${c.complexity}</span>
+    </div>
+    ${c.active?`<div class="success-b">✅ LIVE — Credentials delivered 5/26. Actual go-live: 5/13. — Four users received credentials.</div>`:""}
+    ${isQW?`<div class="success-b">First migration candidate — stand up in E3 quietly, validate internally, then demo to customer.</div>`:""}
+    <div style="margin:.75rem 0">
+      <div class="d-row"><span class="dl">Loads</span><span class="dv">${c.loads>0?c.loads.toLocaleString():'—'}</span></div>
+      <div class="d-row"><span class="dl">Gross profit</span><span class="dv">${fmt(c.gp)}</span></div>
+      ${c.uxpct!==undefined?`<div class="d-row"><span class="dl">% UX</span><span class="dv">${c.uxpct}%</span></div>`:""}
+      ${c.kam?`<div class="d-row"><span class="dl">KAM</span><span class="dv">${c.kam}</span></div>`:""}
+      ${c.mondayStatus?`<div class="d-row"><span class="dl">monday.com status</span><span class="dv">${c.mondayStatus}</span></div>`:""}
+      ${c.legacyWS?`<div class="d-row"><span class="dl">Legacy WS active post-migration</span><span class="dv">${c.legacyWS}</span></div>`:""}
+      ${c.pvOutreach?`<div class="d-row"><span class="dl">Paul Volkman</span><span class="dv" style="color:#854F0B">${c.pvOutreach}</span></div>`:""}
+      <div class="d-row"><span class="dl">Status</span><span class="dv">${c.status}</span></div>
+      <div class="d-row"><span class="dl">Widget type</span><span class="dv">${c.type}</span></div>
+    </div>
+    ${c.note?`<div class="d-note">${c.note.replace(/\n/g,'<br>')}</div>`:""}
+    ${c.spike?`<div style="margin-top:.75rem;padding:.75rem;background:#f5f4f0;border-radius:8px;border:0.5px solid #d3d1c7">${c.spike}</div>`:""}
+    ${c.flag==="integration"?`<div class="alert-b">Integration flag — do not begin UX migration until full integration audit is complete.</div>`:""}
+    ${c.status==="Hold"?`<div class="warn-b">On hold — do not migrate until blocking condition is resolved.</div>`:""}
+    <div style="margin-top:1rem">
+      <div style="font-size:12px;font-weight:500;margin-bottom:.5rem">Definition of done</div>
+      ${DOD.map((d,i)=>`<div class="check-item"><div class="check-box${(c.dod||0)>i?' done':''}" onclick="this.classList.toggle('done');this.textContent=this.classList.contains('done')?'✓':'';">${(c.dod||0)>i?'✓':''}</div><span>${d}</span></div>`).join("")}
+    </div>`;
+  document.getElementById("overlay").classList.add("open");
+  document.getElementById("detail-panel").classList.add("open");
+}
+
+function closeDetail() {
+  document.getElementById("overlay").classList.remove("open");
+  document.getElementById("detail-panel").classList.remove("open");
+}
+
+function switchView(id, btn) {
+  document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));
+  document.querySelectorAll(".nav button").forEach(b=>b.classList.remove("active"));
+  document.getElementById("v-"+id).classList.add("active");
+  btn.classList.add("active");
+}
+
+function toggleBlockers(header) {
+  const body = document.getElementById('blocker-body');
+  const chevron = document.getElementById('blocker-chevron');
+  const open = body.style.display === 'block';
+  body.style.display = open ? 'none' : 'block';
+  chevron.style.transform = open ? '' : 'rotate(180deg)';
+}
+
+function toggleP0(el) {
+  const d = document.getElementById("p0-detail");
+  d.classList.toggle("open");
+  el.textContent = d.classList.contains("open") ? "Hide gap backlog ▴" : "Show gap backlog ▾";
+}
+
+buildGapTable(document.getElementById("gap-inline-tbl"), true);
+buildGapTable(document.getElementById("gap-full-tbl"), false);
+renderKanban(); renderQW(); renderTable(); renderKickoff(); renderLifecycle();
+</script>
+</body>
+</html>         
