@@ -636,12 +636,6 @@ const CUSTOMERS = [
   { name:"Rosco Laboratories [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:199, gp:13397, complexity:"Simple", type:"Customer", status:"Validation", dod:7, color:"qw", kam:"Mike Stiglich (AM)", targetGoLive:"Jul 10, 2026", note:"🟠 On Deck. Low complexity. Quick win.", uxpct:100 },
   { name:"Warehouse Specialists (WSI) [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:489, gp:0, complexity:"Simple", type:"Customer", status:"Intake", dod:1, color:"qw", kam:"Ryan Helgason", note:"🟠 On Deck. Low complexity. Subsidiary of Steel King — clean migration path, no Legacy WS dependency.", uxpct:100 },
   { name:"BluLabs Brands [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:380, gp:60444, complexity:"Moderate", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Rich Reese", note:"🟠 On Deck. Moderate. Multi-tenant vendor flag — vendors serving multiple shippers.", uxpct:100 },
-  { name:"Hellermann Tyton [Integration / E3]", tier:"Quick Win", loads:0, gp:0, complexity:"Low", type:"Integration", status:"Discovery", dod:1, color:"int", kam:"Rich Reese",
-    note:"🟠 New — added from Monday.com 7/11. Integration / E3. KAM: Rich Reese. Complexity: Low. Load volume and GP not yet captured.\n\nOpen items:\n⬜ Load volume/GP assessment\n⬜ Spike doc — not started\n⬜ Paul Volkman Begin Transformation approval — not submitted" },
-  { name:"Galleher Industries [LTL Rate Shop + Dispatch + TL Tender + Vendor Management]", tier:"Net New", loads:0, gp:0, complexity:"Low", type:"Net New", status:"Intake", dod:0, color:"qw", kam:"TBD",
-    note:"🟠 New — added from Monday.com 7/11. Net New onboarding. LTL Rate Shop + Dispatch + TL Tender + Vendor Management. KAM not yet assigned. Complexity: Low. Load volume and GP not yet captured.\n\nOpen items:\n⬜ KAM assignment\n⬜ Loads/GP assessment\n⬜ Spike doc — not started\n⬜ Paul Volkman Begin Transformation approval — not submitted" },
-  { name:"Cirrus Aircraft [LTL Rate Shop + Dispatch + TL Tender + Customer Managed Shipments]", tier:"Net New", loads:0, gp:0, complexity:"Low", type:"Net New", status:"Intake", dod:0, color:"qw", kam:"TBD", targetGoLive:"Jul 15, 2026",
-    note:"🟠 New — added from Monday.com 7/11. Net New onboarding. LTL Rate Shop + Dispatch + TL Tender + Customer Managed Shipments. Target Go-Live: Jul 15, 2026 (per Monday). KAM not yet assigned. Complexity: Low. Load volume and GP not yet captured.\n\nOpen items:\n⬜ KAM assignment\n⬜ Loads/GP assessment\n⬜ Spike doc — not started\n⬜ Paul Volkman Begin Transformation approval — not submitted" },
   { name:"Dollamur [Website Rate API Integration]", tier:"Quick Win", loads:2419, gp:130000, complexity:"Moderate", type:"Integration", status:"Transformation Design", dod:4, color:"int", kam:"Shawn Cross", legacyWS:"NO",
     note:"🔵 Discovery. Website Rate API Integration. KAM: Shawn Cross. Intake: Jun 1. Complexity: Moderate. Legacy WS active post-migration: NO. Spike v1.0 + config complete.\n\nDollamur Sport Surfaces — sport flooring/mat systems for gymnastics, MMA, wrestling facilities. ~2,419 UX loads/yr on Legacy UX (DOLLFO) + ~1,867 other-method loads (majority manual TMS entry by Evans ops — explicitly out of scope for this transformation) + 23 Vooma + 17 EDI 210 inbound invoice conversion. No active customer-side API integration today. Primary UX users: cassie.schuler, sinead.ireland. Address book: 278 records. Product catalog: 5 entries. Fixed Special Instructions: 'Accessories are included in box'. Two NMFCs with density-based sub-class rules. 30 active customer users to migrate with existing rate access.\n\nParallel workstream: Dollamur dev team integrating customer-facing quote tool against E3 POST /v2/rates (greenfield) — EVACAR/no-rate responses surface as 'Call for Quote'. API schema sent to Shawn 6/4. Technical contact TBD.\n\nArtifacts on file: Spike Doc (DollamurSportSurfaces_SpikeDoc_v1.docx), Onboarding doc (20260604_Customer_DOLLFO_customer-onboarding.xlsx).\n\nOpen items:\n⬜ Onboarding doc — in progress\n⬜ Customer training/communication\n⬜ Paul Volkman Begin Transformation approval — not submitted\n⬜ Paul Volkman Go-Live approval — not submitted" },
   { name:"Trinity Industries [Integration Transformation]", tier:"Quick Win", loads:10121, gp:0, complexity:"High", type:"Integration", status:"In Execution", dod:5, color:"int", kam:"Shawn Cross (KAM) / Mike Stiglich (AM)", legacyWS:"YES",
@@ -956,4 +950,43 @@ function openDetail(c) {
     ${c.spike?`<div style="margin-top:.75rem;padding:.75rem;background:#f5f4f0;border-radius:8px;border:0.5px solid #d3d1c7">${c.spike}</div>`:""}
     ${c.flag==="integration"?`<div class="alert-b">Integration flag — do not begin UX migration until full integration audit is complete.</div>`:""}
     ${c.status==="Hold"?`<div class="warn-b">On hold — do not migrate until blocking condition is resolved.</div>`:""}
-    <div style="
+    <div style="margin-top:1rem">
+      <div style="font-size:12px;font-weight:500;margin-bottom:.5rem">Definition of done</div>
+      ${DOD.map((d,i)=>`<div class="check-item"><div class="check-box${(c.dod||0)>i?' done':''}" onclick="this.classList.toggle('done');this.textContent=this.classList.contains('done')?'✓':'';">${(c.dod||0)>i?'✓':''}</div><span>${d}</span></div>`).join("")}
+    </div>`;
+  document.getElementById("overlay").classList.add("open");
+  document.getElementById("detail-panel").classList.add("open");
+}
+
+function closeDetail() {
+  document.getElementById("overlay").classList.remove("open");
+  document.getElementById("detail-panel").classList.remove("open");
+}
+
+function switchView(id, btn) {
+  document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));
+  document.querySelectorAll(".nav button").forEach(b=>b.classList.remove("active"));
+  document.getElementById("v-"+id).classList.add("active");
+  btn.classList.add("active");
+}
+
+function toggleBlockers(header) {
+  const body = document.getElementById('blocker-body');
+  const chevron = document.getElementById('blocker-chevron');
+  const open = body.style.display === 'block';
+  body.style.display = open ? 'none' : 'block';
+  chevron.style.transform = open ? '' : 'rotate(180deg)';
+}
+
+function toggleP0(el) {
+  const d = document.getElementById("p0-detail");
+  d.classList.toggle("open");
+  el.textContent = d.classList.contains("open") ? "Hide gap backlog ▴" : "Show gap backlog ▾";
+}
+
+buildGapTable(document.getElementById("gap-inline-tbl"), true);
+buildGapTable(document.getElementById("gap-full-tbl"), false);
+renderKanban(); renderQW(); renderTable(); renderKickoff(); renderLifecycle();
+</script>
+</body>
+</html>
