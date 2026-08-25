@@ -10,7 +10,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .wrap { max-width: 1200px; margin: 0 auto; padding: 0 0 2rem; }
 
 /* HEADER */
-.board-header { background: #393E46; color: #fff; padding: 1.25rem 1.5rem 1rem; border-radius: 0 0 12px 12px; margin-bottom: 1.25rem; }
+.board-header { background: #0B5362; color: #fff; padding: 1.25rem 1.5rem 1rem; border-radius: 0 0 12px 12px; margin-bottom: 1.25rem; }
 .board-header h1 { font-size: 17px; font-weight: 600; color: #fff; margin-bottom: 3px; letter-spacing: 0.01em; }
 .board-header .subtitle { font-size: 11px; color: rgba(255,255,255,0.65); margin-bottom: 0; }
 
@@ -19,8 +19,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .p0-badge { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 10px; background: #BA7517; color: #fff; }
 .p0-chips { display: flex; gap: 7px; margin-top: 8px; flex-wrap: wrap; }
 .p0-chip { font-size: 11px; padding: 2px 9px; border-radius: 6px; background: #fff; border: 0.5px solid #d3d1c7; color: #5f5e5a; }
-.p0-toggle { font-size: 11px; color: #393E46; cursor: pointer; padding: 3px 8px; border-radius: 4px; border: 0.5px solid #393E46; margin-top: 8px; display: inline-block; font-weight: 500; }
-.p0-toggle:hover { background: #393E46; color: #fff; }
+.p0-toggle { font-size: 11px; color: #0B5362; cursor: pointer; padding: 3px 8px; border-radius: 4px; border: 0.5px solid #0B5362; margin-top: 8px; display: inline-block; font-weight: 500; }
+.p0-toggle:hover { background: #0B5362; color: #fff; }
 .p0-detail { display: none; margin-top: .75rem; padding-top: .75rem; border-top: 0.5px solid #d4a020; }
 .p0-detail.open { display: block; }
 
@@ -28,14 +28,14 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 0 1rem 1.25rem; }
 .stat { background: #fff; border-radius: 8px; padding: .75rem 1rem; border: 0.5px solid #d3d1c7; }
 .stat .lbl { font-size: 11px; color: #73726c; margin-bottom: 4px; }
-.stat .val { font-size: 20px; font-weight: 600; color: #393E46; }
+.stat .val { font-size: 20px; font-weight: 600; color: #0B5362; }
 .stat .sub { font-size: 11px; color: #73726c; margin-top: 2px; }
 
 /* NAV */
 .nav { display: flex; gap: 6px; margin: 0 1rem 1.25rem; flex-wrap: wrap; }
 .nav button { font-size: 12px; padding: 5px 13px; border-radius: 20px; border: 0.5px solid #b4b2a9; background: #fff; color: #73726c; cursor: pointer; transition: all .15s; }
-.nav button.active { background: #393E46; color: #fff; border-color: transparent; }
-.nav button:hover:not(.active) { border-color: #393E46; color: #393E46; }
+.nav button.active { background: #0B5362; color: #fff; border-color: transparent; }
+.nav button:hover:not(.active) { border-color: #0B5362; color: #0B5362; }
 .view { display: none; padding: 0 1rem; }
 .view.active { display: block; }
 
@@ -53,11 +53,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 
 /* KANBAN */
 .kanban { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 5px; overflow-x: auto; }
-.col-header { font-size: 10px; font-weight: 600; color: #fff; padding: 4px 5px; border-radius: 4px; background: #393E46; text-align: center; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: 0.02em; }
+.col-header { font-size: 10px; font-weight: 600; color: #fff; padding: 4px 5px; border-radius: 4px; background: #0B5362; text-align: center; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: 0.02em; }
 .col-header.paused { background: #7a7a72; }
 .col-cards { display: flex; flex-direction: column; gap: 4px; }
 .kcard { border: 0.5px solid #d3d1c7; border-radius: 6px; padding: 6px 7px; background: #fff; cursor: pointer; transition: border-color .15s, box-shadow .15s; }
-.kcard:hover { border-color: #393E46; box-shadow: 0 1px 4px rgba(57,62,70,0.10); }
+.kcard:hover { border-color: #0B5362; box-shadow: 0 1px 4px rgba(57,62,70,0.10); }
 .kcard.p0 { border-color: #BA7517; background: #fef8e8; }
 .kcard.qw { border-color: #00A984; }
 .kcard-name { font-size: 11px; font-weight: 500; line-height: 1.3; }
@@ -65,7 +65,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 
 /* TABLE */
 table.main { width: 100%; border-collapse: collapse; font-size: 12px; }
-table.main thead th { font-size: 11px; font-weight: 600; color: #fff; text-align: left; padding: 6px 8px; background: #393E46; position: sticky; top: 0; }
+table.main thead th { font-size: 11px; font-weight: 600; color: #fff; text-align: left; padding: 6px 8px; background: #0B5362; position: sticky; top: 0; }
 table.main tbody td { padding: 5px 8px; border-bottom: 0.5px solid #d3d1c7; vertical-align: middle; }
 table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 .gp-bar-wrap { display: flex; align-items: center; gap: 5px; }
@@ -92,14 +92,14 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 .koff-rule { display: flex; align-items: flex-start; gap: 10px; padding: .6rem 0; border-bottom: 0.5px solid #d3d1c7; font-size: 12px; }
 .koff-rule:last-child { border: none; }
 .step-grid { display: grid; grid-template-columns: 24px 1fr 90px 1fr; gap: 0; font-size: 12px; margin-bottom: 1rem; border: 0.5px solid #d3d1c7; border-radius: 6px; overflow: hidden; }
-.step-head { font-size: 11px; font-weight: 600; color: #fff; padding: 5px 8px; border-bottom: 0.5px solid #b4b2a9; background: #393E46; }
+.step-head { font-size: 11px; font-weight: 600; color: #fff; padding: 5px 8px; border-bottom: 0.5px solid #b4b2a9; background: #0B5362; }
 .step-cell { padding: 5px 8px; border-bottom: 0.5px solid #d3d1c7; border-right: 0.5px solid #d3d1c7; }
 .step-cell:last-child { border-right: none; }
 .step-num { font-weight: 500; color: #73726c; font-size: 11px; }
 
 /* LIFECYCLE */
 .lc-item { display: flex; align-items: flex-start; gap: 12px; padding: .7rem 0; border-bottom: 0.5px solid #d3d1c7; }
-.lc-num { min-width: 22px; height: 22px; border-radius: 50%; background: #393E46; color: #fff; border: none; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; flex-shrink: 0; }
+.lc-num { min-width: 22px; height: 22px; border-radius: 50%; background: #0B5362; color: #fff; border: none; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; flex-shrink: 0; }
 .check-item { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; color: #73726c; padding: 4px 0; border-bottom: 0.5px solid #d3d1c7; }
 .check-item:last-child { border: none; }
 .check-box { width: 14px; height: 14px; border: 0.5px solid #b4b2a9; border-radius: 3px; flex-shrink: 0; margin-top: 1px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 9px; }
@@ -108,10 +108,10 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 /* DETAIL PANEL */
 .detail-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0); pointer-events: none; z-index: 10; transition: background .2s; }
 .detail-overlay.open { background: rgba(0,0,0,0.25); pointer-events: all; }
-.detail-panel { position: fixed; right: -420px; top: 0; bottom: 0; width: 380px; background: #fff; border-left: 2px solid #393E46; overflow-y: auto; transition: right .25s; padding: 1.25rem; z-index: 11; }
+.detail-panel { position: fixed; right: -420px; top: 0; bottom: 0; width: 380px; background: #fff; border-left: 2px solid #0B5362; overflow-y: auto; transition: right .25s; padding: 1.25rem; z-index: 11; }
 .detail-panel.open { right: 0; }
 .detail-close { float: right; cursor: pointer; font-size: 18px; color: #73726c; line-height: 1; padding: 2px 4px; }
-.detail-close:hover { color: #393E46; }
+.detail-close:hover { color: #0B5362; }
 .d-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 0.5px solid #d3d1c7; font-size: 13px; }
 .d-row .dl { color: #73726c; }
 .d-row .dv { font-weight: 500; text-align: right; max-width: 58%; }
@@ -232,7 +232,7 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 <div class="wrap">
   <div class="board-header">
     <h1>Evans Transformation Board</h1>
-    <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 8/24/2026 5:44 PM · PM — synced from Monday.com</div>
+    <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 8/25/2026 9:53 AM · AM — synced from Monday.com</div>
   </div>
 
   <!-- P0 BANNER -->
@@ -620,7 +620,7 @@ const CUSTOMERS = [
     note:"🟡 Spike v1.1 complete. ✅ Jared review done. ✅ Monday card created 5/5. Spencer engaged — email sent 5/5. KAM: Spencer Walker. ~699 UX loads/yr. 100% UX. LTL rate shop + dispatch. Standard rate mode. No integrations, no EDI, no Legacy WS. Clean migration path.\n\nVendor portal active — 84 vendor addresses. Confirm active vendor users with Spencer.\nAllow Quote Dispatch = No — users cannot self-dispatch from quote screen.\nFixed Special Instructions on every BOL: 'DRIVER MUST CHOCK WHEELS' and 'ATTN Receiving: Inspect this shipment and note any potential damage on the BOL'\n\nKey contacts: Spencer Walker (KAM/Evans) · Krystal Blum (Primary) — kblum@ajdoor.com / 715-568-1793 ext. 10 · Carol Prince (Bill-To) — cprince@ajdoor.com\n\nConfirmed config: Account AJMABL · Rate Contract AJMABL · Standard rate flow · PPA 19% · PPA Min $15 · PPA Max $200 · PPA Key PalletRaterConfig40 · PPA Calculation Total $ · NTE 7 pallets/10,000 lbs/143\" · Default Origin 521 Main Street, Bloomer WI 54724 (address conflict — Spencer to confirm) · Default Terms Prepaid · Pickup 0700–1600, Delivery 0800–1600 · Help Email ajmfg@evanstrans.com · Help Phone 800-886-7799\n\nNMFC sub-classes: 34265 (4 subs) and 35540 (8 subs including colon-suffix variant)\n\nUsers to migrate (7): kblum, cprince, jseverson, rfisher, bsarauer, jbohl, chassemer — all @ajdoor.com. kblum = Open Book + Customer Markup; all others = Closed Book + Customer Markup.\n\nOpen items:\n✅ Jared McKeen spike review — complete\n✅ Monday card created — 5/5\n⬜ Spencer — spike review + onboarding spreadsheet (email sent 5/5)\n⬜ Shipping address confirm — Spencer\n⬜ Backup POC for Krystal Blum — Spencer\n⬜ Active vendor user confirmation — Spencer\n⬜ Vendor portal go-live confirmation — Spencer\n⬜ Fixed Special Instructions field in E3 — confirm field exists\n⬜ Customer Markup rate access tier — confirm configurable in E3\n⬜ Paul Volkman Begin Transformation approval — not submitted, early stage" },
   { name:"Newton Beverage Solutions [LTL Rate Shop + Dispatch + Vendor Management]", tier:"Net New", loads:0, gp:0, complexity:"Moderate", type:"Customer", status:"Complete", color:"qw", kam:"Spencer Walker", mondayStatus:"Complete", dod:12, targetGoLive:"Jun 15, 2026", actualGoLive:"Jun 15, 2026",
     note:"✅ LIVE 6/15/2026. Hypercare. Actual Go-Live: June 15. PV Begin Transformation APPROVED 5/29. NET NEW ONBOARD — not a Project Meridian migration. One-pager format.\n\nKickoff complete 5/21. Demo 6/4 · Training 6/11 · Go-Live 6/15.\nPrimary contact: Corey Richardson\nSales lead: Implementation Team. Spencer Walker to be added.\nPPA: N/A\n\nOpen items:\n✅ Paul Volkman Begin Transformation — APPROVED 5/29\n✅ One-pager — Francesca/KAM review complete\n✅ E3 config — loaded and validated\n✅ Address book — loaded\n✅ Paul Volkman Go-Live approval — obtained\n✅ KAM briefed and aligned\n✅ E3 config loaded and validated\n✅ Acceptance criteria met\n✅ Customer communication sent\n⬜ Hypercare period completed\n⬜ Legacy access decommissioned\n⬜ Customer profile updated in artifact library" },
-  { name:"Blachford Acoustics [Net New]", tier:"Net New", loads:0, gp:0, complexity:"Low", type:"Net New", status:"Hypercare", dod:9, color:"qw", kam:"TBD", targetGoLive:"Jul 13, 2026", actualGoLive:"Jul 15, 2026",
+  { name:"Blachford Acoustics", tier:"Net New", loads:0, gp:0, complexity:"Low", type:"Net New", status:"Complete", dod:12, color:"qw", kam:"TBD", targetGoLive:"Jul 13, 2026", actualGoLive:"Jul 15, 2026",
     note:"🔵 In Execution. Net New — Managed Light customer. Added 6/30/2026. Vendor portal requires TL Tender button. Tentative go-live: Jul 13, 2026.\n\n✅ Discovery document — complete\n✅ Onboarding doc — complete\n✅ Gap Analysis — complete\n✅ Enhance doc — complete\n✅ RWC integration config — complete\n✅ Invoicing (Special Rules) — complete\n✅ Reporting (Special Needs) — complete\n\nOpen items:\n⬜ Paul Volkman Begin Transformation approval — pending\n⬜ Paul Volkman Go-Live approval — pending\n⬜ Customer training/communication — pending" },
   { name:"ASI Doors [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:1161, gp:30591, complexity:"Moderate", type:"Customer", status:"Hypercare", color:"qw", kam:"Eric Bollis (AM) · Melissa Reich (Ops)", legacyWS:"NO", dod:9, targetGoLive:"Jul 8, 2026", actualGoLive:"Jul 1, 2026",
     note:"🔵 Discovery. AM: Eric Bollis. Ops: Melissa Reich. KAM: ⚠️ Not yet assigned — DM Jared McKeen.\n\n~1,161 UX loads/yr: 728 customer-initiated · 319 Vooma · 105 Evans ops · 9 EDI artifact.\nSpike Doc v1.0 complete. Config spreadsheet v1.0 complete. Address book: 5,500+ records loaded.\nConfig doc out to Melissa Reich + Eric Bollis — awaiting return.\nDefault Special Instructions: DO NOT STACK FREIGHT / ALL SHIPMENTS REQUIRE 24HR NOTIFY CONSIGNEE\nLegacy WS Post-Migration: NO — Vooma is Evans-owned infrastructure, excluded from customer transformation assessment.\n\nConfig: Account ASIDMI · Web Username WebserviceUserASIDOORSV4 · Rate Mode Standard · PPA Force Yes · PPA 0.5% Rate Total · NTE 4 pallets/19,999 lbs/240\" · Origin 5848 N 95th Ct, Milwaukee WI 53225 · Prepaid · Pickup 1200–1600 · Delivery 0600–1600 · Notification ASIDoors@evanstrans.com · Help 800-886-7799\n\nOpen items:\n⬜ KAM/AM assignment — DM Jared McKeen\n⬜ Config spreadsheet return — Melissa Reich / Eric Bollis\n⬜ MG contract name + rate flow — confirm in MG\n⬜ Bill To — not set in Legacy UX\n⬜ Vendor portal scope — Luis.Eucede@4frontes.com\n⬜ Product catalog content — audit with AM\n⬜ Paul Volkman Begin Transformation approval — pending spike review" },
@@ -755,9 +755,9 @@ NMFC switches applied: 25970→25525, 27260→25525, 53180→53125, 123290→528
     note:"✅ LIVE — Credentials delivered 5/26. Actual go-live: 5/13.. Four users received credentials 5/26 afternoon. Customer (Legacy UX → E3). Bid Management + TL Tender live. KAM: Rich Reese." },
   { name:"Hellermann Tyton [Integration / E3]", tier:"TBD", loads:0, gp:0, complexity:"High", type:"Integration", status:"Transformation Design", dod:4, color:"int", kam:"Rich Reese", legacyWS:"YES", targetGoLive:"Aug 26, 2026",
     note:"🔵 Discovery. Integration / E3 — MercuryGate E3 (ShipperAPI), phased approach. KAM: Rich Reese. Complexity: High — three complexity flags identified in spike doc v1.0. Legacy WS active post-migration: YES. Added 7/8.\n\nOpen items:\n⬜ Complexity flags — resolve per spike doc\n⬜ Tier/loads/GP — TBD\n⬜ Paul Volkman Begin Transformation approval — not submitted" },
-  { name:"Galleher Industries [LTL Rate Shop + Dispatch + TL Tender + Vendor Management]", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Hypercare", dod:9, color:"qw", kam:"Morgan Nguyen", legacyWS:"N/A", targetGoLive:"Jul 27, 2026", actualGoLive:"Jul 15, 2026",
+  { name:"Galleher Industries [LTL Rate Shop + Dispatch + TL Tender + Vendor Management]", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Complete", dod:12, color:"qw", kam:"Morgan Nguyen", legacyWS:"N/A", targetGoLive:"Jul 27, 2026", actualGoLive:"Jul 15, 2026",
     note:"⚪ Intake → Discovery. LTL Rate Shop + Dispatch + TL Tender + Vendor Management. KAM: TBD. Complexity: Low. Legacy WS active post-migration: N/A. Added 7/8. Logistics Services Agreement signed 6/5/2026 — Net New, awaiting data.\n\nOpen items:\n⬜ KAM assignment — TBD\n⬜ Tier/loads/GP — TBD\n⬜ Paul Volkman Begin Transformation approval — not submitted" },
-  { name:"Cirrus Aircraft [LTL Rate Shop + Dispatch + TL Tender + Customer Managed Shipments]", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Hypercare", dod:9, color:"qw", kam:"Francesca Glorioso", legacyWS:"N/A", targetGoLive:"Jul 15, 2026", actualGoLive:"Jul 15, 2026",
+  { name:"Cirrus Aircraft [LTL Rate Shop + Dispatch + TL Tender + Customer Managed Shipments]", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Complete", dod:12, color:"qw", kam:"Francesca Glorioso", legacyWS:"N/A", targetGoLive:"Jul 15, 2026", actualGoLive:"Jul 15, 2026",
     note:"⚪ Intake → Discovery. LTL Rate Shop + Dispatch + TL Tender + Customer Managed Shipments. KAM: Francesca Glorioso. Complexity: Low. Legacy WS active post-migration: N/A. Added 7/8. Target Go-Live: Jul 15, 2026 — Net New, awaiting data.\n\nOpen items:\n⬜ Tier/loads/GP — TBD\n⬜ Paul Volkman Begin Transformation approval — not submitted" },
   { name:"Maxon Lift [Integration / E3]", tier:"TBD", loads:0, gp:0, complexity:"Moderate", type:"Integration", status:"Discovery", dod:1, color:"int", kam:"Shawn Cross", legacyWS:"NO",
     note:"🔵 Discovery. Integration / E3. KAM: Shawn Cross. Complexity: Moderate. Legacy WS active post-migration: NO. Added 7/13. Note: distinct from the Tier 1 backlog \"Maxon Lift\" assessment row — this is the active Integration/E3 workstream.\n\nOpen items:\n⬜ Tier/loads/GP — TBD\n⬜ Paul Volkman Begin Transformation approval — not submitted [Loads/GP intentionally 0 - this is a workstream against the same MAXON LIFT PARENT entity carried on the Tier 1 Maxon Lift row (7,956 loads/yr, $649,312 GP). Populating both would double-count.]" },
@@ -774,11 +774,11 @@ NMFC switches applied: 25970→25525, 27260→25525, 53180→53125, 123290→528
     note:"⚪ Intake. Integration + UX hybrid — Cross-Border LTL + TL. KAM: Rich Reese / Steve Simms. Complexity: High. Monday intake 8/20/2026. Distinct from the Tier 1 backlog 'Phillips Industries' assessment row, and distinct from Phillips Connect (independent company, tracked separately on the Phillips Connect card).\n\nFour MG entities under parent PHILIR: PHILLA (Laredo TX) 8,278/yr · PHILWC (West Chester OH) 3,977/yr · PHILAR (Arteaga, Coahuila MX) 1,292/yr · PHILIR (parent) 206/yr. Total 13,753 loads/yr (~52/day) — #3 by Legacy UX exposure behind Middleby and Solar Turbines. Prior reporting carried this account at 759 loads/month; corrected to full parent it is 1,146/month, 51% larger. Cross-border Laredo→Arteaga lane with GPS accessorial on 100% of Mexico moves. Margin 8.1%, $26.65 GP/load. UX shipment export (May-Jul 2026 x4) puts the UX-scoped slice at 9,540 loads/yr and $268,101 GP/yr across PHILLA + PHILWC; the 13,753 figure above is all creation methods per SpikeDoc v2.0.\n\n⚠️ CRITICAL PATH — Legacy WS API migration: WebserviceUserPhillips creates 37% of all loads. A net-new E3 API integration must be built and validated with the customer's IT before Legacy WS can be decommissioned. Largest single scope item in the transformation.\n⚠️ PHILAR not discovered — 1,292 loads/yr cross-border MX entity with zero Legacy UX configuration captured.\n⚠️ Shared credential — SEVEN MG accounts share the PHILLIPSINDUSTRIES username, spanning both Industries (PHILIR/PHILLA/PHILWC/PHILAR) and Phillips Connect (PHILVI/LAREPCT/ARTEPCT). One Bill To ruleset and one notification alias (phillips@evanstrans.com) span both companies — separating the two transformations requires untangling shared plumbing, not just separate documents.\n\nProfile: 27% Customer Managed Shipments · 22% truckload (20–40k lbs) · median load 790 lbs · single commodity NMFC 18260 (Truck Parts), 13-tier density. Address book 2,331 clean records (3,752 raw, 38% dupes dropped). Terms: Prepaid 50% / Collect 39% / Third Party 11%.\n\nArtifacts: PhillipsIndustries_SpikeDoc_v2.0.docx (supersedes v1.1) · 20260820_Integration_PHILIR_customer-onboarding.xlsx.\n\nOpen items:\n⬜ Net-new E3 API integration — scope and build with customer IT (critical path)\n⬜ PHILAR discovery — no Legacy UX export exists\n⬜ GPS + CMS accessorials — not in Legacy config, must be created in E3\n⬜ NTE conflict — 143in/6,000lbs (Legacy UX) vs 144in/10,000lbs (MG WS)\n⬜ Payment terms — allowedCustomerTerms must carry Collect + Third Party (50% of freight)\n⬜ TL Tender config tab — unpopulated despite 22% truckload volume\n⬜ Carrier/Bill To gaps — TSMV (top carrier), CHRP, TQYL have no Bill To rows\n⬜ Tier / GP — TBD\n⬜ Paul Volkman Begin Transformation approval — not submitted" },
   { name:"Hyva Corp", tier:"TBD", loads:0, gp:0, complexity:"TBD", type:"Customer", status:"Intake", dod:0, color:"qw", kam:"Rich Reese / Wes Cuomo",
     note:"Monday.com intake stub \u2014 ticket 12883740961, created 8/24/2026 1:50 PM. Added to the board 8/24/2026 at Eric's direction.\n\nThe Monday.com card is only partially completed \u2014 every field below is empty at the source, so nothing here is validated yet:\n\u2b1c Complexity \u2014 not set\n\u2b1c Legacy WS active post-migration \u2014 not set\n\u2b1c Internal Status \u2014 not set\n\u2b1c Intake date \u2014 not set\n\u2b1c Target Go-Live \u2014 not set\n\u2b1c Actual Go-Live \u2014 not set\n\u2b1c KAM/AM \u2014 unassigned\n\u2b1c Item description doc \u2014 created but empty\n\u2b1c No subitems / no DoD checklist started\n\u2b1c Loads / GP \u2014 not yet pulled from the UX shipment-detail export\n\u2b1c Tier \u2014 TBD; color set to Quick Win per board convention for unclassified customer cards (cf. Jeremias Inc, Amerequip)\n\nOnly Type = Customer and Project Status = Intake are populated in Monday.com." },
-  { name:"DeZURIK", tier:"Net New", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Transformation Design", dod:4, color:"qw", kam:"TBD", legacyWS:"N/A", targetGoLive:"Aug 31, 2026",
+  { name:"DeZURIK", tier:"Net New", loads:0, gp:0, complexity:"Low", type:"Customer", status:"In Execution", dod:5, color:"qw", kam:"TBD", legacyWS:"N/A", targetGoLive:"Aug 31, 2026",
     note:"Brand new customer — no Legacy UX history, so there is no shipment volume to annualize. Monday.com ticket 12885994613, created 8/24/2026 4:51 PM. Added to the board 8/24/2026 at Eric's direction.\n\nOnboarding was built in a separate Cowork session from the source spreadsheets Eric provided. The Monday.com card itself carries only Type, Project Status, Complexity and Target Go-Live — every other field is empty at the source, so nothing below is validated yet.\n\nOpen items:\n⬜ Loads / GP — none; brand new customer, no historical volume to pull from the UX shipment-detail export\n✅ Tier — Net New (Eric, 8/24/2026), matching Blachford Acoustics and Newton Beverage, the board's other brand-new customers. Color Quick Win per board convention.\n⬜ KAM/AM — unassigned in Monday.com\n⬜ Internal Status — not set\n⬜ Actual Go-Live — not set\n⬜ Paul Volkman Begin Transformation approval — not submitted" },
-  { name:"Airstream", tier:"Net New", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Transformation Design", dod:4, color:"qw", kam:"TBD", legacyWS:"N/A", targetGoLive:"Aug 31, 2026",
+  { name:"Airstream", tier:"Net New", loads:0, gp:0, complexity:"Low", type:"Customer", status:"In Execution", dod:5, color:"qw", kam:"TBD", legacyWS:"N/A", targetGoLive:"Aug 31, 2026",
     note:"Brand new customer — no Legacy UX history, so there is no shipment volume to annualize. Monday.com ticket 12885964033, created 8/24/2026 4:51 PM. Added to the board 8/24/2026 at Eric's direction.\n\nOnboarding was built in a separate Cowork session from the source spreadsheets Eric provided. The Monday.com card itself carries only Type, Project Status, Complexity and Target Go-Live — every other field is empty at the source, so nothing below is validated yet.\n\nOpen items:\n⬜ Loads / GP — none; brand new customer, no historical volume to pull from the UX shipment-detail export\n✅ Tier — Net New (Eric, 8/24/2026), matching Blachford Acoustics and Newton Beverage, the board's other brand-new customers. Color Quick Win per board convention.\n⬜ KAM/AM — unassigned in Monday.com\n⬜ Internal Status — not set\n⬜ Actual Go-Live — not set\n⬜ Paul Volkman Begin Transformation approval — not submitted" },
-  { name:"Custom Pipe & Fabrication", tier:"Net New", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Transformation Design", dod:4, color:"qw", kam:"TBD", legacyWS:"N/A", targetGoLive:"Aug 31, 2026",
+  { name:"Custom Pipe & Fabrication", tier:"Net New", loads:0, gp:0, complexity:"Low", type:"Customer", status:"In Execution", dod:5, color:"qw", kam:"TBD", legacyWS:"N/A", targetGoLive:"Aug 31, 2026",
     note:"Brand new customer — no Legacy UX history, so there is no shipment volume to annualize. Monday.com ticket 12885963447, created 8/24/2026 4:51 PM. Added to the board 8/24/2026 at Eric's direction.\n\nOnboarding was built in a separate Cowork session from the source spreadsheets Eric provided. The Monday.com card itself carries only Type, Project Status, Complexity and Target Go-Live — every other field is empty at the source, so nothing below is validated yet.\n\nOpen items:\n⬜ Loads / GP — none; brand new customer, no historical volume to pull from the UX shipment-detail export\n✅ Tier — Net New (Eric, 8/24/2026), matching Blachford Acoustics and Newton Beverage, the board's other brand-new customers. Color Quick Win per board convention.\n⬜ KAM/AM — unassigned in Monday.com\n⬜ Internal Status — not set\n⬜ Actual Go-Live — not set\n⬜ Paul Volkman Begin Transformation approval — not submitted" },
 ];
 const RULES = [
