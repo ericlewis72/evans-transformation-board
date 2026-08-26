@@ -232,7 +232,7 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 <div class="wrap">
   <div class="board-header">
     <h1>Evans Transformation Board</h1>
-    <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 8/26/2026 5:46 PM · PM — synced from Monday.com</div>
+    <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 8/26/2026 5:59 PM · PM — synced from Monday.com</div>
   </div>
 
   <!-- P0 BANNER -->
@@ -600,7 +600,7 @@ const QW = [
   { seq:13, name:"Rosco Laboratories [LTL Rate Shop + Dispatch]", loads:199, uxpct:100, gp:13397, type:"Customer", note:"🟠 On Deck. Low complexity. Quick win." },
   { seq:15, name:"BluLabs Brands [LTL Rate Shop + Dispatch]", loads:380, uxpct:100, gp:60444, type:"Customer", note:"🟠 On Deck. Moderate. Multi-tenant vendor flag — vendors serving multiple shippers." },
   { seq:16, name:"Dollamur [Website Rate API Integration]", loads:1423, uxpct:0, gp:130000, type:"Integration", note:"🔵 Discovery. KAM: Shawn Cross. Type: Customer + Integration. Spike v1.0 + config complete. UX migration: 278-record address book, 5 products, 2 NMFCs. Parallel workstream: Dollamur building quote tool against E3 POST /v2/rates (greenfield). API schema sent to Shawn 6/4. Technical contact TBD." },
-  { seq:18, name:"Integer Parent", loads:648, uxpct:0, gp:26370, type:"Customer", note:"🟠 On Deck." },
+  { seq:18, name:"Integer Corp DBA Greatbatch (INTECL2) [LTL Rate Shop + Dispatch]", loads:2418, uxpct:0, gp:37772, type:"Customer", note:"🟠 On Deck." },
   { seq:19, name:"CAT Non-Managed", loads:0, uxpct:0, gp:0, type:"Customer", note:"🟠 On Deck. CAT Managed is separate — hold." },
   { seq:"H1", name:"Ice Drill", loads:"—", uxpct:"Net New", gp:"—", type:"Net New", note:"🔜 Horizon. Blanket inbound + outbound. Implementation Team." },
   { seq:"H2", name:"Custom Pipe", loads:"—", uxpct:"Net New", gp:"—", type:"Net New", note:"🔜 Horizon. TBD. Inbound + outbound. Contract returned 5/9. Pipeline since 1/29. Implementation Team." },
@@ -662,7 +662,6 @@ const CUSTOMERS = [
   { name:"Flambeau Inc", tier:"Tier 1", loads:2424, gp:80204, complexity:"Simple-Moderate", type:"Type 1", status:"Intake", dod:0, color:"t1", kam:"Ryan Helgason", note:"Non-integrated divisions only. Mears relationship value. [Figures refreshed 8/20/2026 from May-Jul 2026 UX actuals, annualized x4.]" },
   { name:"Palmer Johnson", kam:"Wes Cuomo (AM)", tier:"Tier 2", loads:2876, gp:138582, complexity:"Moderate", type:"Type 1", status:"Discovery", dod:1, color:"t2", note:" [Figures refreshed 8/20/2026 from May-Jul 2026 UX actuals, annualized x4.]" },
   { name:"Sub-Zero Group", tier:"Tier 2", loads:9320, gp:85803, complexity:"Moderate", type:"Type 1+2", status:"Intake", dod:0, color:"t2", kam:"Craig Curwick", note:"Also Dock Scheduler candidate — two separate widgets. [Figures refreshed 8/20/2026 from May-Jul 2026 UX actuals, annualized x4.]" },
-  { name:"Integer Parent", tier:"Tier 3", loads:648, gp:26370, complexity:"Simple", type:"Type 1", status:"On Deck", dod:0, color:"t3", note:" [NOT refreshed 8/20/2026 - the UX export shows only one Integer entity (INTEGER CORP DBA GREATBATCH, 1,032 loads/yr, $37,772 GP), already carried on the INTECL2 card. This row may be a duplicate - confirm before prioritising.]" },
   { name:"CAT Non-Managed", tier:"Tier 3", loads:1532, gp:10923, complexity:"Simple", type:"Type 1", status:"Intake", dod:0, color:"t3", kam:"Jeannie Chamber", note:"Quick win. CAT Managed is separate — hold. [Figures refreshed 8/20/2026 from May-Jul 2026 UX actuals, annualized x4.]" },
   { name:"Anderson Process", tier:"Tier 2", loads:5524, gp:91068, complexity:"Complex", type:"Type 3+1", status:"Discovery", dod:1, color:"int", flag:"integration", kam:"Craig Curwick", note:"Shipper HQ rating integration via Legacy WS. Migration requires Shipper HQ to integrate with E3 API, or Anderson Process changes their rating workflow. [Figures refreshed 8/20/2026 from May-Jul 2026 UX actuals, annualized x4.]" },
   { name:"Manitou", tier:"Hold", loads:9256, gp:296357, complexity:"Complex", type:"Type 1", status:"Paused", dod:1, color:"hold", kam:"Shawn Cross", note:"Paused 8/24/2026 — the customer is leaving Evans, so there is no transformation to run (Eric, 8/24/2026). Row retained for volume visibility only, not as an active workstream.\n\n✅ Note corrected 8/26/2026 at Eric’s direction. It previously read “ConnectShip/WiseTech SOW gated”, which described the original gate and no longer reflects reality — the account is departing, not blocked.\n✅ Paused status confirmed by Eric 8/24/2026 — Monday.com agrees. Do not re-flag.\n⬜ tier/color remain “Hold” — unchanged per rule 4. Confirm whether a departing account should carry a distinct tier or come off the board entirely.\n\nHistorical detail, retained: ConnectShip/WiseTech SOW was the original gate; NMFC 050970 issue; 113 EDI/210 Corp loads. [Figures refreshed 8/20/2026 from May–Jul 2026 UX actuals, annualized x4.]" },
