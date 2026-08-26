@@ -10,7 +10,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .wrap { max-width: 1200px; margin: 0 auto; padding: 0 0 2rem; }
 
 /* HEADER */
-.board-header { background: #0B5362; color: #fff; padding: 1.25rem 1.5rem 1rem; border-radius: 0 0 12px 12px; margin-bottom: 1.25rem; }
+.board-header { background: #393E46; color: #fff; padding: 1.25rem 1.5rem 1rem; border-radius: 0 0 12px 12px; margin-bottom: 1.25rem; }
 .board-header h1 { font-size: 17px; font-weight: 600; color: #fff; margin-bottom: 3px; letter-spacing: 0.01em; }
 .board-header .subtitle { font-size: 11px; color: rgba(255,255,255,0.65); margin-bottom: 0; }
 
@@ -19,8 +19,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .p0-badge { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 10px; background: #BA7517; color: #fff; }
 .p0-chips { display: flex; gap: 7px; margin-top: 8px; flex-wrap: wrap; }
 .p0-chip { font-size: 11px; padding: 2px 9px; border-radius: 6px; background: #fff; border: 0.5px solid #d3d1c7; color: #5f5e5a; }
-.p0-toggle { font-size: 11px; color: #0B5362; cursor: pointer; padding: 3px 8px; border-radius: 4px; border: 0.5px solid #0B5362; margin-top: 8px; display: inline-block; font-weight: 500; }
-.p0-toggle:hover { background: #0B5362; color: #fff; }
+.p0-toggle { font-size: 11px; color: #393E46; cursor: pointer; padding: 3px 8px; border-radius: 4px; border: 0.5px solid #393E46; margin-top: 8px; display: inline-block; font-weight: 500; }
+.p0-toggle:hover { background: #393E46; color: #fff; }
 .p0-detail { display: none; margin-top: .75rem; padding-top: .75rem; border-top: 0.5px solid #d4a020; }
 .p0-detail.open { display: block; }
 
@@ -28,14 +28,14 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 0 1rem 1.25rem; }
 .stat { background: #fff; border-radius: 8px; padding: .75rem 1rem; border: 0.5px solid #d3d1c7; }
 .stat .lbl { font-size: 11px; color: #73726c; margin-bottom: 4px; }
-.stat .val { font-size: 20px; font-weight: 600; color: #0B5362; }
+.stat .val { font-size: 20px; font-weight: 600; color: #393E46; }
 .stat .sub { font-size: 11px; color: #73726c; margin-top: 2px; }
 
 /* NAV */
 .nav { display: flex; gap: 6px; margin: 0 1rem 1.25rem; flex-wrap: wrap; }
 .nav button { font-size: 12px; padding: 5px 13px; border-radius: 20px; border: 0.5px solid #b4b2a9; background: #fff; color: #73726c; cursor: pointer; transition: all .15s; }
-.nav button.active { background: #0B5362; color: #fff; border-color: transparent; }
-.nav button:hover:not(.active) { border-color: #0B5362; color: #0B5362; }
+.nav button.active { background: #393E46; color: #fff; border-color: transparent; }
+.nav button:hover:not(.active) { border-color: #393E46; color: #393E46; }
 .view { display: none; padding: 0 1rem; }
 .view.active { display: block; }
 
@@ -53,11 +53,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 
 /* KANBAN */
 .kanban { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 5px; overflow-x: auto; }
-.col-header { font-size: 10px; font-weight: 600; color: #fff; padding: 4px 5px; border-radius: 4px; background: #0B5362; text-align: center; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: 0.02em; }
+.col-header { font-size: 10px; font-weight: 600; color: #fff; padding: 4px 5px; border-radius: 4px; background: #393E46; text-align: center; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: 0.02em; }
 .col-header.paused { background: #7a7a72; }
 .col-cards { display: flex; flex-direction: column; gap: 4px; }
 .kcard { border: 0.5px solid #d3d1c7; border-radius: 6px; padding: 6px 7px; background: #fff; cursor: pointer; transition: border-color .15s, box-shadow .15s; }
-.kcard:hover { border-color: #0B5362; box-shadow: 0 1px 4px rgba(57,62,70,0.10); }
+.kcard:hover { border-color: #393E46; box-shadow: 0 1px 4px rgba(57,62,70,0.10); }
 .kcard.p0 { border-color: #BA7517; background: #fef8e8; }
 .kcard.qw { border-color: #00A984; }
 .kcard-name { font-size: 11px; font-weight: 500; line-height: 1.3; }
@@ -65,7 +65,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 
 /* TABLE */
 table.main { width: 100%; border-collapse: collapse; font-size: 12px; }
-table.main thead th { font-size: 11px; font-weight: 600; color: #fff; text-align: left; padding: 6px 8px; background: #0B5362; position: sticky; top: 0; }
+table.main thead th { font-size: 11px; font-weight: 600; color: #fff; text-align: left; padding: 6px 8px; background: #393E46; position: sticky; top: 0; }
 table.main tbody td { padding: 5px 8px; border-bottom: 0.5px solid #d3d1c7; vertical-align: middle; }
 table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 .gp-bar-wrap { display: flex; align-items: center; gap: 5px; }
@@ -92,14 +92,14 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 .koff-rule { display: flex; align-items: flex-start; gap: 10px; padding: .6rem 0; border-bottom: 0.5px solid #d3d1c7; font-size: 12px; }
 .koff-rule:last-child { border: none; }
 .step-grid { display: grid; grid-template-columns: 24px 1fr 90px 1fr; gap: 0; font-size: 12px; margin-bottom: 1rem; border: 0.5px solid #d3d1c7; border-radius: 6px; overflow: hidden; }
-.step-head { font-size: 11px; font-weight: 600; color: #fff; padding: 5px 8px; border-bottom: 0.5px solid #b4b2a9; background: #0B5362; }
+.step-head { font-size: 11px; font-weight: 600; color: #fff; padding: 5px 8px; border-bottom: 0.5px solid #b4b2a9; background: #393E46; }
 .step-cell { padding: 5px 8px; border-bottom: 0.5px solid #d3d1c7; border-right: 0.5px solid #d3d1c7; }
 .step-cell:last-child { border-right: none; }
 .step-num { font-weight: 500; color: #73726c; font-size: 11px; }
 
 /* LIFECYCLE */
 .lc-item { display: flex; align-items: flex-start; gap: 12px; padding: .7rem 0; border-bottom: 0.5px solid #d3d1c7; }
-.lc-num { min-width: 22px; height: 22px; border-radius: 50%; background: #0B5362; color: #fff; border: none; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; flex-shrink: 0; }
+.lc-num { min-width: 22px; height: 22px; border-radius: 50%; background: #393E46; color: #fff; border: none; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; flex-shrink: 0; }
 .check-item { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; color: #73726c; padding: 4px 0; border-bottom: 0.5px solid #d3d1c7; }
 .check-item:last-child { border: none; }
 .check-box { width: 14px; height: 14px; border: 0.5px solid #b4b2a9; border-radius: 3px; flex-shrink: 0; margin-top: 1px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 9px; }
@@ -108,10 +108,10 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 /* DETAIL PANEL */
 .detail-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0); pointer-events: none; z-index: 10; transition: background .2s; }
 .detail-overlay.open { background: rgba(0,0,0,0.25); pointer-events: all; }
-.detail-panel { position: fixed; right: -420px; top: 0; bottom: 0; width: 380px; background: #fff; border-left: 2px solid #0B5362; overflow-y: auto; transition: right .25s; padding: 1.25rem; z-index: 11; }
+.detail-panel { position: fixed; right: -420px; top: 0; bottom: 0; width: 380px; background: #fff; border-left: 2px solid #393E46; overflow-y: auto; transition: right .25s; padding: 1.25rem; z-index: 11; }
 .detail-panel.open { right: 0; }
 .detail-close { float: right; cursor: pointer; font-size: 18px; color: #73726c; line-height: 1; padding: 2px 4px; }
-.detail-close:hover { color: #0B5362; }
+.detail-close:hover { color: #393E46; }
 .d-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 0.5px solid #d3d1c7; font-size: 13px; }
 .d-row .dl { color: #73726c; }
 .d-row .dv { font-weight: 500; text-align: right; max-width: 58%; }
@@ -232,7 +232,7 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 <div class="wrap">
   <div class="board-header">
     <h1>Evans Transformation Board</h1>
-    <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 8/26/2026 9:22 AM · AM — synced from Monday.com</div>
+    <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 8/26/2026 1:07 PM · PM — synced from Monday.com</div>
   </div>
 
   <!-- P0 BANNER -->
@@ -600,7 +600,6 @@ const QW = [
   { seq:13, name:"Rosco Laboratories [LTL Rate Shop + Dispatch]", loads:199, uxpct:100, gp:13397, type:"Customer", note:"🟠 On Deck. Low complexity. Quick win." },
   { seq:15, name:"BluLabs Brands [LTL Rate Shop + Dispatch]", loads:380, uxpct:100, gp:60444, type:"Customer", note:"🟠 On Deck. Moderate. Multi-tenant vendor flag — vendors serving multiple shippers." },
   { seq:16, name:"Dollamur [Website Rate API Integration]", loads:1423, uxpct:0, gp:130000, type:"Integration", note:"🔵 Discovery. KAM: Shawn Cross. Type: Customer + Integration. Spike v1.0 + config complete. UX migration: 278-record address book, 5 products, 2 NMFCs. Parallel workstream: Dollamur building quote tool against E3 POST /v2/rates (greenfield). API schema sent to Shawn 6/4. Technical contact TBD." },
-  { seq:17, name:"Durex Products", loads:1256, uxpct:0, gp:65129, type:"Customer", note:"🟠 On Deck." },
   { seq:18, name:"Integer Parent", loads:648, uxpct:0, gp:26370, type:"Customer", note:"🟠 On Deck." },
   { seq:19, name:"CAT Non-Managed", loads:0, uxpct:0, gp:0, type:"Customer", note:"🟠 On Deck. CAT Managed is separate — hold." },
   { seq:"H1", name:"Ice Drill", loads:"—", uxpct:"Net New", gp:"—", type:"Net New", note:"🔜 Horizon. Blanket inbound + outbound. Implementation Team." },
@@ -646,7 +645,7 @@ const CUSTOMERS = [
     note:"Middleby Group child entity - largest GP contributor in the group. Loads and GP annualized x4 from May-Jul 2026 actuals (three complete months of the UX shipment-detail export, 8/20/2026). Parse validated against the July pivot - all six Middleby child figures matched to the cent. May-Jul 2026 actual: 1091 loads, $88,454.30 GP (34% of all Middleby GP that month). Load-level export on file covers 5/1/2026-8/19/2026." },
   { name:"Taylor Company Inbound", parent:"Middleby Group", tier:"Tier 1", loads:5216, gp:173950, complexity:"TBD", type:"Type 1", status:"Discovery", dod:1, color:"t1", kam:"Spencer Walker",
     note:"Middleby Group child entity - highest load count in the group. Loads and GP annualized x4 from May-Jul 2026 actuals (three complete months of the UX shipment-detail export, 8/20/2026). Parse validated against the July pivot - all six Middleby child figures matched to the cent. May-Jul 2026 actual: 1304 loads, $43,487.52 GP. Tracked separately from Taylor Company Inc. per owner-group split in the source pivot." },
-  { name:"Taylor Company Inc.", parent:"Middleby Group", tier:"Tier 1", loads:1164, gp:67907, complexity:"TBD", type:"Type 1", status:"Intake", dod:0, color:"t1", kam:"Spencer Walker",
+  { name:"Taylor Company Inc.", parent:"Middleby Group", tier:"Tier 1", loads:1164, gp:67907, complexity:"TBD", type:"Type 1", status:"Discovery", dod:1, color:"t1", kam:"Spencer Walker",
     note:"Middleby Group child entity. Loads and GP annualized x4 from May-Jul 2026 actuals (three complete months of the UX shipment-detail export, 8/20/2026). Parse validated against the July pivot - all six Middleby child figures matched to the cent. May-Jul 2026 actual: 291 loads, $16,976.81 GP. Tracked separately from Taylor Company Inbound per owner-group split in the source pivot." },
   { name:"Osmose Utilities", tier:"Tier 2", loads:3608, gp:371580, complexity:"Moderate", type:"Type 1", status:"Discovery", dod:1, color:"t2", kam:"Spencer Walker", note:"Active ODFL eBOL customer. [Figures refreshed 8/20/2026 from May-Jul 2026 UX actuals, annualized x4.]" },
   { name:"Southbend", parent:"Middleby Group", tier:"Tier 1", loads:2884, gp:168924, complexity:"TBD", type:"Type 1", status:"Discovery", dod:1, color:"t1", kam:"Spencer Walker",
@@ -654,7 +653,7 @@ const CUSTOMERS = [
   { name:"ETE (Engine & Transmission Exchange)", tier:"Tier 1", loads:12424, gp:53389, complexity:"TBD", type:"Type 1", status:"Discovery", dod:1, color:"t1", kam:"Rich Reese",
     note:"Engine \u0026 Transmission Exchange. Not a Middleby entity - standalone owner group. Added to the On Deck list 8/20/2026. Loads and GP annualized x4 from May-Jul 2026 actuals (three complete months of the UX shipment-detail export, 8/20/2026). Parse validated against the July pivot - all six Middleby child figures matched to the cent. May-Jul 2026 actual: 3,106 loads, $13,347.30 GP. High volume, thin margin - 12,424 loads/yr annualized against only $53,389 GP, roughly $4.30 GP per load, the lowest GP-per-load of any entity on this list. Worth confirming the rate structure before prioritising.\n\nOpen items:\n\u2b1c Tier confirmation - flagged Tier 1 by KAM, but GP/load is well below the other Tier 1 rows\n\u2b1c KAM assignment - TBD\n\u2b1c Complexity assessment - not started" },
 
-  { name:"Viking Range", parent:"Middleby Group", tier:"Tier 1", loads:804, gp:46978, complexity:"TBD", type:"Type 1", status:"Intake", dod:0, color:"t1", kam:"Spencer Walker",
+  { name:"Viking Range", parent:"Middleby Group", tier:"Tier 1", loads:804, gp:46978, complexity:"TBD", type:"Type 1", status:"Discovery", dod:1, color:"t1", kam:"Spencer Walker",
     note:"Middleby Group child entity. Loads and GP annualized x4 from May-Jul 2026 actuals (three complete months of the UX shipment-detail export, 8/20/2026). Parse validated against the July pivot - all six Middleby child figures matched to the cent. May-Jul 2026 actual: 201 loads, $11,744.51 GP. Not on the original On Deck screenshot - added as a material Middleby child." },
   { name:"Middleby Marshall Inc", parent:"Middleby Group", tier:"Tier 1", loads:544, gp:35175, complexity:"TBD", type:"Type 1", status:"Intake", dod:0, color:"t1", kam:"Spencer Walker",
     note:"Middleby Group child entity. Loads and GP annualized x4 from May-Jul 2026 actuals (three complete months of the UX shipment-detail export, 8/20/2026). Parse validated against the July pivot - all six Middleby child figures matched to the cent. May-Jul 2026 actual: 136 loads, $8,793.77 GP. Not on the original On Deck screenshot - added as a material Middleby child." },
@@ -664,7 +663,6 @@ const CUSTOMERS = [
   { name:"Flambeau Inc", tier:"Tier 1", loads:2424, gp:80204, complexity:"Simple-Moderate", type:"Type 1", status:"Intake", dod:0, color:"t1", kam:"Ryan Helgason", note:"Non-integrated divisions only. Mears relationship value. [Figures refreshed 8/20/2026 from May-Jul 2026 UX actuals, annualized x4.]" },
   { name:"Palmer Johnson", kam:"Wes Cuomo (AM)", tier:"Tier 2", loads:2876, gp:138582, complexity:"Moderate", type:"Type 1", status:"Discovery", dod:1, color:"t2", note:" [Figures refreshed 8/20/2026 from May-Jul 2026 UX actuals, annualized x4.]" },
   { name:"Sub-Zero Group", tier:"Tier 2", loads:9320, gp:85803, complexity:"Moderate", type:"Type 1+2", status:"Intake", dod:0, color:"t2", kam:"Craig Curwick", note:"Also Dock Scheduler candidate — two separate widgets. [Figures refreshed 8/20/2026 from May-Jul 2026 UX actuals, annualized x4.]" },
-  { name:"Durex Products", tier:"Tier 3", loads:1916, gp:81733, complexity:"Simple", type:"Type 1", status:"Discovery", dod:1, color:"t3", kam:"Craig Curwick", note:" [Figures refreshed 8/20/2026 from May-Jul 2026 UX actuals, annualized x4.]" },
   { name:"Integer Parent", tier:"Tier 3", loads:648, gp:26370, complexity:"Simple", type:"Type 1", status:"On Deck", dod:0, color:"t3", note:" [NOT refreshed 8/20/2026 - the UX export shows only one Integer entity (INTEGER CORP DBA GREATBATCH, 1,032 loads/yr, $37,772 GP), already carried on the INTECL2 card. This row may be a duplicate - confirm before prioritising.]" },
   { name:"CAT Non-Managed", tier:"Tier 3", loads:1532, gp:10923, complexity:"Simple", type:"Type 1", status:"Intake", dod:0, color:"t3", kam:"Jeannie Chamber", note:"Quick win. CAT Managed is separate — hold. [Figures refreshed 8/20/2026 from May-Jul 2026 UX actuals, annualized x4.]" },
   { name:"Anderson Process", tier:"Tier 2", loads:5524, gp:91068, complexity:"Complex", type:"Type 3+1", status:"Discovery", dod:1, color:"int", flag:"integration", kam:"Craig Curwick", note:"Shipper HQ rating integration via Legacy WS. Migration requires Shipper HQ to integrate with E3 API, or Anderson Process changes their rating workflow. [Figures refreshed 8/20/2026 from May-Jul 2026 UX actuals, annualized x4.]" },
