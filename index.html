@@ -78,6 +78,10 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 .gap-pri.med { background: #FAEEDA; color: #854F0B; }
 .gap-pri.low { background: #D3D1C7; color: #444441; }
 .gap-badge { font-size: 10px; padding: 1px 7px; border-radius: 10px; white-space: nowrap; }
+.rte-badge { font-size: 9px; padding: 1px 6px; border-radius: 8px; font-weight: 500; vertical-align: middle; margin-left: 4px; }
+.rte-blocked { background: #FBE9E9; color: #791F1F; }
+.rte-ready { background: #EAF3DE; color: #27500A; }
+.rte-executed { background: #E6F1FB; color: #0C447C; }
 .gap-done { background: #b3ede0; color: #085041; }
 .gap-val { background: #B5D4F4; color: #0C447C; }
 .gap-spread { background: #FAEEDA; color: #854F0B; }
@@ -232,7 +236,7 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 <div class="wrap">
   <div class="board-header">
     <h1>Evans Transformation Board</h1>
-    <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 9/1/2026 9:03 AM · AM — synced from Monday.com</div>
+    <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 9/1/2026 12:34 PM · AM — synced from Monday.com</div>
   </div>
 
   <!-- P0 BANNER -->
@@ -312,6 +316,13 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
         <option value="Hold">Hold</option>
         <option value="int">Integration flag</option>
         <option value="Not UX">Not UX</option>
+      </select>
+      <select id="rte-filter" onchange="renderTable()" style="font-size:12px;padding:4px 8px;border-radius:6px;border:0.5px solid #b4b2a9;background:#fff">
+        <option value="">Execution push: all</option>
+        <option value="in">In execution push</option>
+        <option value="Ready">Ready</option>
+        <option value="Blocked">Blocked</option>
+        <option value="Executed">Executed</option>
       </select>
       <select id="sort-col" onchange="renderTable()" style="font-size:12px;padding:4px 8px;border-radius:6px;border:0.5px solid #b4b2a9;background:#fff">
         <option value="gp">Sort by GP ↓</option>
@@ -655,9 +666,9 @@ const CUSTOMERS = [
 
   { name:"Viking Range", parent:"Middleby Group", tier:"Tier 1", loads:804, gp:46978, complexity:"TBD", type:"Type 1", status:"Discovery", dod:1, color:"t1", kam:"Spencer Walker",
     note:"Middleby Group child entity. Loads and GP annualized x4 from May-Jul 2026 actuals (three complete months of the UX shipment-detail export, 8/20/2026). Parse validated against the July pivot - all six Middleby child figures matched to the cent. May-Jul 2026 actual: 201 loads, $11,744.51 GP. Not on the original On Deck screenshot - added as a material Middleby child." },
-  { name:"Middleby Marshall Inc", parent:"Middleby Group", tier:"Tier 1", loads:544, gp:35175, complexity:"TBD", type:"Type 1", status:"Discovery", dod:1, color:"t1", kam:"Spencer Walker",
+  { name:"Middleby Marshall Inc", parent:"Middleby Group", tier:"Tier 1", loads:544, gp:35175, complexity:"TBD", type:"Type 1", status:"Discovery", dod:1, color:"t1", readyToExecute:"Blocked", kam:"Spencer Walker",
     note:"Middleby Group child entity. Loads and GP annualized x4 from May-Jul 2026 actuals (three complete months of the UX shipment-detail export, 8/20/2026). Parse validated against the July pivot - all six Middleby child figures matched to the cent. May-Jul 2026 actual: 136 loads, $8,793.77 GP. Not on the original On Deck screenshot - added as a material Middleby child." },
-  { name:"Stewart Systems Baking LLC", parent:"Middleby Group", tier:"Tier 1", loads:932, gp:28250, complexity:"TBD", type:"Type 1", status:"Discovery", dod:1, color:"t1", kam:"Spencer Walker",
+  { name:"Stewart Systems Baking LLC", parent:"Middleby Group", tier:"Tier 1", loads:932, gp:28250, complexity:"TBD", type:"Type 1", status:"Discovery", dod:1, color:"t1", readyToExecute:"Blocked", kam:"Spencer Walker",
     note:"Middleby Group child entity. Loads and GP annualized x4 from May-Jul 2026 actuals (three complete months of the UX shipment-detail export, 8/20/2026). Parse validated against the July pivot - all six Middleby child figures matched to the cent. May-Jul 2026 actual: 233 loads, $7,062.60 GP. Not on the original On Deck screenshot - added as a material Middleby child." },
   { name:"Flambeau Inc", tier:"Tier 1", loads:2424, gp:80204, complexity:"Simple-Moderate", type:"Type 1", status:"Discovery", dod:1, color:"t1", kam:"Ryan Helgason", note:"Non-integrated divisions only. Mears relationship value. [Figures refreshed 8/20/2026 from May-Jul 2026 UX actuals, annualized x4.]" },
   { name:"Palmer Johnson", kam:"Wes Cuomo (AM)", tier:"Tier 2", loads:2876, gp:138582, complexity:"Moderate", type:"Type 1", status:"Discovery", dod:1, color:"t2", note:" [Figures refreshed 8/20/2026 from May-Jul 2026 UX actuals, annualized x4.]" },
@@ -777,16 +788,16 @@ NMFC switches applied: 25970→25525, 27260→25525, 53180→53125, 123290→528
   { name:"Lake Country Manufacturing", tier:"Quick Win", loads:1012, gp:38744, complexity:"TBD", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Wes Cuomo (AM)",
     note:"Monday.com intake stub \u2014 ticket 12886936779, created 8/24/2026 10:40 PM. Added to the board 8/25/2026 at Eric's direction.\n\nOnly Type = Customer and Project Status = Intake are populated in Monday.com. Every other field is empty at the source, so nothing here is validated yet:\n\u2b1c Complexity \u2014 not set\n\u2b1c Legacy WS active post-migration \u2014 not set\n\u2b1c Internal Status \u2014 not set\n\u2b1c Target Go-Live \u2014 not set\n\u2b1c Actual Go-Live \u2014 not set\n\u2705 KAM/AM \u2014 Wes Cuomo (AM), from Monday.com 8/25/2026\n\u2b1c No subitems / no DoD checklist started\n\u2705 Loads / GP \u2014 1,012 loads, $38,744 GP. From the 365-day Create-Date extract (8/25/2026): 1,094 loads / $45,766 total, of which 1,012 / $38,744 are Legacy UX portal loads by customer staff. The board tracks UX-attributed only, so Evans-created MercuryGate loads (72), EDI-210 unmatched (7) and Vooma (3) are excluded. GP/load $38.28. Not annualized \u2014 these are full-year actuals\n\u2705 Legacy-to-E3 \u2014 existing Legacy UX customer (Eric, 8/25/2026), not net new. The loads/GP zeros are therefore placeholders that MUST be replaced: run the UX shipment-detail export and annualize x4 from May\u2013Jul 2026 actuals, then set tier from the result.\n\u2705 Tier \u2014 Quick Win (Eric, 8/25/2026)\n\u2705 No integration \u2014 named UX User on 100% of 1,012 credential loads across a full year: portal usage, not a feed. Cutover is provisioning and retraining, not an API build\n\u2705 Evans-created loads (72) \u2014 tyler.buechs and jake.schulte confirmed Evans employees (Eric, 8/25/2026); MercuryGate-native, out of Legacy scope\n\u2705 tina.natzke@lakecountrymfg.com \u2014 removed user, no loads in the last 90 days, not a concern (Eric, 8/25/2026). Her 113 loads / $4,551 remain in the 365-day figures as historical volume\n\u2b1c Volume is spread, not concentrated: frank.pivonka 368 (36%), jim.seelig 275 (27%), tina.natzke 113, jeff.phipps 100, matt.brandt 99, amy.b 30, carrie.smith 20, sasha.pickering 7" },
 
-  { name:"Runtal North America", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Mike Stiglich, Natasha Clark (AM)", legacyWS:"NO",
+  { name:"Runtal North America", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Discovery", dod:1, color:"qw", readyToExecute:"Blocked", kam:"Mike Stiglich, Natasha Clark (AM)", legacyWS:"NO",
     note:"🔵 Discovery. Legacy-to-E3 existing customer (Eric, 8/31/2026). Monday.com ticket 12920860798, intake 8/27/2026. KAM/AM: Mike Stiglich, Natasha Clark (AM). Complexity: Low.\n\n⬜ loads:0 / gp:0 are PLACEHOLDERS, not facts - the UX shipment-detail export has not been run for this account yet. Annualize x4 from May-Jul 2026 actuals once pulled, then set tier from the resulting volume.\n⬜ tier:'TBD' pending those figures." },
 
   { name:"MetalTek International", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Rich Reese (KAM) / Mike Stiglich (AM)", legacyWS:"NO",
     note:"🔵 Discovery. Legacy-to-E3 existing customer (Eric, 8/31/2026). Monday.com ticket 12921733958, intake 8/27/2026. KAM/AM: Rich Reese (KAM) / Mike Stiglich (AM). Complexity: Low. MetalTek-family account - confirm with the KAM whether Investcast and MetalTek International consolidate before pulling figures separately.\n\n⬜ loads:0 / gp:0 are PLACEHOLDERS, not facts - the UX shipment-detail export has not been run for this account yet. Annualize x4 from May-Jul 2026 actuals once pulled, then set tier from the resulting volume.\n⬜ tier:'TBD' pending those figures." },
 
-  { name:"Investcast MetalTek", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Mike Stiglich (AM)", legacyWS:"NO",
+  { name:"Investcast MetalTek", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Discovery", dod:1, color:"qw", readyToExecute:"Blocked", kam:"Mike Stiglich (AM)", legacyWS:"NO",
     note:"🔵 Discovery. Legacy-to-E3 existing customer (Eric, 8/31/2026). Monday.com ticket 12921743366, intake 8/27/2026. KAM/AM: Mike Stiglich (AM). Complexity: Low. MetalTek-family account - confirm with the KAM whether Investcast and MetalTek International consolidate before pulling figures separately.\n\n⬜ loads:0 / gp:0 are PLACEHOLDERS, not facts - the UX shipment-detail export has not been run for this account yet. Annualize x4 from May-Jul 2026 actuals once pulled, then set tier from the resulting volume.\n⬜ tier:'TBD' pending those figures." },
 
-  { name:"Mixer Systems Inc", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Wes Cuomo (AM)", legacyWS:"NO",
+  { name:"Mixer Systems Inc", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Discovery", dod:1, color:"qw", readyToExecute:"Blocked", kam:"Wes Cuomo (AM)", legacyWS:"NO",
     note:"🔵 Discovery. Legacy-to-E3 existing customer (Eric, 8/31/2026). Monday.com ticket 12921743352, intake 8/27/2026. KAM/AM: Wes Cuomo (AM). Complexity: Low.\n\n⬜ loads:0 / gp:0 are PLACEHOLDERS, not facts - the UX shipment-detail export has not been run for this account yet. Annualize x4 from May-Jul 2026 actuals once pulled, then set tier from the resulting volume.\n⬜ tier:'TBD' pending those figures." },
 
   { name:"Beckett Thermal Solutions", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Spencer Walker (KAM) / Mark Charlesworth (AM)", legacyWS:"NO",
@@ -795,7 +806,7 @@ NMFC switches applied: 25970→25525, 27260→25525, 53180→53125, 123290→528
   { name:"Unico", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Wes Cuomo (AM)", legacyWS:"NO",
     note:"🔵 Discovery. Legacy-to-E3 existing customer (Eric, 8/31/2026). Monday.com ticket 12921743363, intake 8/27/2026. KAM/AM: Wes Cuomo (AM). Complexity: Low.\n\n⬜ loads:0 / gp:0 are PLACEHOLDERS, not facts - the UX shipment-detail export has not been run for this account yet. Annualize x4 from May-Jul 2026 actuals once pulled, then set tier from the resulting volume.\n⬜ tier:'TBD' pending those figures." },
 
-  { name:"Venco Venturo", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Tracy Maaser (AM)", legacyWS:"NO",
+  { name:"Venco Venturo", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Discovery", dod:1, color:"qw", readyToExecute:"Blocked", kam:"Tracy Maaser (AM)", legacyWS:"NO",
     note:"🔵 Discovery. Legacy-to-E3 existing customer (Eric, 8/31/2026). Monday.com ticket 12921743365, intake 8/27/2026. KAM/AM: Tracy Maaser (AM). Complexity: Low.\n\n⬜ loads:0 / gp:0 are PLACEHOLDERS, not facts - the UX shipment-detail export has not been run for this account yet. Annualize x4 from May-Jul 2026 actuals once pulled, then set tier from the resulting volume.\n⬜ tier:'TBD' pending those figures." },
 
   { name:"Super Steel", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Tracy Maaser (AM)", legacyWS:"NO",
@@ -810,10 +821,10 @@ NMFC switches applied: 25970→25525, 27260→25525, 53180→53125, 123290→528
   { name:"Premier Cruise Logistics Inc", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Mark Charlesworth", legacyWS:"NO",
     note:"🔵 Discovery. Legacy-to-E3 existing customer (Eric, 8/31/2026). Monday.com ticket 12921743454, intake 8/27/2026. KAM/AM: Mark Charlesworth. Complexity: Low.\n\n⬜ loads:0 / gp:0 are PLACEHOLDERS, not facts - the UX shipment-detail export has not been run for this account yet. Annualize x4 from May-Jul 2026 actuals once pulled, then set tier from the resulting volume.\n⬜ tier:'TBD' pending those figures." },
 
-  { name:"Olympus Group", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Mike Stiglich (AM)", legacyWS:"NO",
+  { name:"Olympus Group", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Discovery", dod:1, color:"qw", readyToExecute:"Blocked", kam:"Mike Stiglich (AM)", legacyWS:"NO",
     note:"🔵 Discovery. Legacy-to-E3 existing customer (Eric, 8/31/2026). Monday.com ticket 12921743455, intake 8/27/2026. KAM/AM: Mike Stiglich (AM). Complexity: Low.\n\n⬜ loads:0 / gp:0 are PLACEHOLDERS, not facts - the UX shipment-detail export has not been run for this account yet. Annualize x4 from May-Jul 2026 actuals once pulled, then set tier from the resulting volume.\n⬜ tier:'TBD' pending those figures." },
 
-  { name:"Stego Industries", tier:"TBD", loads:0, gp:0, complexity:"Moderate", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Ryan Helgason (KAM) / Jacob Yount (AM)", legacyWS:"YES",
+  { name:"Stego Industries", tier:"TBD", loads:0, gp:0, complexity:"Moderate", type:"Customer", status:"Discovery", dod:1, color:"qw", readyToExecute:"Blocked", kam:"Ryan Helgason (KAM) / Jacob Yount (AM)", legacyWS:"YES",
     note:"🔵 Discovery. Legacy-to-E3 existing customer (Eric, 8/31/2026). Monday.com ticket 12921743456, intake 8/27/2026. KAM/AM: Ryan Helgason (KAM) / Jacob Yount (AM). Complexity: Moderate.\n\n⬜ loads:0 / gp:0 are PLACEHOLDERS, not facts - the UX shipment-detail export has not been run for this account yet. Annualize x4 from May-Jul 2026 actuals once pulled, then set tier from the resulting volume.\n⬜ tier:'TBD' pending those figures.\n⬜ Legacy webservice user present (Legacy WS: YES) - run the Create By / UX User analysis before calling this integration-led." },
 
   { name:"Gearbox Express", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Mike Stiglich (AM)", legacyWS:"NO",
@@ -828,7 +839,7 @@ NMFC switches applied: 25970→25525, 27260→25525, 53180→53125, 123290→528
   { name:"Aries Industries Inc", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Shawn Cross", legacyWS:"NO",
     note:"⚪ Intake. Legacy-to-E3 existing customer (Eric, 8/31/2026). Monday.com ticket 12921743453, intake 8/27/2026. KAM/AM: Shawn Cross. Complexity: Low.\n\n⬜ loads:0 / gp:0 are PLACEHOLDERS, not facts - the UX shipment-detail export has not been run for this account yet. Annualize x4 from May-Jul 2026 actuals once pulled, then set tier from the resulting volume.\n⬜ tier:'TBD' pending those figures." },
 
-  { name:"CHS Inc (2 entities consolidating)", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Mike Stiglich (AM)", legacyWS:"NO",
+  { name:"CHS Inc (2 entities consolidating)", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Discovery", dod:1, color:"qw", readyToExecute:"Blocked", kam:"Mike Stiglich (AM)", legacyWS:"NO",
     note:"⚪ Intake. Legacy-to-E3 existing customer (Eric, 8/31/2026). Monday.com ticket 12921743460, intake 8/27/2026. KAM/AM: Mike Stiglich (AM). Complexity: Low. Renamed at source from 'CHS Inc MN' on 8/31/2026 - two entities are consolidating, so expect one card to cover both.\n\n⬜ loads:0 / gp:0 are PLACEHOLDERS, not facts - the UX shipment-detail export has not been run for this account yet. Annualize x4 from May-Jul 2026 actuals once pulled, then set tier from the resulting volume.\n⬜ tier:'TBD' pending those figures." },
 
   { name:"FireResQ Incorporated", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Wes Cuomo (AM)", legacyWS:"NO",
@@ -846,7 +857,7 @@ NMFC switches applied: 25970→25525, 27260→25525, 53180→53125, 123290→528
   { name:"V&Co Beauty LLC", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Anita Green (AM)", legacyWS:"NO",
     note:"⚪ Intake. Legacy-to-E3 existing customer (Eric, 8/31/2026). Monday.com ticket 12921742688, intake 8/27/2026. KAM/AM: Anita Green (AM). Complexity: Low.\n\n⬜ loads:0 / gp:0 are PLACEHOLDERS, not facts - the UX shipment-detail export has not been run for this account yet. Annualize x4 from May-Jul 2026 actuals once pulled, then set tier from the resulting volume.\n⬜ tier:'TBD' pending those figures." },
 
-  { name:"Lynx Grills", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Spencer Walker", legacyWS:"NO",
+  { name:"Lynx Grills", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Discovery", dod:1, color:"qw", readyToExecute:"Blocked", kam:"Spencer Walker", legacyWS:"NO",
     note:"⚪ Intake. Legacy-to-E3 existing customer (Eric, 8/31/2026). Monday.com ticket 12921742691, intake 8/27/2026. KAM/AM: Spencer Walker. Complexity: Low.\n\n⬜ loads:0 / gp:0 are PLACEHOLDERS, not facts - the UX shipment-detail export has not been run for this account yet. Annualize x4 from May-Jul 2026 actuals once pulled, then set tier from the resulting volume.\n⬜ tier:'TBD' pending those figures." },
 
   { name:"GPM Pump and Truck Parts & Service", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Tracy Maaser (AM)", legacyWS:"NO",
@@ -904,6 +915,7 @@ const COLS = ["On Deck","Paused","Intake","Discovery","Transformation Design","I
 function fmt(n) { return n > 0 ? "$" + n.toLocaleString() : "—"; }
 function pillC(c) { return {qw:"pill-qw",t1:"pill-t1",t2:"pill-t2",t3:"pill-t3",hold:"pill-hold"}[c]||"pill-int"; }
 function pillL(c) { return {qw:"Quick Win",t1:"Tier 1",t2:"Tier 2",t3:"Tier 3",hold:"Hold"}[c]||"Integration"; }
+function rteBadge(v) { if(!v) return ""; const m={Blocked:"rte-blocked",Ready:"rte-ready",Executed:"rte-executed"}; return `<span class="rte-badge ${m[v]||""}">${v}</span>`; }
 function cxC(c) { if(!c)return"pill-mod"; if(c.includes("Simple"))return"pill-simple"; if(c.includes("Complex"))return"pill-complex"; return"pill-mod"; }
 function gapBadge(s) {
   const m = {complete:`<span class="gap-badge gap-done">UI complete</span>`,validate:`<span class="gap-badge gap-val">Needs validation</span>`,spreadsheet:`<span class="gap-badge gap-spread">Spreadsheet only</span>`,kev:`<span class="gap-badge gap-kev">Kev-only</span>`,notbuilt:`<span class="gap-badge gap-nb">Not built</span>`,platform:`<span class="gap-badge gap-platform">⚠️ Platform gap — escalate</span>`};
@@ -938,7 +950,7 @@ function renderKanban() {
     CUSTOMERS.filter(c => c.status === col).forEach(c => {
       const card = document.createElement("div"); card.className = "kcard" + (c.color==="qw"?" qw":"");
       card.onclick = () => openDetail(c);
-      card.innerHTML = `<div class="kcard-name">${c.name}${c.active?' <span style="font-size:9px;padding:1px 5px;border-radius:8px;background:#EAF3DE;color:#27500A;font-weight:500;vertical-align:middle">ACTIVE</span>':''}</div><div class="kcard-meta">${fmt(c.gp)}</div>${c.parent?`<div style="font-size:10px;color:#73726c;margin-top:-2px;margin-bottom:2px">${c.parent}</div>`:''}<span class="pill ${pillC(c.color)}">${pillL(c.color)}</span>`;
+      card.innerHTML = `<div class="kcard-name">${c.name}${c.active?' <span style="font-size:9px;padding:1px 5px;border-radius:8px;background:#EAF3DE;color:#27500A;font-weight:500;vertical-align:middle">ACTIVE</span>':''}${rteBadge(c.readyToExecute)}</div><div class="kcard-meta">${fmt(c.gp)}</div>${c.parent?`<div style="font-size:10px;color:#73726c;margin-top:-2px;margin-bottom:2px">${c.parent}</div>`:''}<span class="pill ${pillC(c.color)}">${pillL(c.color)}</span>`;
       cards.appendChild(card);
     });
     if (!CUSTOMERS.filter(c=>c.status===col).length && col!=="Intake") {
@@ -975,6 +987,9 @@ function renderTable() {
   let rows = [...CUSTOMERS];
   if (tier === "int") rows = rows.filter(c => c.color === "int");
   else if (tier) rows = rows.filter(c => c.tier === tier);
+  const rte = document.getElementById("rte-filter").value;
+  if (rte === "in") rows = rows.filter(c => c.readyToExecute);
+  else if (rte) rows = rows.filter(c => c.readyToExecute === rte);
   if (sort === "gp") rows.sort((a,b) => b.gp - a.gp);
   else if (sort === "loads") rows.sort((a,b) => b.loads - a.loads);
   else rows.sort((a,b) => a.name.localeCompare(b.name));
@@ -1060,6 +1075,7 @@ function openDetail(c) {
       ${c.uxpct!==undefined?`<div class="d-row"><span class="dl">% UX</span><span class="dv">${c.uxpct}%</span></div>`:""}
       ${c.kam?`<div class="d-row"><span class="dl">KAM</span><span class="dv">${c.kam}</span></div>`:""}
       ${c.mondayStatus?`<div class="d-row"><span class="dl">monday.com status</span><span class="dv">${c.mondayStatus}</span></div>`:""}
+      ${c.readyToExecute?`<div class="d-row"><span class="dl">Ready to execute</span><span class="dv">${rteBadge(c.readyToExecute)}</span></div>`:""}
       ${c.legacyWS?`<div class="d-row"><span class="dl">Legacy WS active post-migration</span><span class="dv">${c.legacyWS}</span></div>`:""}
       ${c.pvOutreach?`<div class="d-row"><span class="dl">Paul Volkman</span><span class="dv" style="color:#854F0B">${c.pvOutreach}</span></div>`:""}
       <div class="d-row"><span class="dl">Status</span><span class="dv">${c.status}</span></div>
