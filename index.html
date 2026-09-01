@@ -52,9 +52,14 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .pill-simple { background: #C0DD97; color: #27500A; }
 
 /* KANBAN */
-.kanban { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 5px; overflow-x: auto; }
+.kanban { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 5px; overflow-x: auto; }
 .col-header { font-size: 10px; font-weight: 600; color: #fff; padding: 4px 5px; border-radius: 4px; background: #0B5362; text-align: center; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: 0.02em; }
 .col-header.paused { background: #7a7a72; }
+.col-header.push { background: #BA7517; }
+.push-sub { font-size: 9px; font-weight: 600; color: #73726c; letter-spacing: .04em; text-transform: uppercase; margin: 6px 0 2px; }
+.push-sub:first-child { margin-top: 0; }
+.push-empty { font-size: 10px; color: #a3a199; font-style: italic; padding: 2px 0 4px; }
+.kcard-status { font-size: 9px; color: #73726c; margin-top: 1px; }
 .col-cards { display: flex; flex-direction: column; gap: 4px; }
 .kcard { border: 0.5px solid #d3d1c7; border-radius: 6px; padding: 6px 7px; background: #fff; cursor: pointer; transition: border-color .15s, box-shadow .15s; }
 .kcard:hover { border-color: #0B5362; box-shadow: 0 1px 4px rgba(57,62,70,0.10); }
@@ -186,7 +191,7 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 /* Tablet landscape (768–1099px) */
 @media (min-width: 768px) and (max-width: 1099px) {
   .wrap { max-width: 100%; }
-  .kanban { grid-template-columns: repeat(9, minmax(80px, 1fr)); gap: 4px; }
+  .kanban { grid-template-columns: repeat(10, minmax(80px, 1fr)); gap: 4px; }
   .kcard-name { font-size: 10px; }
   .kcard-meta { font-size: 9px; }
   .col-header { font-size: 9px; padding: 3px 4px; }
@@ -236,7 +241,7 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 <div class="wrap">
   <div class="board-header">
     <h1>Evans Transformation Board</h1>
-    <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 9/1/2026 12:34 PM · AM — synced from Monday.com</div>
+    <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 9/1/2026 12:51 PM · AM — synced from Monday.com</div>
   </div>
 
   <!-- P0 BANNER -->
@@ -938,6 +943,42 @@ function buildGapTable(el, compact) {
   </tr>`).join("") + `</tbody>`;
 }
 
+// Execution push — a lens, not a status. Cards also remain in their status column.
+// Rendered between Discovery and Transformation Design (Eric, 9/1/2026).
+function buildPushColumn() {
+  const pushWrap = document.createElement("div");
+  const pushHdr = document.createElement("div");
+  pushHdr.className = "col-header push";
+  pushHdr.title = "Execution push — Ready to Execute set in monday.com";
+  pushHdr.textContent = "Execution push";
+  pushWrap.appendChild(pushHdr);
+  const pushCards = document.createElement("div");
+  pushCards.className = "col-cards";
+  ["Ready","Blocked","Executed"].forEach(band => {
+    const inBand = CUSTOMERS.filter(c => c.readyToExecute === band);
+    const sub = document.createElement("div");
+    sub.className = "push-sub";
+    sub.textContent = band + " (" + inBand.length + ")";
+    pushCards.appendChild(sub);
+    if (!inBand.length) {
+      const e = document.createElement("div"); e.className = "push-empty"; e.textContent = "none"; pushCards.appendChild(e);
+      return;
+    }
+    inBand.forEach(c => {
+      const card = document.createElement("div");
+      card.className = "kcard" + (c.color==="qw"?" qw":"");
+      card.onclick = () => openDetail(c);
+      card.innerHTML = `<div class="kcard-name">${c.name}</div><div class="kcard-status">${c.status}</div><div class="kcard-meta">${fmt(c.gp)}</div>`;
+      pushCards.appendChild(card);
+    });
+  });
+  if (!CUSTOMERS.filter(c => c.readyToExecute).length) {
+    pushCards.innerHTML = `<div class="push-empty">No accounts in the current execution push.</div>`;
+  }
+  pushWrap.appendChild(pushCards);
+  return pushWrap;
+}
+
 function renderKanban() {
   const grid = document.getElementById("kanban-grid");
   grid.innerHTML = "";
@@ -957,6 +998,7 @@ function renderKanban() {
       const e = document.createElement("div"); e.style.cssText = "height:32px;border:0.5px dashed #d3d1c7;border-radius:6px;opacity:.4"; cards.appendChild(e);
     }
     wrap.appendChild(cards); grid.appendChild(wrap);
+    if (col === "Discovery") grid.appendChild(buildPushColumn());
   });
 }
 
