@@ -10,7 +10,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .wrap { max-width: 1200px; margin: 0 auto; padding: 0 0 2rem; }
 
 /* HEADER */
-.board-header { background: #393E46; color: #fff; padding: 1.25rem 1.5rem 1rem; border-radius: 0 0 12px 12px; margin-bottom: 1.25rem; }
+.board-header { background: #0B5362; color: #fff; padding: 1.25rem 1.5rem 1rem; border-radius: 0 0 12px 12px; margin-bottom: 1.25rem; }
 .board-header h1 { font-size: 17px; font-weight: 600; color: #fff; margin-bottom: 3px; letter-spacing: 0.01em; }
 .board-header .subtitle { font-size: 11px; color: rgba(255,255,255,0.65); margin-bottom: 0; }
 
@@ -19,8 +19,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .p0-badge { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 10px; background: #BA7517; color: #fff; }
 .p0-chips { display: flex; gap: 7px; margin-top: 8px; flex-wrap: wrap; }
 .p0-chip { font-size: 11px; padding: 2px 9px; border-radius: 6px; background: #fff; border: 0.5px solid #d3d1c7; color: #5f5e5a; }
-.p0-toggle { font-size: 11px; color: #393E46; cursor: pointer; padding: 3px 8px; border-radius: 4px; border: 0.5px solid #393E46; margin-top: 8px; display: inline-block; font-weight: 500; }
-.p0-toggle:hover { background: #393E46; color: #fff; }
+.p0-toggle { font-size: 11px; color: #0B5362; cursor: pointer; padding: 3px 8px; border-radius: 4px; border: 0.5px solid #0B5362; margin-top: 8px; display: inline-block; font-weight: 500; }
+.p0-toggle:hover { background: #0B5362; color: #fff; }
 .p0-detail { display: none; margin-top: .75rem; padding-top: .75rem; border-top: 0.5px solid #d4a020; }
 .p0-detail.open { display: block; }
 
@@ -28,14 +28,14 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 0 1rem 1.25rem; }
 .stat { background: #fff; border-radius: 8px; padding: .75rem 1rem; border: 0.5px solid #d3d1c7; }
 .stat .lbl { font-size: 11px; color: #73726c; margin-bottom: 4px; }
-.stat .val { font-size: 20px; font-weight: 600; color: #393E46; }
+.stat .val { font-size: 20px; font-weight: 600; color: #0B5362; }
 .stat .sub { font-size: 11px; color: #73726c; margin-top: 2px; }
 
 /* NAV */
 .nav { display: flex; gap: 6px; margin: 0 1rem 1.25rem; flex-wrap: wrap; }
 .nav button { font-size: 12px; padding: 5px 13px; border-radius: 20px; border: 0.5px solid #b4b2a9; background: #fff; color: #73726c; cursor: pointer; transition: all .15s; }
-.nav button.active { background: #393E46; color: #fff; border-color: transparent; }
-.nav button:hover:not(.active) { border-color: #393E46; color: #393E46; }
+.nav button.active { background: #0B5362; color: #fff; border-color: transparent; }
+.nav button:hover:not(.active) { border-color: #0B5362; color: #0B5362; }
 .view { display: none; padding: 0 1rem; }
 .view.active { display: block; }
 
@@ -53,7 +53,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 
 /* KANBAN */
 .kanban { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 5px; overflow-x: auto; }
-.col-header { font-size: 10px; font-weight: 600; color: #fff; padding: 4px 5px; border-radius: 4px; background: #393E46; text-align: center; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: 0.02em; }
+.col-header { font-size: 10px; font-weight: 600; color: #fff; padding: 4px 5px; border-radius: 4px; background: #0B5362; text-align: center; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: 0.02em; }
 .col-header.paused { background: #7a7a72; }
 .col-header.push { background: #BA7517; }
 .push-sub { font-size: 9px; font-weight: 600; color: #73726c; letter-spacing: .04em; text-transform: uppercase; margin: 6px 0 2px; }
@@ -62,7 +62,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .kcard-status { font-size: 9px; color: #73726c; margin-top: 1px; }
 .col-cards { display: flex; flex-direction: column; gap: 4px; }
 .kcard { border: 0.5px solid #d3d1c7; border-radius: 6px; padding: 6px 7px; background: #fff; cursor: pointer; transition: border-color .15s, box-shadow .15s; }
-.kcard:hover { border-color: #393E46; box-shadow: 0 1px 4px rgba(57,62,70,0.10); }
+.kcard:hover { border-color: #0B5362; box-shadow: 0 1px 4px rgba(57,62,70,0.10); }
 .kcard.p0 { border-color: #BA7517; background: #fef8e8; }
 .kcard.qw { border-color: #00A984; }
 .kcard-name { font-size: 11px; font-weight: 500; line-height: 1.3; }
@@ -70,7 +70,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 
 /* TABLE */
 table.main { width: 100%; border-collapse: collapse; font-size: 12px; }
-table.main thead th { font-size: 11px; font-weight: 600; color: #fff; text-align: left; padding: 6px 8px; background: #393E46; position: sticky; top: 0; }
+table.main thead th { font-size: 11px; font-weight: 600; color: #fff; text-align: left; padding: 6px 8px; background: #0B5362; position: sticky; top: 0; }
 table.main tbody td { padding: 5px 8px; border-bottom: 0.5px solid #d3d1c7; vertical-align: middle; }
 table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 .gp-bar-wrap { display: flex; align-items: center; gap: 5px; }
@@ -102,14 +102,14 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 .koff-rule { display: flex; align-items: flex-start; gap: 10px; padding: .6rem 0; border-bottom: 0.5px solid #d3d1c7; font-size: 12px; }
 .koff-rule:last-child { border: none; }
 .step-grid { display: grid; grid-template-columns: 24px 1fr 90px 1fr; gap: 0; font-size: 12px; margin-bottom: 1rem; border: 0.5px solid #d3d1c7; border-radius: 6px; overflow: hidden; }
-.step-head { font-size: 11px; font-weight: 600; color: #fff; padding: 5px 8px; border-bottom: 0.5px solid #b4b2a9; background: #393E46; }
+.step-head { font-size: 11px; font-weight: 600; color: #fff; padding: 5px 8px; border-bottom: 0.5px solid #b4b2a9; background: #0B5362; }
 .step-cell { padding: 5px 8px; border-bottom: 0.5px solid #d3d1c7; border-right: 0.5px solid #d3d1c7; }
 .step-cell:last-child { border-right: none; }
 .step-num { font-weight: 500; color: #73726c; font-size: 11px; }
 
 /* LIFECYCLE */
 .lc-item { display: flex; align-items: flex-start; gap: 12px; padding: .7rem 0; border-bottom: 0.5px solid #d3d1c7; }
-.lc-num { min-width: 22px; height: 22px; border-radius: 50%; background: #393E46; color: #fff; border: none; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; flex-shrink: 0; }
+.lc-num { min-width: 22px; height: 22px; border-radius: 50%; background: #0B5362; color: #fff; border: none; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; flex-shrink: 0; }
 .check-item { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; color: #73726c; padding: 4px 0; border-bottom: 0.5px solid #d3d1c7; }
 .check-item:last-child { border: none; }
 .check-box { width: 14px; height: 14px; border: 0.5px solid #b4b2a9; border-radius: 3px; flex-shrink: 0; margin-top: 1px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 9px; }
@@ -118,10 +118,10 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 /* DETAIL PANEL */
 .detail-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0); pointer-events: none; z-index: 10; transition: background .2s; }
 .detail-overlay.open { background: rgba(0,0,0,0.25); pointer-events: all; }
-.detail-panel { position: fixed; right: -420px; top: 0; bottom: 0; width: 380px; background: #fff; border-left: 2px solid #393E46; overflow-y: auto; transition: right .25s; padding: 1.25rem; z-index: 11; }
+.detail-panel { position: fixed; right: -420px; top: 0; bottom: 0; width: 380px; background: #fff; border-left: 2px solid #0B5362; overflow-y: auto; transition: right .25s; padding: 1.25rem; z-index: 11; }
 .detail-panel.open { right: 0; }
 .detail-close { float: right; cursor: pointer; font-size: 18px; color: #73726c; line-height: 1; padding: 2px 4px; }
-.detail-close:hover { color: #393E46; }
+.detail-close:hover { color: #0B5362; }
 .d-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 0.5px solid #d3d1c7; font-size: 13px; }
 .d-row .dl { color: #73726c; }
 .d-row .dv { font-weight: 500; text-align: right; max-width: 58%; }
@@ -242,7 +242,7 @@ table.main tbody tr:hover td { background: #e8f4f6; cursor: pointer; }
 <div class="wrap">
   <div class="board-header">
     <h1>Evans Transformation Board</h1>
-    <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 9/9/2026 2:37 PM · PM — synced from Monday.com</div>
+    <div class="subtitle">Owner: Eric Lewis · Collaborators: Brian Franzwa, Wyatt Hassemer · Last updated: 9/10/2026 9:06 AM · AM — synced from Monday.com</div>
   </div>
 
   <!-- P0 BANNER -->
@@ -648,8 +648,8 @@ const CUSTOMERS = [
     note:"⏸ PAUSED. KAM: Craig Curwick. AM: Wes Cuomo. Spike v1.0 + config complete. 308-record address book loaded. Stuck — awaiting PV approval.\n\nOpen items:\n⬜ Paul Volkman Begin Transformation approval — pending" },
   { name:"Best Pump and Flow [LTL Rate Shop + TL Tender]", tier:"Quick Win", loads:362, gp:17661, complexity:"Simple", type:"Customer", status:"Hypercare", dod:9, color:"qw", kam:"Eric Bollis (AM)", targetGoLive:"Jul 8, 2026", actualGoLive:"Jul 1, 2026", note:"🔵 Discovery. AM: Eric Bollis. Low complexity.", uxpct:100 },
   { name:"34 Degrees LLC [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:271, gp:39378, complexity:"Simple", type:"Customer", status:"Hypercare", dod:9, color:"qw", kam:"Mark Charlesworth (AM)", actualGoLive:"Jul 1, 2026", note:"🔵 Discovery. AM: Mark Charlesworth.", uxpct:100 },
-  { name:"Rosco Laboratories [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:199, gp:13397, complexity:"Simple", type:"Customer", status:"Validation", dod:7, color:"qw", kam:"Mike Stiglich (AM)", targetGoLive:"Jul 10, 2026", actualGoLive:"Jul 29, 2026", note:"🟠 On Deck. Low complexity. Quick win.", uxpct:100 },
-  { name:"BluLabs Brands [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:380, gp:60444, complexity:"Moderate", type:"Customer", status:"Validation", dod:7, color:"qw", kam:"Rich Reese", targetGoLive:"Jul 22, 2026", actualGoLive:"Jul 22, 2026", note:"🟠 On Deck. Moderate. Multi-tenant vendor flag — vendors serving multiple shippers.", uxpct:100 },
+  { name:"Rosco Laboratories [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:199, gp:13397, complexity:"Simple", type:"Customer", status:"Hypercare", dod:9, color:"qw", kam:"Mike Stiglich (AM)", targetGoLive:"Jul 10, 2026", actualGoLive:"Jul 29, 2026", note:"🟠 On Deck. Low complexity. Quick win.", uxpct:100 },
+  { name:"BluLabs Brands [LTL Rate Shop + Dispatch]", tier:"Quick Win", loads:380, gp:60444, complexity:"Moderate", type:"Customer", status:"Hypercare", dod:9, color:"qw", kam:"Rich Reese", targetGoLive:"Jul 22, 2026", actualGoLive:"Jul 22, 2026", note:"🟠 On Deck. Moderate. Multi-tenant vendor flag — vendors serving multiple shippers.", uxpct:100 },
   { name:"Dollamur [Website Rate API Integration]", tier:"Quick Win", loads:2419, gp:130000, complexity:"Moderate", type:"Integration", status:"Validation", dod:7, color:"int", kam:"Shawn Cross", legacyWS:"NO", targetGoLive:"Sep 9, 2026", actualGoLive:"Jul 29, 2026",
     note:"🔵 Discovery. Website Rate API Integration. KAM: Shawn Cross. Intake: Jun 1. Complexity: Moderate. Legacy WS active post-migration: NO. Spike v1.0 + config complete.\n\nDollamur Sport Surfaces — sport flooring/mat systems for gymnastics, MMA, wrestling facilities. ~2,419 UX loads/yr on Legacy UX (DOLLFO) + ~1,867 other-method loads (majority manual TMS entry by Evans ops — explicitly out of scope for this transformation) + 23 Vooma + 17 EDI 210 inbound invoice conversion. No active customer-side API integration today. Primary UX users: cassie.schuler, sinead.ireland. Address book: 278 records. Product catalog: 5 entries. Fixed Special Instructions: 'Accessories are included in box'. Two NMFCs with density-based sub-class rules. 30 active customer users to migrate with existing rate access.\n\nParallel workstream: Dollamur dev team integrating customer-facing quote tool against E3 POST /v2/rates (greenfield) — EVACAR/no-rate responses surface as 'Call for Quote'. API schema sent to Shawn 6/4. Technical contact TBD.\n\nArtifacts on file: Spike Doc (DollamurSportSurfaces_SpikeDoc_v1.docx), Onboarding doc (20260604_Customer_DOLLFO_customer-onboarding.xlsx).\n\nOpen items:\n⬜ Onboarding doc — in progress\n⬜ Customer training/communication\n⬜ Paul Volkman Begin Transformation approval — not submitted\n⬜ Paul Volkman Go-Live approval — not submitted" },
   { name:"Trinity Industries [Integration Transformation]", tier:"Quick Win", loads:10121, gp:0, complexity:"High", type:"Integration", status:"Hypercare", dod:9, color:"int", kam:"Shawn Cross (KAM) / Mike Stiglich (AM)", legacyWS:"YES", targetGoLive:"Jul 15, 2026", actualGoLive:"Jul 15, 2026",
@@ -668,7 +668,7 @@ const CUSTOMERS = [
   { name:"Osmose Utilities", tier:"Tier 2", loads:3608, gp:371580, complexity:"Moderate", type:"Type 1", status:"Discovery", dod:1, color:"t2", kam:"Spencer Walker", note:"Active ODFL eBOL customer. [Figures refreshed 8/20/2026 from May-Jul 2026 UX actuals, annualized x4.]" },
   { name:"Southbend", parent:"Middleby Group", tier:"Tier 1", loads:2884, gp:168924, complexity:"TBD", type:"Type 1", status:"Discovery", dod:1, color:"t1", kam:"Spencer Walker",
     note:"Middleby Group child entity. Loads and GP annualized x4 from May-Jul 2026 actuals (three complete months of the UX shipment-detail export, 8/20/2026). Parse validated against the July pivot - all six Middleby child figures matched to the cent. May-Jul 2026 actual: 721 loads, $42,230.94 GP. Note: previously flagged in the not-a-quick-win list - 115 File Integration loads in data. Integration profile to be confirmed during discovery." },
-  { name:"ETE (Engine & Transmission Exchange)", tier:"Tier 1", loads:12424, gp:53389, complexity:"TBD", type:"Type 1", status:"Transformation Design", dod:4, color:"t1", kam:"Rich Reese",
+  { name:"ETE (Engine & Transmission Exchange)", tier:"Tier 1", loads:12424, gp:53389, complexity:"TBD", type:"Type 1", status:"In Execution", dod:5, color:"t1", kam:"Rich Reese",
     note:"Engine \u0026 Transmission Exchange. Not a Middleby entity - standalone owner group. Added to the On Deck list 8/20/2026. Loads and GP annualized x4 from May-Jul 2026 actuals (three complete months of the UX shipment-detail export, 8/20/2026). Parse validated against the July pivot - all six Middleby child figures matched to the cent. May-Jul 2026 actual: 3,106 loads, $13,347.30 GP. High volume, thin margin - 12,424 loads/yr annualized against only $53,389 GP, roughly $4.30 GP per load, the lowest GP-per-load of any entity on this list. Worth confirming the rate structure before prioritising.\n\nOpen items:\n\u2b1c Tier confirmation - flagged Tier 1 by KAM, but GP/load is well below the other Tier 1 rows\n\u2b1c KAM assignment - TBD\n\u2b1c Complexity assessment - not started" },
 
   { name:"Viking Range", parent:"Middleby Group", tier:"Tier 1", loads:804, gp:46978, complexity:"TBD", type:"Type 1", status:"Discovery", dod:1, color:"t1", kam:"Spencer Walker",
@@ -792,7 +792,7 @@ NMFC switches applied: 25970→25525, 27260→25525, 53180→53125, 123290→528
     note:"Brand new customer — no Legacy UX history, so there is no shipment volume to annualize. Monday.com ticket 12885964033, created 8/24/2026 4:51 PM. Added to the board 8/24/2026 at Eric's direction.\n\nOnboarding was built in a separate Cowork session from the source spreadsheets Eric provided. The Monday.com card itself carries only Type, Project Status, Complexity and Target Go-Live — every other field is empty at the source, so nothing below is validated yet.\n\nOpen items:\n⬜ Loads / GP — none; brand new customer, no historical volume to pull from the UX shipment-detail export\n✅ Tier — Net New (Eric, 8/24/2026), matching Blachford Acoustics and Newton Beverage, the board's other brand-new customers. Color Quick Win per board convention.\n⬜ KAM/AM — unassigned in Monday.com\n⬜ Internal Status — not set\n⬜ Actual Go-Live — not set\n⬜ Paul Volkman Begin Transformation approval — not submitted" },
   { name:"Custom Pipe & Fabrication", tier:"Net New", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Hypercare", dod:9, color:"qw", kam:"TBD", legacyWS:"N/A", targetGoLive:"Aug 31, 2026", actualGoLive:"Aug 25, 2026",
     note:"Brand new customer — no Legacy UX history, so there is no shipment volume to annualize. Monday.com ticket 12885963447, created 8/24/2026 4:51 PM. Added to the board 8/24/2026 at Eric's direction.\n\nOnboarding was built in a separate Cowork session from the source spreadsheets Eric provided. The Monday.com card itself carries only Type, Project Status, Complexity and Target Go-Live — every other field is empty at the source, so nothing below is validated yet.\n\nOpen items:\n⬜ Loads / GP — none; brand new customer, no historical volume to pull from the UX shipment-detail export\n✅ Tier — Net New (Eric, 8/24/2026), matching Blachford Acoustics and Newton Beverage, the board's other brand-new customers. Color Quick Win per board convention.\n⬜ KAM/AM — unassigned in Monday.com\n⬜ Internal Status — not set\n⬜ Actual Go-Live — not set\n⬜ Paul Volkman Begin Transformation approval — not submitted" },
-  { name:"Lake Country Manufacturing", tier:"Quick Win", loads:1012, gp:38744, complexity:"TBD", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Wes Cuomo (AM)",
+  { name:"Lake Country Manufacturing", tier:"Quick Win", loads:1012, gp:38744, complexity:"TBD", type:"Customer", status:"Transformation Design", dod:4, color:"qw", kam:"Wes Cuomo (AM)",
     note:"Monday.com intake stub \u2014 ticket 12886936779, created 8/24/2026 10:40 PM. Added to the board 8/25/2026 at Eric's direction.\n\nOnly Type = Customer and Project Status = Intake are populated in Monday.com. Every other field is empty at the source, so nothing here is validated yet:\n\u2b1c Complexity \u2014 not set\n\u2b1c Legacy WS active post-migration \u2014 not set\n\u2b1c Internal Status \u2014 not set\n\u2b1c Target Go-Live \u2014 not set\n\u2b1c Actual Go-Live \u2014 not set\n\u2705 KAM/AM \u2014 Wes Cuomo (AM), from Monday.com 8/25/2026\n\u2b1c No subitems / no DoD checklist started\n\u2705 Loads / GP \u2014 1,012 loads, $38,744 GP. From the 365-day Create-Date extract (8/25/2026): 1,094 loads / $45,766 total, of which 1,012 / $38,744 are Legacy UX portal loads by customer staff. The board tracks UX-attributed only, so Evans-created MercuryGate loads (72), EDI-210 unmatched (7) and Vooma (3) are excluded. GP/load $38.28. Not annualized \u2014 these are full-year actuals\n\u2705 Legacy-to-E3 \u2014 existing Legacy UX customer (Eric, 8/25/2026), not net new. The loads/GP zeros are therefore placeholders that MUST be replaced: run the UX shipment-detail export and annualize x4 from May\u2013Jul 2026 actuals, then set tier from the result.\n\u2705 Tier \u2014 Quick Win (Eric, 8/25/2026)\n\u2705 No integration \u2014 named UX User on 100% of 1,012 credential loads across a full year: portal usage, not a feed. Cutover is provisioning and retraining, not an API build\n\u2705 Evans-created loads (72) \u2014 tyler.buechs and jake.schulte confirmed Evans employees (Eric, 8/25/2026); MercuryGate-native, out of Legacy scope\n\u2705 tina.natzke@lakecountrymfg.com \u2014 removed user, no loads in the last 90 days, not a concern (Eric, 8/25/2026). Her 113 loads / $4,551 remain in the 365-day figures as historical volume\n\u2b1c Volume is spread, not concentrated: frank.pivonka 368 (36%), jim.seelig 275 (27%), tina.natzke 113, jeff.phipps 100, matt.brandt 99, amy.b 30, carrie.smith 20, sasha.pickering 7" },
 
   { name:"Runtal North America", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Discovery", dod:1, color:"qw", readyToExecute:"Blocked", kam:"Mike Stiglich, Natasha Clark (AM)", legacyWS:"NO",
@@ -822,7 +822,7 @@ NMFC switches applied: 25970→25525, 27260→25525, 53180→53125, 123290→528
   { name:"Nassco Inc", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Mike Stiglich (AM)", legacyWS:"NO",
     note:"🔵 Discovery. Legacy-to-E3 existing customer (Eric, 8/31/2026). Monday.com ticket 12921743450, intake 8/27/2026. KAM/AM: Mike Stiglich (AM). Complexity: Low.\n\n⬜ loads:0 / gp:0 are PLACEHOLDERS, not facts - the UX shipment-detail export has not been run for this account yet. Annualize x4 from May-Jul 2026 actuals once pulled, then set tier from the resulting volume.\n⬜ tier:'TBD' pending those figures." },
 
-  { name:"Electrochem Solutions", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Transformation Design", dod:4, color:"qw", kam:"Rich Reese (KAM) / Eric Bollis (AM)", legacyWS:"NO",
+  { name:"Electrochem Solutions", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"In Execution", dod:5, color:"qw", kam:"Rich Reese (KAM) / Eric Bollis (AM)", legacyWS:"NO",
     note:"🔵 Discovery. Legacy-to-E3 existing customer (Eric, 8/31/2026). Monday.com ticket 12921743451, intake 8/27/2026. KAM/AM: Rich Reese (KAM) / Eric Bollis (AM). Complexity: Low.\n\n⬜ loads:0 / gp:0 are PLACEHOLDERS, not facts - the UX shipment-detail export has not been run for this account yet. Annualize x4 from May-Jul 2026 actuals once pulled, then set tier from the resulting volume.\n⬜ tier:'TBD' pending those figures." },
 
   { name:"Premier Cruise Logistics Inc", tier:"TBD", loads:0, gp:0, complexity:"Low", type:"Customer", status:"Discovery", dod:1, color:"qw", kam:"Mark Charlesworth", legacyWS:"NO",
